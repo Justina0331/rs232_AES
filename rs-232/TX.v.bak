@@ -1,0 +1,89 @@
+module TX(data_out, data_in, start, clk, rst, CHECK_TIME);
+
+  output  data_out;
+  input   data_in, start, clk, rst, CHECK_TIME; 
+    
+  reg   data, load_data, restart, tx_start;
+  reg   [5:0] check_q;
+  wire  data_out;
+  reg   [2:0] ps,ns;
+  
+  /*parameter T0 = 0;
+  parameter T1 = 1;
+  parameter T2 = 2;
+  parameter T3 = 3;
+  parameter T4 = 4;
+  parameter T5 = 5;
+  parameter T6 = 6;
+  
+  
+  always@(posedge clk)
+  begin
+    if(rst | check_q >= 18)
+      tx_start <= 0;
+    if(start)
+      if(check_q == 2)  tx_start <= 1;
+  end 
+  
+  //接收bit
+	always @(posedge CHECK_TIME, posedge rst, posedge restart)
+	begin
+		if(rst | restart)
+      check_q <= 0;
+		else
+		  if(start) check_q <= check_q + 1;
+	end
+	
+	always @(*)
+	begin
+	  case(check_q)
+	     2:  data <= data_in;
+	     4:  data <= data_in;
+	     6:  data <= data_in;
+	     8:  data <= data_in;
+	     10:  data <= data_in;
+	     12:  data <= data_in;
+	     14:  data <= data_in;
+	     16:  data <= data_in;
+	  endcase
+	end
+    
+  //States
+  always@(posedge clk)
+  begin
+    if(rst)
+      ps <= T0;
+    else
+      ps <= ns;
+  end
+    
+  always@(*)
+  begin
+    load_data = 0;
+    restart = 0;
+    ns = T0;
+    case(ps)
+      T0://等待數字進來
+      begin
+        if(check_q >= 2)ns = T1;
+      end
+      T1://8bit數字進來
+      begin
+        if(check_q >= 20)ns = T2;
+      end
+      T2://數字讀完顯示於LED
+      begin
+          if(~tx_start) 
+           	begin
+              restart = 1;
+              ns = T0;
+            end
+      end
+    endcase 
+  end*/
+    
+  assign data_out = start ? 0 : data_in;
+
+endmodule
+
+

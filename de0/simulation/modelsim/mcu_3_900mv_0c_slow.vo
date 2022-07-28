@@ -1,0 +1,3167 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+
+// DATE "07/05/2022 17:59:10"
+
+// 
+// Device: Altera EP2AGX45CU17I3 Package UFBGA358
+// 
+
+// 
+// This Verilog file should be used for ModelSim (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module mcu (
+	CLK,
+	HEX0,
+	HEX1,
+	HEX2,
+	HEX3,
+	LED,
+	SW,
+	BTN,
+	TX,
+	RX);
+input 	CLK;
+output 	[6:0] HEX0;
+output 	[6:0] HEX1;
+output 	[6:0] HEX2;
+output 	[6:0] HEX3;
+output 	[9:0] LED;
+input 	[9:0] SW;
+input 	[2:0] BTN;
+input 	TX;
+output 	RX;
+
+// Design Ports Information
+// HEX0[0]	=>  Location: PIN_A16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX0[1]	=>  Location: PIN_B13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX0[2]	=>  Location: PIN_U1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX0[3]	=>  Location: PIN_Y4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX0[4]	=>  Location: PIN_B10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX0[5]	=>  Location: PIN_C5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX0[6]	=>  Location: PIN_V2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX1[0]	=>  Location: PIN_E7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX1[1]	=>  Location: PIN_V15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX1[2]	=>  Location: PIN_B15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX1[3]	=>  Location: PIN_Y11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX1[4]	=>  Location: PIN_D1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX1[5]	=>  Location: PIN_D14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX1[6]	=>  Location: PIN_Y1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX2[0]	=>  Location: PIN_C15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX2[1]	=>  Location: PIN_V6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX2[2]	=>  Location: PIN_J3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX2[3]	=>  Location: PIN_V14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX2[4]	=>  Location: PIN_W13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX2[5]	=>  Location: PIN_A11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX2[6]	=>  Location: PIN_J2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX3[0]	=>  Location: PIN_V7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX3[1]	=>  Location: PIN_R3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX3[2]	=>  Location: PIN_P4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX3[3]	=>  Location: PIN_A15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX3[4]	=>  Location: PIN_V5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX3[5]	=>  Location: PIN_W4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX3[6]	=>  Location: PIN_C13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED[0]	=>  Location: PIN_F4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED[1]	=>  Location: PIN_G2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED[2]	=>  Location: PIN_F3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED[3]	=>  Location: PIN_G1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED[4]	=>  Location: PIN_E4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED[5]	=>  Location: PIN_F2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED[6]	=>  Location: PIN_F5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED[7]	=>  Location: PIN_D4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED[8]	=>  Location: PIN_D12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED[9]	=>  Location: PIN_U3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[0]	=>  Location: PIN_B7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[1]	=>  Location: PIN_M2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[2]	=>  Location: PIN_B12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[3]	=>  Location: PIN_U11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[4]	=>  Location: PIN_Y15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[5]	=>  Location: PIN_U7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[6]	=>  Location: PIN_T4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[7]	=>  Location: PIN_U4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[8]	=>  Location: PIN_Y13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[9]	=>  Location: PIN_T7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// BTN[1]	=>  Location: PIN_Y14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// BTN[2]	=>  Location: PIN_U6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RX	=>  Location: PIN_V3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// BTN[0]	=>  Location: PIN_E1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CLK	=>  Location: PIN_T10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// TX	=>  Location: PIN_D2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("mcu_3_900mv_0c_v_slow.sdo");
+// synopsys translate_on
+
+wire \SW[0]~input_o ;
+wire \SW[1]~input_o ;
+wire \SW[2]~input_o ;
+wire \SW[3]~input_o ;
+wire \SW[4]~input_o ;
+wire \SW[5]~input_o ;
+wire \SW[6]~input_o ;
+wire \SW[7]~input_o ;
+wire \SW[8]~input_o ;
+wire \SW[9]~input_o ;
+wire \BTN[1]~input_o ;
+wire \BTN[2]~input_o ;
+wire \HEX0[0]~output_o ;
+wire \HEX0[1]~output_o ;
+wire \HEX0[2]~output_o ;
+wire \HEX0[3]~output_o ;
+wire \HEX0[4]~output_o ;
+wire \HEX0[5]~output_o ;
+wire \HEX0[6]~output_o ;
+wire \HEX1[0]~output_o ;
+wire \HEX1[1]~output_o ;
+wire \HEX1[2]~output_o ;
+wire \HEX1[3]~output_o ;
+wire \HEX1[4]~output_o ;
+wire \HEX1[5]~output_o ;
+wire \HEX1[6]~output_o ;
+wire \HEX2[0]~output_o ;
+wire \HEX2[1]~output_o ;
+wire \HEX2[2]~output_o ;
+wire \HEX2[3]~output_o ;
+wire \HEX2[4]~output_o ;
+wire \HEX2[5]~output_o ;
+wire \HEX2[6]~output_o ;
+wire \HEX3[0]~output_o ;
+wire \HEX3[1]~output_o ;
+wire \HEX3[2]~output_o ;
+wire \HEX3[3]~output_o ;
+wire \HEX3[4]~output_o ;
+wire \HEX3[5]~output_o ;
+wire \HEX3[6]~output_o ;
+wire \LED[0]~output_o ;
+wire \LED[1]~output_o ;
+wire \LED[2]~output_o ;
+wire \LED[3]~output_o ;
+wire \LED[4]~output_o ;
+wire \LED[5]~output_o ;
+wire \LED[6]~output_o ;
+wire \LED[7]~output_o ;
+wire \LED[8]~output_o ;
+wire \LED[9]~output_o ;
+wire \RX~output_o ;
+wire \CLK~input_o ;
+wire \CLK~inputclkctrl_outclk ;
+wire \TX~input_o ;
+wire \f_rs232|check_q~3_combout ;
+wire \f_rs232|check_q~2_combout ;
+wire \f_rs232|check_q~0_combout ;
+wire \f_rs232|check_q~1_combout ;
+wire \f_rs232|Add1~0_combout ;
+wire \f_rs232|check_q~5_combout ;
+wire \f_rs232|LessThan0~0_combout ;
+wire \BTN[0]~input_o ;
+wire \f_rs232|d~0_combout ;
+wire \f_rs232|d~q ;
+wire \f_rs232|s~0_combout ;
+wire \f_rs232|s~q ;
+wire \f_rs232|start~0_combout ;
+wire \f_rs232|start~q ;
+wire \f_rs232|Add0~1_sumout ;
+wire \f_rs232|Add0~42 ;
+wire \f_rs232|Add0~45_sumout ;
+wire \f_rs232|Equal0~0DUPLICATE_combout ;
+wire \f_rs232|Equal0~1DUPLICATE_combout ;
+wire \f_rs232|div[11]~0_combout ;
+wire \f_rs232|Add0~2 ;
+wire \f_rs232|Add0~5_sumout ;
+wire \f_rs232|Add0~6 ;
+wire \f_rs232|Add0~9_sumout ;
+wire \f_rs232|Add0~10 ;
+wire \f_rs232|Add0~13_sumout ;
+wire \f_rs232|Add0~14 ;
+wire \f_rs232|Add0~17_sumout ;
+wire \f_rs232|Add0~18 ;
+wire \f_rs232|Add0~21_sumout ;
+wire \f_rs232|Add0~22 ;
+wire \f_rs232|Add0~25_sumout ;
+wire \f_rs232|Add0~26 ;
+wire \f_rs232|Add0~29_sumout ;
+wire \f_rs232|Add0~30 ;
+wire \f_rs232|Add0~33_sumout ;
+wire \f_rs232|Add0~34 ;
+wire \f_rs232|Add0~37_sumout ;
+wire \f_rs232|Add0~38 ;
+wire \f_rs232|Add0~41_sumout ;
+wire \f_rs232|Equal0~1_combout ;
+wire \f_rs232|Equal0~0_combout ;
+wire \f_rs232|CHECK_TIME~0_combout ;
+wire \f_rs232|CHECK_TIME~feeder_combout ;
+wire \f_rs232|CHECK_TIME~q ;
+wire \f_rs232|check_q~4_combout ;
+wire \f_rs232|WideOr1~0_combout ;
+wire \f_rs232|Selector1~0_combout ;
+wire \f_rs232|WideOr7~0_combout ;
+wire \f_rs232|port_b_out~0_combout ;
+wire \f_rs232|port_b_out[0]~feeder_combout ;
+wire \f_rs232|LessThan2~0_combout ;
+wire \f_rs232|LessThan1~0_combout ;
+wire \f_rs232|ps~8_combout ;
+wire \f_rs232|ps.T0~q ;
+wire \f_rs232|ps~7_combout ;
+wire \f_rs232|ps.T1~q ;
+wire \f_rs232|ps~6_combout ;
+wire \f_rs232|ps.T2~q ;
+wire \f_rs232|port_b_out[0]~1_combout ;
+wire \f_rs232|WideOr6~0_combout ;
+wire \f_rs232|port_b_out~2_combout ;
+wire \f_rs232|WideOr5~0_combout ;
+wire \f_rs232|port_b_out~3_combout ;
+wire \f_rs232|WideOr4~0_combout ;
+wire \f_rs232|port_b_out~4_combout ;
+wire \f_rs232|WideOr3~0_combout ;
+wire \f_rs232|port_b_out~5_combout ;
+wire \f_rs232|WideOr2~0_combout ;
+wire \f_rs232|port_b_out~6_combout ;
+wire \f_rs232|WideOr1~1_combout ;
+wire \f_rs232|port_b_out~7_combout ;
+wire \f_rs232|WideOr0~0_combout ;
+wire \f_rs232|port_b_out~8_combout ;
+wire [7:0] \f_rs232|port_b_out ;
+wire [11:0] \f_rs232|div ;
+wire [5:0] \f_rs232|check_q ;
+wire [7:0] \f_rs232|data ;
+
+
+// Location: IOOBUF_X5_Y56_N2
+arriaii_io_obuf \HEX0[0]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX0[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX0[0]~output .bus_hold = "false";
+defparam \HEX0[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X8_Y56_N36
+arriaii_io_obuf \HEX0[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX0[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX0[1]~output .bus_hold = "false";
+defparam \HEX0[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X47_Y0_N67
+arriaii_io_obuf \HEX0[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX0[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX0[2]~output .bus_hold = "false";
+defparam \HEX0[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X32_Y0_N2
+arriaii_io_obuf \HEX0[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX0[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX0[3]~output .bus_hold = "false";
+defparam \HEX0[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X30_Y56_N36
+arriaii_io_obuf \HEX0[4]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX0[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX0[4]~output .bus_hold = "false";
+defparam \HEX0[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X44_Y56_N2
+arriaii_io_obuf \HEX0[5]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX0[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX0[5]~output .bus_hold = "false";
+defparam \HEX0[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X45_Y0_N2
+arriaii_io_obuf \HEX0[6]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX0[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX0[6]~output .bus_hold = "false";
+defparam \HEX0[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X44_Y56_N36
+arriaii_io_obuf \HEX1[0]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX1[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX1[0]~output .bus_hold = "false";
+defparam \HEX1[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X3_Y0_N33
+arriaii_io_obuf \HEX1[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX1[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX1[1]~output .bus_hold = "false";
+defparam \HEX1[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X5_Y56_N98
+arriaii_io_obuf \HEX1[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX1[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX1[2]~output .bus_hold = "false";
+defparam \HEX1[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X9_Y0_N98
+arriaii_io_obuf \HEX1[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX1[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX1[3]~output .bus_hold = "false";
+defparam \HEX1[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X48_Y56_N67
+arriaii_io_obuf \HEX1[4]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX1[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX1[4]~output .bus_hold = "false";
+defparam \HEX1[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X3_Y56_N64
+arriaii_io_obuf \HEX1[5]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX1[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX1[5]~output .bus_hold = "false";
+defparam \HEX1[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X33_Y0_N67
+arriaii_io_obuf \HEX1[6]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX1[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX1[6]~output .bus_hold = "false";
+defparam \HEX1[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X5_Y56_N36
+arriaii_io_obuf \HEX2[0]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX2[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX2[0]~output .bus_hold = "false";
+defparam \HEX2[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X43_Y0_N98
+arriaii_io_obuf \HEX2[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX2[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX2[1]~output .bus_hold = "false";
+defparam \HEX2[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y48_N67
+arriaii_io_obuf \HEX2[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX2[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX2[2]~output .bus_hold = "false";
+defparam \HEX2[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X5_Y0_N98
+arriaii_io_obuf \HEX2[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX2[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX2[3]~output .bus_hold = "false";
+defparam \HEX2[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X5_Y0_N2
+arriaii_io_obuf \HEX2[4]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX2[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX2[4]~output .bus_hold = "false";
+defparam \HEX2[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X10_Y56_N67
+arriaii_io_obuf \HEX2[5]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX2[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX2[5]~output .bus_hold = "false";
+defparam \HEX2[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y49_N36
+arriaii_io_obuf \HEX2[6]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX2[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX2[6]~output .bus_hold = "false";
+defparam \HEX2[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X30_Y0_N98
+arriaii_io_obuf \HEX3[0]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX3[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX3[0]~output .bus_hold = "false";
+defparam \HEX3[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X48_Y0_N67
+arriaii_io_obuf \HEX3[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX3[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX3[1]~output .bus_hold = "false";
+defparam \HEX3[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X56_Y0_N2
+arriaii_io_obuf \HEX3[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX3[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX3[2]~output .bus_hold = "false";
+defparam \HEX3[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X5_Y56_N67
+arriaii_io_obuf \HEX3[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX3[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX3[3]~output .bus_hold = "false";
+defparam \HEX3[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X43_Y0_N36
+arriaii_io_obuf \HEX3[4]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX3[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX3[4]~output .bus_hold = "false";
+defparam \HEX3[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X43_Y0_N67
+arriaii_io_obuf \HEX3[5]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX3[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX3[5]~output .bus_hold = "false";
+defparam \HEX3[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X7_Y56_N67
+arriaii_io_obuf \HEX3[6]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX3[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX3[6]~output .bus_hold = "false";
+defparam \HEX3[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y51_N98
+arriaii_io_obuf \LED[0]~output (
+	.i(\f_rs232|port_b_out [0]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED[0]~output .bus_hold = "false";
+defparam \LED[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y51_N5
+arriaii_io_obuf \LED[1]~output (
+	.i(\f_rs232|port_b_out [1]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED[1]~output .bus_hold = "false";
+defparam \LED[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X56_Y56_N33
+arriaii_io_obuf \LED[2]~output (
+	.i(\f_rs232|port_b_out [2]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED[2]~output .bus_hold = "false";
+defparam \LED[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y51_N67
+arriaii_io_obuf \LED[3]~output (
+	.i(\f_rs232|port_b_out [3]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED[3]~output .bus_hold = "false";
+defparam \LED[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X56_Y56_N64
+arriaii_io_obuf \LED[4]~output (
+	.i(\f_rs232|port_b_out [4]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED[4]~output .bus_hold = "false";
+defparam \LED[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X56_Y56_N95
+arriaii_io_obuf \LED[5]~output (
+	.i(\f_rs232|port_b_out [5]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED[5]~output .bus_hold = "false";
+defparam \LED[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y51_N33
+arriaii_io_obuf \LED[6]~output (
+	.i(\f_rs232|port_b_out [6]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED[6]~output .bus_hold = "false";
+defparam \LED[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X56_Y56_N2
+arriaii_io_obuf \LED[7]~output (
+	.i(\f_rs232|port_b_out [7]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED[7]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED[7]~output .bus_hold = "false";
+defparam \LED[7]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X7_Y56_N98
+arriaii_io_obuf \LED[8]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED[8]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED[8]~output .bus_hold = "false";
+defparam \LED[8]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X47_Y0_N36
+arriaii_io_obuf \LED[9]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED[9]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED[9]~output .bus_hold = "false";
+defparam \LED[9]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X47_Y0_N98
+arriaii_io_obuf \RX~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\RX~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \RX~output .bus_hold = "false";
+defparam \RX~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X26_Y0_N32
+arriaii_io_ibuf \CLK~input (
+	.i(CLK),
+	.ibar(gnd),
+	.o(\CLK~input_o ));
+// synopsys translate_off
+defparam \CLK~input .bus_hold = "false";
+defparam \CLK~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G7
+arriaii_clkena \CLK~inputclkctrl (
+	.inclk(\CLK~input_o ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\CLK~inputclkctrl_outclk ),
+	.enaout());
+// synopsys translate_off
+defparam \CLK~inputclkctrl .clock_type = "global clock";
+defparam \CLK~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: IOIBUF_X48_Y56_N1
+arriaii_io_ibuf \TX~input (
+	.i(TX),
+	.ibar(gnd),
+	.o(\TX~input_o ));
+// synopsys translate_off
+defparam \TX~input .bus_hold = "false";
+defparam \TX~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N34
+arriaii_lcell_comb \f_rs232|check_q~3 (
+// Equation(s):
+// \f_rs232|check_q~3_combout  = ( \f_rs232|start~q  & ( !\f_rs232|check_q [0] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|check_q [0]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\f_rs232|start~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|check_q~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|check_q~3 .extended_lut = "off";
+defparam \f_rs232|check_q~3 .lut_mask = 64'h00000000F0F0F0F0;
+defparam \f_rs232|check_q~3 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y55_N37
+dffeas \f_rs232|check_q[0] (
+	.clk(\f_rs232|CHECK_TIME~q ),
+	.d(gnd),
+	.asdata(\f_rs232|check_q~3_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|check_q [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|check_q[0] .is_wysiwyg = "true";
+defparam \f_rs232|check_q[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N24
+arriaii_lcell_comb \f_rs232|check_q~2 (
+// Equation(s):
+// \f_rs232|check_q~2_combout  = ( \f_rs232|start~q  & ( !\f_rs232|check_q [1] $ (!\f_rs232|check_q [0]) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|check_q [1]),
+	.datad(!\f_rs232|check_q [0]),
+	.datae(gnd),
+	.dataf(!\f_rs232|start~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|check_q~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|check_q~2 .extended_lut = "off";
+defparam \f_rs232|check_q~2 .lut_mask = 64'h000000000FF00FF0;
+defparam \f_rs232|check_q~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y55_N7
+dffeas \f_rs232|check_q[1] (
+	.clk(\f_rs232|CHECK_TIME~q ),
+	.d(gnd),
+	.asdata(\f_rs232|check_q~2_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|check_q [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|check_q[1] .is_wysiwyg = "true";
+defparam \f_rs232|check_q[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N30
+arriaii_lcell_comb \f_rs232|check_q~0 (
+// Equation(s):
+// \f_rs232|check_q~0_combout  = ( \f_rs232|start~q  & ( !\f_rs232|check_q [2] $ (((!\f_rs232|check_q [1]) # (!\f_rs232|check_q [0]))) ) )
+
+	.dataa(gnd),
+	.datab(!\f_rs232|check_q [1]),
+	.datac(!\f_rs232|check_q [0]),
+	.datad(!\f_rs232|check_q [2]),
+	.datae(gnd),
+	.dataf(!\f_rs232|start~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|check_q~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|check_q~0 .extended_lut = "off";
+defparam \f_rs232|check_q~0 .lut_mask = 64'h0000000003FC03FC;
+defparam \f_rs232|check_q~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y55_N15
+dffeas \f_rs232|check_q[2] (
+	.clk(\f_rs232|CHECK_TIME~q ),
+	.d(gnd),
+	.asdata(\f_rs232|check_q~0_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|check_q [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|check_q[2] .is_wysiwyg = "true";
+defparam \f_rs232|check_q[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N38
+arriaii_lcell_comb \f_rs232|check_q~1 (
+// Equation(s):
+// \f_rs232|check_q~1_combout  = ( \f_rs232|start~q  & ( !\f_rs232|check_q [3] $ (((!\f_rs232|check_q [2]) # ((!\f_rs232|check_q [0]) # (!\f_rs232|check_q [1])))) ) )
+
+	.dataa(!\f_rs232|check_q [3]),
+	.datab(!\f_rs232|check_q [2]),
+	.datac(!\f_rs232|check_q [0]),
+	.datad(!\f_rs232|check_q [1]),
+	.datae(gnd),
+	.dataf(!\f_rs232|start~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|check_q~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|check_q~1 .extended_lut = "off";
+defparam \f_rs232|check_q~1 .lut_mask = 64'h0000000055565556;
+defparam \f_rs232|check_q~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y55_N13
+dffeas \f_rs232|check_q[3] (
+	.clk(\f_rs232|CHECK_TIME~q ),
+	.d(gnd),
+	.asdata(\f_rs232|check_q~1_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|check_q [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|check_q[3] .is_wysiwyg = "true";
+defparam \f_rs232|check_q[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N16
+arriaii_lcell_comb \f_rs232|Add1~0 (
+// Equation(s):
+// \f_rs232|Add1~0_combout  = ( \f_rs232|check_q [2] & ( (\f_rs232|check_q [0] & (\f_rs232|check_q [1] & \f_rs232|check_q [3])) ) )
+
+	.dataa(gnd),
+	.datab(!\f_rs232|check_q [0]),
+	.datac(!\f_rs232|check_q [1]),
+	.datad(!\f_rs232|check_q [3]),
+	.datae(gnd),
+	.dataf(!\f_rs232|check_q [2]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|Add1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add1~0 .extended_lut = "off";
+defparam \f_rs232|Add1~0 .lut_mask = 64'h0000000000030003;
+defparam \f_rs232|Add1~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N28
+arriaii_lcell_comb \f_rs232|check_q~5 (
+// Equation(s):
+// \f_rs232|check_q~5_combout  = ( \f_rs232|start~q  & ( !\f_rs232|check_q [5] $ (((!\f_rs232|check_q [4]) # (!\f_rs232|Add1~0_combout ))) ) )
+
+	.dataa(!\f_rs232|check_q [5]),
+	.datab(gnd),
+	.datac(!\f_rs232|check_q [4]),
+	.datad(!\f_rs232|Add1~0_combout ),
+	.datae(gnd),
+	.dataf(!\f_rs232|start~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|check_q~5_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|check_q~5 .extended_lut = "off";
+defparam \f_rs232|check_q~5 .lut_mask = 64'h00000000555A555A;
+defparam \f_rs232|check_q~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y55_N27
+dffeas \f_rs232|check_q[5] (
+	.clk(\f_rs232|CHECK_TIME~q ),
+	.d(gnd),
+	.asdata(\f_rs232|check_q~5_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|check_q [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|check_q[5] .is_wysiwyg = "true";
+defparam \f_rs232|check_q[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N10
+arriaii_lcell_comb \f_rs232|LessThan0~0 (
+// Equation(s):
+// \f_rs232|LessThan0~0_combout  = ( \f_rs232|check_q [3] & ( (!\f_rs232|check_q [5] & !\f_rs232|check_q [4]) ) ) # ( !\f_rs232|check_q [3] & ( (!\f_rs232|check_q [5] & ((!\f_rs232|check_q [2]) # (!\f_rs232|check_q [4]))) ) )
+
+	.dataa(!\f_rs232|check_q [5]),
+	.datab(!\f_rs232|check_q [2]),
+	.datac(gnd),
+	.datad(!\f_rs232|check_q [4]),
+	.datae(!\f_rs232|check_q [3]),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|LessThan0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|LessThan0~0 .extended_lut = "off";
+defparam \f_rs232|LessThan0~0 .lut_mask = 64'hAA88AA00AA88AA00;
+defparam \f_rs232|LessThan0~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: IOIBUF_X48_Y56_N32
+arriaii_io_ibuf \BTN[0]~input (
+	.i(BTN[0]),
+	.ibar(gnd),
+	.o(\BTN[0]~input_o ));
+// synopsys translate_off
+defparam \BTN[0]~input .bus_hold = "false";
+defparam \BTN[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N2
+arriaii_lcell_comb \f_rs232|d~0 (
+// Equation(s):
+// \f_rs232|d~0_combout  = ( \TX~input_o  & ( \BTN[0]~input_o  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\BTN[0]~input_o ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\TX~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|d~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|d~0 .extended_lut = "off";
+defparam \f_rs232|d~0 .lut_mask = 64'h000000000F0F0F0F;
+defparam \f_rs232|d~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y55_N3
+dffeas \f_rs232|d (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|d~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|d~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|d .is_wysiwyg = "true";
+defparam \f_rs232|d .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N4
+arriaii_lcell_comb \f_rs232|s~0 (
+// Equation(s):
+// \f_rs232|s~0_combout  = ( \f_rs232|d~q  & ( \BTN[0]~input_o  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\BTN[0]~input_o ),
+	.datae(gnd),
+	.dataf(!\f_rs232|d~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|s~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|s~0 .extended_lut = "off";
+defparam \f_rs232|s~0 .lut_mask = 64'h0000000000FF00FF;
+defparam \f_rs232|s~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y55_N5
+dffeas \f_rs232|s (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|s~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|s~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|s .is_wysiwyg = "true";
+defparam \f_rs232|s .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N26
+arriaii_lcell_comb \f_rs232|start~0 (
+// Equation(s):
+// \f_rs232|start~0_combout  = ( \f_rs232|d~q  & ( (!\f_rs232|LessThan0~0_combout  & ((!\f_rs232|s~q ))) # (\f_rs232|LessThan0~0_combout  & (\f_rs232|start~q )) ) ) # ( !\f_rs232|d~q  & ( (\f_rs232|LessThan0~0_combout  & ((\f_rs232|s~q ) # (\f_rs232|start~q 
+// ))) ) )
+
+	.dataa(!\f_rs232|start~q ),
+	.datab(gnd),
+	.datac(!\f_rs232|LessThan0~0_combout ),
+	.datad(!\f_rs232|s~q ),
+	.datae(gnd),
+	.dataf(!\f_rs232|d~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|start~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|start~0 .extended_lut = "off";
+defparam \f_rs232|start~0 .lut_mask = 64'h050F050FF505F505;
+defparam \f_rs232|start~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y55_N35
+dffeas \f_rs232|start (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\f_rs232|start~0_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\BTN[0]~input_o ),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|start~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|start .is_wysiwyg = "true";
+defparam \f_rs232|start .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N0
+arriaii_lcell_comb \f_rs232|Add0~1 (
+// Equation(s):
+// \f_rs232|Add0~1_sumout  = SUM(( \f_rs232|div [0] ) + ( \f_rs232|start~q  ) + ( !VCC ))
+// \f_rs232|Add0~2  = CARRY(( \f_rs232|div [0] ) + ( \f_rs232|start~q  ) + ( !VCC ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [0]),
+	.datae(gnd),
+	.dataf(!\f_rs232|start~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~1_sumout ),
+	.cout(\f_rs232|Add0~2 ),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~1 .extended_lut = "off";
+defparam \f_rs232|Add0~1 .lut_mask = 64'h0000FF00000000FF;
+defparam \f_rs232|Add0~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N20
+arriaii_lcell_comb \f_rs232|Add0~41 (
+// Equation(s):
+// \f_rs232|Add0~41_sumout  = SUM(( \f_rs232|div [10] ) + ( GND ) + ( \f_rs232|Add0~38  ))
+// \f_rs232|Add0~42  = CARRY(( \f_rs232|div [10] ) + ( GND ) + ( \f_rs232|Add0~38  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [10]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\f_rs232|Add0~38 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~41_sumout ),
+	.cout(\f_rs232|Add0~42 ),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~41 .extended_lut = "off";
+defparam \f_rs232|Add0~41 .lut_mask = 64'h0000FFFF000000FF;
+defparam \f_rs232|Add0~41 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N22
+arriaii_lcell_comb \f_rs232|Add0~45 (
+// Equation(s):
+// \f_rs232|Add0~45_sumout  = SUM(( \f_rs232|div [11] ) + ( GND ) + ( \f_rs232|Add0~42  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [11]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\f_rs232|Add0~42 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~45_sumout ),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~45 .extended_lut = "off";
+defparam \f_rs232|Add0~45 .lut_mask = 64'h0000FFFF000000FF;
+defparam \f_rs232|Add0~45 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N23
+dffeas \f_rs232|div[11] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~45_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[11] .is_wysiwyg = "true";
+defparam \f_rs232|div[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N26
+arriaii_lcell_comb \f_rs232|Equal0~0DUPLICATE (
+// Equation(s):
+// \f_rs232|Equal0~0DUPLICATE_combout  = ( !\f_rs232|div [2] & ( !\f_rs232|div [11] & ( (!\f_rs232|div [3] & (!\f_rs232|div [1] & \f_rs232|div [0])) ) ) )
+
+	.dataa(gnd),
+	.datab(!\f_rs232|div [3]),
+	.datac(!\f_rs232|div [1]),
+	.datad(!\f_rs232|div [0]),
+	.datae(!\f_rs232|div [2]),
+	.dataf(!\f_rs232|div [11]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|Equal0~0DUPLICATE_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Equal0~0DUPLICATE .extended_lut = "off";
+defparam \f_rs232|Equal0~0DUPLICATE .lut_mask = 64'h00C0000000000000;
+defparam \f_rs232|Equal0~0DUPLICATE .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N38
+arriaii_lcell_comb \f_rs232|Equal0~1DUPLICATE (
+// Equation(s):
+// \f_rs232|Equal0~1DUPLICATE_combout  = ( !\f_rs232|div [9] & ( !\f_rs232|div [5] & ( (!\f_rs232|div [8] & (!\f_rs232|div [7] & !\f_rs232|div [6])) ) ) )
+
+	.dataa(gnd),
+	.datab(!\f_rs232|div [8]),
+	.datac(!\f_rs232|div [7]),
+	.datad(!\f_rs232|div [6]),
+	.datae(!\f_rs232|div [9]),
+	.dataf(!\f_rs232|div [5]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|Equal0~1DUPLICATE_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Equal0~1DUPLICATE .extended_lut = "off";
+defparam \f_rs232|Equal0~1DUPLICATE .lut_mask = 64'hC000000000000000;
+defparam \f_rs232|Equal0~1DUPLICATE .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N30
+arriaii_lcell_comb \f_rs232|div[11]~0 (
+// Equation(s):
+// \f_rs232|div[11]~0_combout  = ( \f_rs232|Equal0~0DUPLICATE_combout  & ( \f_rs232|Equal0~1DUPLICATE_combout  & ( (!\BTN[0]~input_o ) # ((\f_rs232|div [4] & \f_rs232|div [10])) ) ) ) # ( !\f_rs232|Equal0~0DUPLICATE_combout  & ( 
+// \f_rs232|Equal0~1DUPLICATE_combout  & ( !\BTN[0]~input_o  ) ) ) # ( \f_rs232|Equal0~0DUPLICATE_combout  & ( !\f_rs232|Equal0~1DUPLICATE_combout  & ( !\BTN[0]~input_o  ) ) ) # ( !\f_rs232|Equal0~0DUPLICATE_combout  & ( !\f_rs232|Equal0~1DUPLICATE_combout  
+// & ( !\BTN[0]~input_o  ) ) )
+
+	.dataa(gnd),
+	.datab(!\BTN[0]~input_o ),
+	.datac(!\f_rs232|div [4]),
+	.datad(!\f_rs232|div [10]),
+	.datae(!\f_rs232|Equal0~0DUPLICATE_combout ),
+	.dataf(!\f_rs232|Equal0~1DUPLICATE_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|div[11]~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|div[11]~0 .extended_lut = "off";
+defparam \f_rs232|div[11]~0 .lut_mask = 64'hCCCCCCCCCCCCCCCF;
+defparam \f_rs232|div[11]~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N1
+dffeas \f_rs232|div[0] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~1_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[0] .is_wysiwyg = "true";
+defparam \f_rs232|div[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N2
+arriaii_lcell_comb \f_rs232|Add0~5 (
+// Equation(s):
+// \f_rs232|Add0~5_sumout  = SUM(( \f_rs232|div [1] ) + ( GND ) + ( \f_rs232|Add0~2  ))
+// \f_rs232|Add0~6  = CARRY(( \f_rs232|div [1] ) + ( GND ) + ( \f_rs232|Add0~2  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [1]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\f_rs232|Add0~2 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~5_sumout ),
+	.cout(\f_rs232|Add0~6 ),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~5 .extended_lut = "off";
+defparam \f_rs232|Add0~5 .lut_mask = 64'h0000FFFF000000FF;
+defparam \f_rs232|Add0~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N3
+dffeas \f_rs232|div[1] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~5_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[1] .is_wysiwyg = "true";
+defparam \f_rs232|div[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N4
+arriaii_lcell_comb \f_rs232|Add0~9 (
+// Equation(s):
+// \f_rs232|Add0~9_sumout  = SUM(( \f_rs232|div [2] ) + ( GND ) + ( \f_rs232|Add0~6  ))
+// \f_rs232|Add0~10  = CARRY(( \f_rs232|div [2] ) + ( GND ) + ( \f_rs232|Add0~6  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [2]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\f_rs232|Add0~6 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~9_sumout ),
+	.cout(\f_rs232|Add0~10 ),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~9 .extended_lut = "off";
+defparam \f_rs232|Add0~9 .lut_mask = 64'h0000FFFF000000FF;
+defparam \f_rs232|Add0~9 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N5
+dffeas \f_rs232|div[2] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~9_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[2] .is_wysiwyg = "true";
+defparam \f_rs232|div[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N6
+arriaii_lcell_comb \f_rs232|Add0~13 (
+// Equation(s):
+// \f_rs232|Add0~13_sumout  = SUM(( \f_rs232|div [3] ) + ( GND ) + ( \f_rs232|Add0~10  ))
+// \f_rs232|Add0~14  = CARRY(( \f_rs232|div [3] ) + ( GND ) + ( \f_rs232|Add0~10  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [3]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\f_rs232|Add0~10 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~13_sumout ),
+	.cout(\f_rs232|Add0~14 ),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~13 .extended_lut = "off";
+defparam \f_rs232|Add0~13 .lut_mask = 64'h0000FFFF000000FF;
+defparam \f_rs232|Add0~13 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N7
+dffeas \f_rs232|div[3] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~13_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[3] .is_wysiwyg = "true";
+defparam \f_rs232|div[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N8
+arriaii_lcell_comb \f_rs232|Add0~17 (
+// Equation(s):
+// \f_rs232|Add0~17_sumout  = SUM(( \f_rs232|div [4] ) + ( GND ) + ( \f_rs232|Add0~14  ))
+// \f_rs232|Add0~18  = CARRY(( \f_rs232|div [4] ) + ( GND ) + ( \f_rs232|Add0~14  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [4]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\f_rs232|Add0~14 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~17_sumout ),
+	.cout(\f_rs232|Add0~18 ),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~17 .extended_lut = "off";
+defparam \f_rs232|Add0~17 .lut_mask = 64'h0000FFFF000000FF;
+defparam \f_rs232|Add0~17 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N9
+dffeas \f_rs232|div[4] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~17_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[4] .is_wysiwyg = "true";
+defparam \f_rs232|div[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N10
+arriaii_lcell_comb \f_rs232|Add0~21 (
+// Equation(s):
+// \f_rs232|Add0~21_sumout  = SUM(( \f_rs232|div [5] ) + ( GND ) + ( \f_rs232|Add0~18  ))
+// \f_rs232|Add0~22  = CARRY(( \f_rs232|div [5] ) + ( GND ) + ( \f_rs232|Add0~18  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [5]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\f_rs232|Add0~18 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~21_sumout ),
+	.cout(\f_rs232|Add0~22 ),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~21 .extended_lut = "off";
+defparam \f_rs232|Add0~21 .lut_mask = 64'h0000FFFF000000FF;
+defparam \f_rs232|Add0~21 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N11
+dffeas \f_rs232|div[5] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~21_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[5] .is_wysiwyg = "true";
+defparam \f_rs232|div[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N12
+arriaii_lcell_comb \f_rs232|Add0~25 (
+// Equation(s):
+// \f_rs232|Add0~25_sumout  = SUM(( \f_rs232|div [6] ) + ( GND ) + ( \f_rs232|Add0~22  ))
+// \f_rs232|Add0~26  = CARRY(( \f_rs232|div [6] ) + ( GND ) + ( \f_rs232|Add0~22  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [6]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\f_rs232|Add0~22 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~25_sumout ),
+	.cout(\f_rs232|Add0~26 ),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~25 .extended_lut = "off";
+defparam \f_rs232|Add0~25 .lut_mask = 64'h0000FFFF000000FF;
+defparam \f_rs232|Add0~25 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N13
+dffeas \f_rs232|div[6] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~25_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[6] .is_wysiwyg = "true";
+defparam \f_rs232|div[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N14
+arriaii_lcell_comb \f_rs232|Add0~29 (
+// Equation(s):
+// \f_rs232|Add0~29_sumout  = SUM(( \f_rs232|div [7] ) + ( GND ) + ( \f_rs232|Add0~26  ))
+// \f_rs232|Add0~30  = CARRY(( \f_rs232|div [7] ) + ( GND ) + ( \f_rs232|Add0~26  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [7]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\f_rs232|Add0~26 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~29_sumout ),
+	.cout(\f_rs232|Add0~30 ),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~29 .extended_lut = "off";
+defparam \f_rs232|Add0~29 .lut_mask = 64'h0000FFFF000000FF;
+defparam \f_rs232|Add0~29 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N15
+dffeas \f_rs232|div[7] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~29_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[7] .is_wysiwyg = "true";
+defparam \f_rs232|div[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N16
+arriaii_lcell_comb \f_rs232|Add0~33 (
+// Equation(s):
+// \f_rs232|Add0~33_sumout  = SUM(( \f_rs232|div [8] ) + ( GND ) + ( \f_rs232|Add0~30  ))
+// \f_rs232|Add0~34  = CARRY(( \f_rs232|div [8] ) + ( GND ) + ( \f_rs232|Add0~30  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [8]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\f_rs232|Add0~30 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~33_sumout ),
+	.cout(\f_rs232|Add0~34 ),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~33 .extended_lut = "off";
+defparam \f_rs232|Add0~33 .lut_mask = 64'h0000FFFF000000FF;
+defparam \f_rs232|Add0~33 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N17
+dffeas \f_rs232|div[8] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~33_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[8] .is_wysiwyg = "true";
+defparam \f_rs232|div[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N18
+arriaii_lcell_comb \f_rs232|Add0~37 (
+// Equation(s):
+// \f_rs232|Add0~37_sumout  = SUM(( \f_rs232|div [9] ) + ( GND ) + ( \f_rs232|Add0~34  ))
+// \f_rs232|Add0~38  = CARRY(( \f_rs232|div [9] ) + ( GND ) + ( \f_rs232|Add0~34  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|div [9]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\f_rs232|Add0~34 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\f_rs232|Add0~37_sumout ),
+	.cout(\f_rs232|Add0~38 ),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Add0~37 .extended_lut = "off";
+defparam \f_rs232|Add0~37 .lut_mask = 64'h0000FFFF000000FF;
+defparam \f_rs232|Add0~37 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N19
+dffeas \f_rs232|div[9] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~37_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[9] .is_wysiwyg = "true";
+defparam \f_rs232|div[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X50_Y55_N21
+dffeas \f_rs232|div[10] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|Add0~41_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\f_rs232|div[11]~0_combout ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|div [10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|div[10] .is_wysiwyg = "true";
+defparam \f_rs232|div[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N36
+arriaii_lcell_comb \f_rs232|Equal0~1 (
+// Equation(s):
+// \f_rs232|Equal0~1_combout  = ( !\f_rs232|div [9] & ( !\f_rs232|div [5] & ( (!\f_rs232|div [8] & (!\f_rs232|div [6] & !\f_rs232|div [7])) ) ) )
+
+	.dataa(gnd),
+	.datab(!\f_rs232|div [8]),
+	.datac(!\f_rs232|div [6]),
+	.datad(!\f_rs232|div [7]),
+	.datae(!\f_rs232|div [9]),
+	.dataf(!\f_rs232|div [5]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|Equal0~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Equal0~1 .extended_lut = "off";
+defparam \f_rs232|Equal0~1 .lut_mask = 64'hC000000000000000;
+defparam \f_rs232|Equal0~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N24
+arriaii_lcell_comb \f_rs232|Equal0~0 (
+// Equation(s):
+// \f_rs232|Equal0~0_combout  = ( !\f_rs232|div [2] & ( !\f_rs232|div [11] & ( (!\f_rs232|div [3] & (\f_rs232|div [0] & !\f_rs232|div [1])) ) ) )
+
+	.dataa(gnd),
+	.datab(!\f_rs232|div [3]),
+	.datac(!\f_rs232|div [0]),
+	.datad(!\f_rs232|div [1]),
+	.datae(!\f_rs232|div [2]),
+	.dataf(!\f_rs232|div [11]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|Equal0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Equal0~0 .extended_lut = "off";
+defparam \f_rs232|Equal0~0 .lut_mask = 64'h0C00000000000000;
+defparam \f_rs232|Equal0~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y55_N32
+arriaii_lcell_comb \f_rs232|CHECK_TIME~0 (
+// Equation(s):
+// \f_rs232|CHECK_TIME~0_combout  = ( \f_rs232|Equal0~1_combout  & ( \f_rs232|Equal0~0_combout  & ( !\f_rs232|CHECK_TIME~q  $ (((!\f_rs232|div [10]) # (!\f_rs232|div [4]))) ) ) ) # ( !\f_rs232|Equal0~1_combout  & ( \f_rs232|Equal0~0_combout  & ( 
+// \f_rs232|CHECK_TIME~q  ) ) ) # ( \f_rs232|Equal0~1_combout  & ( !\f_rs232|Equal0~0_combout  & ( \f_rs232|CHECK_TIME~q  ) ) ) # ( !\f_rs232|Equal0~1_combout  & ( !\f_rs232|Equal0~0_combout  & ( \f_rs232|CHECK_TIME~q  ) ) )
+
+	.dataa(!\f_rs232|div [10]),
+	.datab(gnd),
+	.datac(!\f_rs232|CHECK_TIME~q ),
+	.datad(!\f_rs232|div [4]),
+	.datae(!\f_rs232|Equal0~1_combout ),
+	.dataf(!\f_rs232|Equal0~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|CHECK_TIME~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|CHECK_TIME~0 .extended_lut = "off";
+defparam \f_rs232|CHECK_TIME~0 .lut_mask = 64'h0F0F0F0F0F0F0F5A;
+defparam \f_rs232|CHECK_TIME~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X49_Y55_N24
+arriaii_lcell_comb \f_rs232|CHECK_TIME~feeder (
+// Equation(s):
+// \f_rs232|CHECK_TIME~feeder_combout  = \f_rs232|CHECK_TIME~0_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|CHECK_TIME~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|CHECK_TIME~feeder_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|CHECK_TIME~feeder .extended_lut = "off";
+defparam \f_rs232|CHECK_TIME~feeder .lut_mask = 64'h0F0F0F0F0F0F0F0F;
+defparam \f_rs232|CHECK_TIME~feeder .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X49_Y55_N25
+dffeas \f_rs232|CHECK_TIME (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|CHECK_TIME~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(!\BTN[0]~input_o ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|CHECK_TIME~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|CHECK_TIME .is_wysiwyg = "true";
+defparam \f_rs232|CHECK_TIME .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N2
+arriaii_lcell_comb \f_rs232|check_q~4 (
+// Equation(s):
+// \f_rs232|check_q~4_combout  = ( \f_rs232|check_q [0] & ( \f_rs232|start~q  & ( !\f_rs232|check_q [4] $ (((!\f_rs232|check_q [3]) # ((!\f_rs232|check_q [1]) # (!\f_rs232|check_q [2])))) ) ) ) # ( !\f_rs232|check_q [0] & ( \f_rs232|start~q  & ( 
+// \f_rs232|check_q [4] ) ) )
+
+	.dataa(!\f_rs232|check_q [3]),
+	.datab(!\f_rs232|check_q [1]),
+	.datac(!\f_rs232|check_q [4]),
+	.datad(!\f_rs232|check_q [2]),
+	.datae(!\f_rs232|check_q [0]),
+	.dataf(!\f_rs232|start~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|check_q~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|check_q~4 .extended_lut = "off";
+defparam \f_rs232|check_q~4 .lut_mask = 64'h000000000F0F0F1E;
+defparam \f_rs232|check_q~4 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y55_N1
+dffeas \f_rs232|check_q[4] (
+	.clk(\f_rs232|CHECK_TIME~q ),
+	.d(gnd),
+	.asdata(\f_rs232|check_q~4_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|check_q [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|check_q[4] .is_wysiwyg = "true";
+defparam \f_rs232|check_q[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N22
+arriaii_lcell_comb \f_rs232|WideOr1~0 (
+// Equation(s):
+// \f_rs232|WideOr1~0_combout  = ( !\f_rs232|check_q [1] & ( (!\f_rs232|check_q [4] & (\f_rs232|check_q [0] & !\f_rs232|check_q [5])) ) )
+
+	.dataa(!\f_rs232|check_q [4]),
+	.datab(gnd),
+	.datac(!\f_rs232|check_q [0]),
+	.datad(!\f_rs232|check_q [5]),
+	.datae(gnd),
+	.dataf(!\f_rs232|check_q [1]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|WideOr1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|WideOr1~0 .extended_lut = "off";
+defparam \f_rs232|WideOr1~0 .lut_mask = 64'h0A000A0000000000;
+defparam \f_rs232|WideOr1~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N10
+arriaii_lcell_comb \f_rs232|Selector1~0 (
+// Equation(s):
+// \f_rs232|Selector1~0_combout  = ( \f_rs232|check_q [2] & ( \TX~input_o  ) ) # ( !\f_rs232|check_q [2] & ( (\TX~input_o  & ((!\f_rs232|WideOr1~0_combout ) # (\f_rs232|check_q [3]))) ) )
+
+	.dataa(!\TX~input_o ),
+	.datab(gnd),
+	.datac(!\f_rs232|WideOr1~0_combout ),
+	.datad(!\f_rs232|check_q [3]),
+	.datae(gnd),
+	.dataf(!\f_rs232|check_q [2]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|Selector1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|Selector1~0 .extended_lut = "off";
+defparam \f_rs232|Selector1~0 .lut_mask = 64'h5055505555555555;
+defparam \f_rs232|Selector1~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N14
+arriaii_lcell_comb \f_rs232|WideOr7~0 (
+// Equation(s):
+// \f_rs232|WideOr7~0_combout  = ( !\f_rs232|check_q [5] & ( !\f_rs232|check_q [2] & ( (!\f_rs232|check_q [3] & (!\f_rs232|check_q [1] & \f_rs232|check_q [0])) ) ) )
+
+	.dataa(!\f_rs232|check_q [3]),
+	.datab(gnd),
+	.datac(!\f_rs232|check_q [1]),
+	.datad(!\f_rs232|check_q [0]),
+	.datae(!\f_rs232|check_q [5]),
+	.dataf(!\f_rs232|check_q [2]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|WideOr7~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|WideOr7~0 .extended_lut = "off";
+defparam \f_rs232|WideOr7~0 .lut_mask = 64'h00A0000000000000;
+defparam \f_rs232|WideOr7~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N32
+arriaii_lcell_comb \f_rs232|data[0] (
+// Equation(s):
+// \f_rs232|data [0] = ( \f_rs232|WideOr7~0_combout  & ( \f_rs232|Selector1~0_combout  ) ) # ( !\f_rs232|WideOr7~0_combout  & ( \f_rs232|data [0] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|data [0]),
+	.datad(!\f_rs232|Selector1~0_combout ),
+	.datae(gnd),
+	.dataf(!\f_rs232|WideOr7~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|data [0]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|data[0] .extended_lut = "off";
+defparam \f_rs232|data[0] .lut_mask = 64'h0F0F0F0F00FF00FF;
+defparam \f_rs232|data[0] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N36
+arriaii_lcell_comb \f_rs232|port_b_out~0 (
+// Equation(s):
+// \f_rs232|port_b_out~0_combout  = ( \BTN[0]~input_o  & ( \f_rs232|data [0] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|data [0]),
+	.datad(gnd),
+	.datae(!\BTN[0]~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|port_b_out~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|port_b_out~0 .extended_lut = "off";
+defparam \f_rs232|port_b_out~0 .lut_mask = 64'h00000F0F00000F0F;
+defparam \f_rs232|port_b_out~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N18
+arriaii_lcell_comb \f_rs232|port_b_out[0]~feeder (
+// Equation(s):
+// \f_rs232|port_b_out[0]~feeder_combout  = \f_rs232|port_b_out~0_combout 
+
+	.dataa(!\f_rs232|port_b_out~0_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|port_b_out[0]~feeder_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|port_b_out[0]~feeder .extended_lut = "off";
+defparam \f_rs232|port_b_out[0]~feeder .lut_mask = 64'h5555555555555555;
+defparam \f_rs232|port_b_out[0]~feeder .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N32
+arriaii_lcell_comb \f_rs232|LessThan2~0 (
+// Equation(s):
+// \f_rs232|LessThan2~0_combout  = ( \f_rs232|check_q [2] & ( \f_rs232|check_q [4] ) ) # ( !\f_rs232|check_q [2] & ( (\f_rs232|check_q [4] & (((\f_rs232|check_q [3]) # (\f_rs232|check_q [1])) # (\f_rs232|check_q [0]))) ) )
+
+	.dataa(!\f_rs232|check_q [4]),
+	.datab(!\f_rs232|check_q [0]),
+	.datac(!\f_rs232|check_q [1]),
+	.datad(!\f_rs232|check_q [3]),
+	.datae(gnd),
+	.dataf(!\f_rs232|check_q [2]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|LessThan2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|LessThan2~0 .extended_lut = "off";
+defparam \f_rs232|LessThan2~0 .lut_mask = 64'h1555155555555555;
+defparam \f_rs232|LessThan2~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N30
+arriaii_lcell_comb \f_rs232|LessThan1~0 (
+// Equation(s):
+// \f_rs232|LessThan1~0_combout  = ( !\f_rs232|check_q [3] & ( !\f_rs232|check_q [2] & ( (!\f_rs232|check_q [4] & (!\f_rs232|check_q [5] & ((!\f_rs232|check_q [1]) # (!\f_rs232|check_q [0])))) ) ) )
+
+	.dataa(!\f_rs232|check_q [4]),
+	.datab(!\f_rs232|check_q [5]),
+	.datac(!\f_rs232|check_q [1]),
+	.datad(!\f_rs232|check_q [0]),
+	.datae(!\f_rs232|check_q [3]),
+	.dataf(!\f_rs232|check_q [2]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|LessThan1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|LessThan1~0 .extended_lut = "off";
+defparam \f_rs232|LessThan1~0 .lut_mask = 64'h8880000000000000;
+defparam \f_rs232|LessThan1~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N36
+arriaii_lcell_comb \f_rs232|ps~8 (
+// Equation(s):
+// \f_rs232|ps~8_combout  = ( \f_rs232|ps.T1~q  & ( \f_rs232|ps.T0~q  & ( (\BTN[0]~input_o  & ((\f_rs232|check_q [5]) # (\f_rs232|LessThan2~0_combout ))) ) ) ) # ( \f_rs232|ps.T1~q  & ( !\f_rs232|ps.T0~q  & ( (\BTN[0]~input_o  & 
+// (((!\f_rs232|LessThan1~0_combout ) # (\f_rs232|check_q [5])) # (\f_rs232|LessThan2~0_combout ))) ) ) ) # ( !\f_rs232|ps.T1~q  & ( !\f_rs232|ps.T0~q  & ( (\BTN[0]~input_o  & !\f_rs232|LessThan1~0_combout ) ) ) )
+
+	.dataa(!\f_rs232|LessThan2~0_combout ),
+	.datab(!\BTN[0]~input_o ),
+	.datac(!\f_rs232|check_q [5]),
+	.datad(!\f_rs232|LessThan1~0_combout ),
+	.datae(!\f_rs232|ps.T1~q ),
+	.dataf(!\f_rs232|ps.T0~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|ps~8_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|ps~8 .extended_lut = "off";
+defparam \f_rs232|ps~8 .lut_mask = 64'h3300331300001313;
+defparam \f_rs232|ps~8 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y55_N7
+dffeas \f_rs232|ps.T0 (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\f_rs232|ps~8_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|ps.T0~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|ps.T0 .is_wysiwyg = "true";
+defparam \f_rs232|ps.T0 .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N22
+arriaii_lcell_comb \f_rs232|ps~7 (
+// Equation(s):
+// \f_rs232|ps~7_combout  = ( !\f_rs232|ps.T0~q  & ( (\BTN[0]~input_o  & !\f_rs232|LessThan1~0_combout ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\BTN[0]~input_o ),
+	.datad(!\f_rs232|LessThan1~0_combout ),
+	.datae(gnd),
+	.dataf(!\f_rs232|ps.T0~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|ps~7_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|ps~7 .extended_lut = "off";
+defparam \f_rs232|ps~7 .lut_mask = 64'h0F000F0000000000;
+defparam \f_rs232|ps~7 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y55_N9
+dffeas \f_rs232|ps.T1 (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\f_rs232|ps~7_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|ps.T1~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|ps.T1 .is_wysiwyg = "true";
+defparam \f_rs232|ps.T1 .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N16
+arriaii_lcell_comb \f_rs232|ps~6 (
+// Equation(s):
+// \f_rs232|ps~6_combout  = ( \f_rs232|check_q [5] & ( (\BTN[0]~input_o  & \f_rs232|ps.T1~q ) ) ) # ( !\f_rs232|check_q [5] & ( (\BTN[0]~input_o  & (\f_rs232|LessThan2~0_combout  & \f_rs232|ps.T1~q )) ) )
+
+	.dataa(gnd),
+	.datab(!\BTN[0]~input_o ),
+	.datac(!\f_rs232|LessThan2~0_combout ),
+	.datad(!\f_rs232|ps.T1~q ),
+	.datae(gnd),
+	.dataf(!\f_rs232|check_q [5]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|ps~6_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|ps~6 .extended_lut = "off";
+defparam \f_rs232|ps~6 .lut_mask = 64'h0003000300330033;
+defparam \f_rs232|ps~6 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X54_Y55_N39
+dffeas \f_rs232|ps.T2 (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\f_rs232|ps~6_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|ps.T2~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|ps.T2 .is_wysiwyg = "true";
+defparam \f_rs232|ps.T2 .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N30
+arriaii_lcell_comb \f_rs232|port_b_out[0]~1 (
+// Equation(s):
+// \f_rs232|port_b_out[0]~1_combout  = ( \BTN[0]~input_o  & ( \f_rs232|ps.T2~q  ) ) # ( !\BTN[0]~input_o  )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|ps.T2~q ),
+	.datae(!\BTN[0]~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|port_b_out[0]~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|port_b_out[0]~1 .extended_lut = "off";
+defparam \f_rs232|port_b_out[0]~1 .lut_mask = 64'hFFFF00FFFFFF00FF;
+defparam \f_rs232|port_b_out[0]~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X54_Y55_N19
+dffeas \f_rs232|port_b_out[0] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|port_b_out[0]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\f_rs232|port_b_out[0]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|port_b_out [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|port_b_out[0] .is_wysiwyg = "true";
+defparam \f_rs232|port_b_out[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N24
+arriaii_lcell_comb \f_rs232|WideOr6~0 (
+// Equation(s):
+// \f_rs232|WideOr6~0_combout  = ( \f_rs232|check_q [3] & ( \f_rs232|check_q [2] & ( (!\f_rs232|check_q [4] & (\f_rs232|check_q [0] & (\f_rs232|check_q [1] & !\f_rs232|check_q [5]))) ) ) ) # ( !\f_rs232|check_q [3] & ( !\f_rs232|check_q [2] & ( 
+// (!\f_rs232|check_q [4] & (\f_rs232|check_q [0] & (!\f_rs232|check_q [1] & !\f_rs232|check_q [5]))) ) ) )
+
+	.dataa(!\f_rs232|check_q [4]),
+	.datab(!\f_rs232|check_q [0]),
+	.datac(!\f_rs232|check_q [1]),
+	.datad(!\f_rs232|check_q [5]),
+	.datae(!\f_rs232|check_q [3]),
+	.dataf(!\f_rs232|check_q [2]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|WideOr6~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|WideOr6~0 .extended_lut = "off";
+defparam \f_rs232|WideOr6~0 .lut_mask = 64'h2000000000000200;
+defparam \f_rs232|WideOr6~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N34
+arriaii_lcell_comb \f_rs232|data[1] (
+// Equation(s):
+// \f_rs232|data [1] = ( \f_rs232|WideOr6~0_combout  & ( \f_rs232|Selector1~0_combout  ) ) # ( !\f_rs232|WideOr6~0_combout  & ( \f_rs232|data [1] ) )
+
+	.dataa(gnd),
+	.datab(!\f_rs232|data [1]),
+	.datac(!\f_rs232|Selector1~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\f_rs232|WideOr6~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|data [1]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|data[1] .extended_lut = "off";
+defparam \f_rs232|data[1] .lut_mask = 64'h333333330F0F0F0F;
+defparam \f_rs232|data[1] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N14
+arriaii_lcell_comb \f_rs232|port_b_out~2 (
+// Equation(s):
+// \f_rs232|port_b_out~2_combout  = ( \f_rs232|data [1] & ( (\f_rs232|port_b_out [1]) # (\f_rs232|ps.T2~q ) ) ) # ( !\f_rs232|data [1] & ( (!\f_rs232|ps.T2~q  & \f_rs232|port_b_out [1]) ) )
+
+	.dataa(gnd),
+	.datab(!\f_rs232|ps.T2~q ),
+	.datac(gnd),
+	.datad(!\f_rs232|port_b_out [1]),
+	.datae(gnd),
+	.dataf(!\f_rs232|data [1]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|port_b_out~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|port_b_out~2 .extended_lut = "off";
+defparam \f_rs232|port_b_out~2 .lut_mask = 64'h00CC00CC33FF33FF;
+defparam \f_rs232|port_b_out~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X54_Y55_N15
+dffeas \f_rs232|port_b_out[1] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(\f_rs232|port_b_out~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(!\BTN[0]~input_o ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|port_b_out [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|port_b_out[1] .is_wysiwyg = "true";
+defparam \f_rs232|port_b_out[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N6
+arriaii_lcell_comb \f_rs232|WideOr5~0 (
+// Equation(s):
+// \f_rs232|WideOr5~0_combout  = ( !\f_rs232|check_q [1] & ( \f_rs232|check_q [2] & ( (!\f_rs232|check_q [5] & (!\f_rs232|check_q [4] & (\f_rs232|check_q [0] & \f_rs232|check_q [3]))) ) ) ) # ( !\f_rs232|check_q [1] & ( !\f_rs232|check_q [2] & ( 
+// (!\f_rs232|check_q [5] & (!\f_rs232|check_q [4] & (\f_rs232|check_q [0] & !\f_rs232|check_q [3]))) ) ) )
+
+	.dataa(!\f_rs232|check_q [5]),
+	.datab(!\f_rs232|check_q [4]),
+	.datac(!\f_rs232|check_q [0]),
+	.datad(!\f_rs232|check_q [3]),
+	.datae(!\f_rs232|check_q [1]),
+	.dataf(!\f_rs232|check_q [2]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|WideOr5~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|WideOr5~0 .extended_lut = "off";
+defparam \f_rs232|WideOr5~0 .lut_mask = 64'h0800000000080000;
+defparam \f_rs232|WideOr5~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N12
+arriaii_lcell_comb \f_rs232|data[2] (
+// Equation(s):
+// \f_rs232|data [2] = ( \f_rs232|WideOr5~0_combout  & ( \f_rs232|Selector1~0_combout  ) ) # ( !\f_rs232|WideOr5~0_combout  & ( \f_rs232|data [2] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|data [2]),
+	.datad(!\f_rs232|Selector1~0_combout ),
+	.datae(gnd),
+	.dataf(!\f_rs232|WideOr5~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|data [2]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|data[2] .extended_lut = "off";
+defparam \f_rs232|data[2] .lut_mask = 64'h0F0F0F0F00FF00FF;
+defparam \f_rs232|data[2] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N22
+arriaii_lcell_comb \f_rs232|port_b_out~3 (
+// Equation(s):
+// \f_rs232|port_b_out~3_combout  = (\BTN[0]~input_o  & \f_rs232|data [2])
+
+	.dataa(!\BTN[0]~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|data [2]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|port_b_out~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|port_b_out~3 .extended_lut = "off";
+defparam \f_rs232|port_b_out~3 .lut_mask = 64'h0055005500550055;
+defparam \f_rs232|port_b_out~3 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X54_Y55_N33
+dffeas \f_rs232|port_b_out[2] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\f_rs232|port_b_out~3_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\f_rs232|port_b_out[0]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|port_b_out [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|port_b_out[2] .is_wysiwyg = "true";
+defparam \f_rs232|port_b_out[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N4
+arriaii_lcell_comb \f_rs232|WideOr4~0 (
+// Equation(s):
+// \f_rs232|WideOr4~0_combout  = ( !\f_rs232|check_q [2] & ( \f_rs232|check_q [1] & ( (!\f_rs232|check_q [5] & (!\f_rs232|check_q [4] & (\f_rs232|check_q [3] & \f_rs232|check_q [0]))) ) ) ) # ( !\f_rs232|check_q [2] & ( !\f_rs232|check_q [1] & ( 
+// (!\f_rs232|check_q [5] & (!\f_rs232|check_q [4] & (!\f_rs232|check_q [3] & \f_rs232|check_q [0]))) ) ) )
+
+	.dataa(!\f_rs232|check_q [5]),
+	.datab(!\f_rs232|check_q [4]),
+	.datac(!\f_rs232|check_q [3]),
+	.datad(!\f_rs232|check_q [0]),
+	.datae(!\f_rs232|check_q [2]),
+	.dataf(!\f_rs232|check_q [1]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|WideOr4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|WideOr4~0 .extended_lut = "off";
+defparam \f_rs232|WideOr4~0 .lut_mask = 64'h0080000000080000;
+defparam \f_rs232|WideOr4~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N18
+arriaii_lcell_comb \f_rs232|data[3] (
+// Equation(s):
+// \f_rs232|data [3] = ( \f_rs232|WideOr4~0_combout  & ( \f_rs232|Selector1~0_combout  ) ) # ( !\f_rs232|WideOr4~0_combout  & ( \f_rs232|data [3] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|Selector1~0_combout ),
+	.datad(!\f_rs232|data [3]),
+	.datae(gnd),
+	.dataf(!\f_rs232|WideOr4~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|data [3]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|data[3] .extended_lut = "off";
+defparam \f_rs232|data[3] .lut_mask = 64'h00FF00FF0F0F0F0F;
+defparam \f_rs232|data[3] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N10
+arriaii_lcell_comb \f_rs232|port_b_out~4 (
+// Equation(s):
+// \f_rs232|port_b_out~4_combout  = ( \BTN[0]~input_o  & ( \f_rs232|data [3] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|data [3]),
+	.datad(gnd),
+	.datae(!\BTN[0]~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|port_b_out~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|port_b_out~4 .extended_lut = "off";
+defparam \f_rs232|port_b_out~4 .lut_mask = 64'h00000F0F00000F0F;
+defparam \f_rs232|port_b_out~4 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X54_Y55_N9
+dffeas \f_rs232|port_b_out[3] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\f_rs232|port_b_out~4_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\f_rs232|port_b_out[0]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|port_b_out [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|port_b_out[3] .is_wysiwyg = "true";
+defparam \f_rs232|port_b_out[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N26
+arriaii_lcell_comb \f_rs232|WideOr3~0 (
+// Equation(s):
+// \f_rs232|WideOr3~0_combout  = ( !\f_rs232|check_q [1] & ( !\f_rs232|check_q [5] & ( (!\f_rs232|check_q [2] & (\f_rs232|check_q [0] & !\f_rs232|check_q [4])) ) ) )
+
+	.dataa(gnd),
+	.datab(!\f_rs232|check_q [2]),
+	.datac(!\f_rs232|check_q [0]),
+	.datad(!\f_rs232|check_q [4]),
+	.datae(!\f_rs232|check_q [1]),
+	.dataf(!\f_rs232|check_q [5]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|WideOr3~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|WideOr3~0 .extended_lut = "off";
+defparam \f_rs232|WideOr3~0 .lut_mask = 64'h0C00000000000000;
+defparam \f_rs232|WideOr3~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N34
+arriaii_lcell_comb \f_rs232|data[4] (
+// Equation(s):
+// \f_rs232|data [4] = ( \f_rs232|WideOr3~0_combout  & ( \f_rs232|Selector1~0_combout  ) ) # ( !\f_rs232|WideOr3~0_combout  & ( \f_rs232|data [4] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|data [4]),
+	.datad(!\f_rs232|Selector1~0_combout ),
+	.datae(!\f_rs232|WideOr3~0_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|data [4]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|data[4] .extended_lut = "off";
+defparam \f_rs232|data[4] .lut_mask = 64'h0F0F00FF0F0F00FF;
+defparam \f_rs232|data[4] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N0
+arriaii_lcell_comb \f_rs232|port_b_out~5 (
+// Equation(s):
+// \f_rs232|port_b_out~5_combout  = ( \BTN[0]~input_o  & ( \f_rs232|data [4] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\f_rs232|data [4]),
+	.datae(!\BTN[0]~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|port_b_out~5_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|port_b_out~5 .extended_lut = "off";
+defparam \f_rs232|port_b_out~5 .lut_mask = 64'h000000FF000000FF;
+defparam \f_rs232|port_b_out~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X54_Y55_N31
+dffeas \f_rs232|port_b_out[4] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\f_rs232|port_b_out~5_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\f_rs232|port_b_out[0]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|port_b_out [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|port_b_out[4] .is_wysiwyg = "true";
+defparam \f_rs232|port_b_out[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N14
+arriaii_lcell_comb \f_rs232|WideOr2~0 (
+// Equation(s):
+// \f_rs232|WideOr2~0_combout  = ( \f_rs232|check_q [2] & ( !\f_rs232|check_q [3] & ( (\f_rs232|check_q [1] & (\f_rs232|check_q [0] & (!\f_rs232|check_q [5] & !\f_rs232|check_q [4]))) ) ) ) # ( !\f_rs232|check_q [2] & ( !\f_rs232|check_q [3] & ( 
+// (!\f_rs232|check_q [1] & (\f_rs232|check_q [0] & (!\f_rs232|check_q [5] & !\f_rs232|check_q [4]))) ) ) )
+
+	.dataa(!\f_rs232|check_q [1]),
+	.datab(!\f_rs232|check_q [0]),
+	.datac(!\f_rs232|check_q [5]),
+	.datad(!\f_rs232|check_q [4]),
+	.datae(!\f_rs232|check_q [2]),
+	.dataf(!\f_rs232|check_q [3]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|WideOr2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|WideOr2~0 .extended_lut = "off";
+defparam \f_rs232|WideOr2~0 .lut_mask = 64'h2000100000000000;
+defparam \f_rs232|WideOr2~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N20
+arriaii_lcell_comb \f_rs232|data[5] (
+// Equation(s):
+// \f_rs232|data [5] = ( \f_rs232|WideOr2~0_combout  & ( \f_rs232|Selector1~0_combout  ) ) # ( !\f_rs232|WideOr2~0_combout  & ( \f_rs232|data [5] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|data [5]),
+	.datad(!\f_rs232|Selector1~0_combout ),
+	.datae(gnd),
+	.dataf(!\f_rs232|WideOr2~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|data [5]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|data[5] .extended_lut = "off";
+defparam \f_rs232|data[5] .lut_mask = 64'h0F0F0F0F00FF00FF;
+defparam \f_rs232|data[5] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N4
+arriaii_lcell_comb \f_rs232|port_b_out~6 (
+// Equation(s):
+// \f_rs232|port_b_out~6_combout  = ( \BTN[0]~input_o  & ( \f_rs232|data [5] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|data [5]),
+	.datad(gnd),
+	.datae(!\BTN[0]~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|port_b_out~6_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|port_b_out~6 .extended_lut = "off";
+defparam \f_rs232|port_b_out~6 .lut_mask = 64'h00000F0F00000F0F;
+defparam \f_rs232|port_b_out~6 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X54_Y55_N7
+dffeas \f_rs232|port_b_out[5] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\f_rs232|port_b_out~6_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\f_rs232|port_b_out[0]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|port_b_out [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|port_b_out[5] .is_wysiwyg = "true";
+defparam \f_rs232|port_b_out[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N0
+arriaii_lcell_comb \f_rs232|WideOr1~1 (
+// Equation(s):
+// \f_rs232|WideOr1~1_combout  = ( !\f_rs232|check_q [1] & ( (!\f_rs232|check_q [3] & (!\f_rs232|check_q [4] & (\f_rs232|check_q [0] & !\f_rs232|check_q [5]))) ) )
+
+	.dataa(!\f_rs232|check_q [3]),
+	.datab(!\f_rs232|check_q [4]),
+	.datac(!\f_rs232|check_q [0]),
+	.datad(!\f_rs232|check_q [5]),
+	.datae(gnd),
+	.dataf(!\f_rs232|check_q [1]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|WideOr1~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|WideOr1~1 .extended_lut = "off";
+defparam \f_rs232|WideOr1~1 .lut_mask = 64'h0800080000000000;
+defparam \f_rs232|WideOr1~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N20
+arriaii_lcell_comb \f_rs232|data[6] (
+// Equation(s):
+// \f_rs232|data [6] = ( \f_rs232|Selector1~0_combout  & ( (\f_rs232|WideOr1~1_combout ) # (\f_rs232|data [6]) ) ) # ( !\f_rs232|Selector1~0_combout  & ( (\f_rs232|data [6] & !\f_rs232|WideOr1~1_combout ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|data [6]),
+	.datad(!\f_rs232|WideOr1~1_combout ),
+	.datae(gnd),
+	.dataf(!\f_rs232|Selector1~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|data [6]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|data[6] .extended_lut = "off";
+defparam \f_rs232|data[6] .lut_mask = 64'h0F000F000FFF0FFF;
+defparam \f_rs232|data[6] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y55_N18
+arriaii_lcell_comb \f_rs232|port_b_out~7 (
+// Equation(s):
+// \f_rs232|port_b_out~7_combout  = (\BTN[0]~input_o  & \f_rs232|data [6])
+
+	.dataa(gnd),
+	.datab(!\BTN[0]~input_o ),
+	.datac(gnd),
+	.datad(!\f_rs232|data [6]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|port_b_out~7_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|port_b_out~7 .extended_lut = "off";
+defparam \f_rs232|port_b_out~7 .lut_mask = 64'h0033003300330033;
+defparam \f_rs232|port_b_out~7 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X54_Y55_N29
+dffeas \f_rs232|port_b_out[6] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\f_rs232|port_b_out~7_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\f_rs232|port_b_out[0]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|port_b_out [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|port_b_out[6] .is_wysiwyg = "true";
+defparam \f_rs232|port_b_out[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N36
+arriaii_lcell_comb \f_rs232|WideOr0~0 (
+// Equation(s):
+// \f_rs232|WideOr0~0_combout  = ( !\f_rs232|check_q [5] & ( (!\f_rs232|check_q [3] & (!\f_rs232|check_q [2] & (!\f_rs232|check_q [4] & \f_rs232|check_q [0]))) ) )
+
+	.dataa(!\f_rs232|check_q [3]),
+	.datab(!\f_rs232|check_q [2]),
+	.datac(!\f_rs232|check_q [4]),
+	.datad(!\f_rs232|check_q [0]),
+	.datae(gnd),
+	.dataf(!\f_rs232|check_q [5]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|WideOr0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|WideOr0~0 .extended_lut = "off";
+defparam \f_rs232|WideOr0~0 .lut_mask = 64'h0080008000000000;
+defparam \f_rs232|WideOr0~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y55_N8
+arriaii_lcell_comb \f_rs232|data[7] (
+// Equation(s):
+// \f_rs232|data [7] = ( \f_rs232|WideOr0~0_combout  & ( \f_rs232|Selector1~0_combout  ) ) # ( !\f_rs232|WideOr0~0_combout  & ( \f_rs232|data [7] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\f_rs232|data [7]),
+	.datad(!\f_rs232|Selector1~0_combout ),
+	.datae(gnd),
+	.dataf(!\f_rs232|WideOr0~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|data [7]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|data[7] .extended_lut = "off";
+defparam \f_rs232|data[7] .lut_mask = 64'h0F0F0F0F00FF00FF;
+defparam \f_rs232|data[7] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X54_Y55_N20
+arriaii_lcell_comb \f_rs232|port_b_out~8 (
+// Equation(s):
+// \f_rs232|port_b_out~8_combout  = (\BTN[0]~input_o  & \f_rs232|data [7])
+
+	.dataa(!\BTN[0]~input_o ),
+	.datab(!\f_rs232|data [7]),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\f_rs232|port_b_out~8_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \f_rs232|port_b_out~8 .extended_lut = "off";
+defparam \f_rs232|port_b_out~8 .lut_mask = 64'h1111111111111111;
+defparam \f_rs232|port_b_out~8 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X54_Y55_N17
+dffeas \f_rs232|port_b_out[7] (
+	.clk(\CLK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\f_rs232|port_b_out~8_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\f_rs232|port_b_out[0]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\f_rs232|port_b_out [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \f_rs232|port_b_out[7] .is_wysiwyg = "true";
+defparam \f_rs232|port_b_out[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X28_Y56_N1
+arriaii_io_ibuf \SW[0]~input (
+	.i(SW[0]),
+	.ibar(gnd),
+	.o(\SW[0]~input_o ));
+// synopsys translate_off
+defparam \SW[0]~input .bus_hold = "false";
+defparam \SW[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X59_Y6_N1
+arriaii_io_ibuf \SW[1]~input (
+	.i(SW[1]),
+	.ibar(gnd),
+	.o(\SW[1]~input_o ));
+// synopsys translate_off
+defparam \SW[1]~input .bus_hold = "false";
+defparam \SW[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X10_Y56_N1
+arriaii_io_ibuf \SW[2]~input (
+	.i(SW[2]),
+	.ibar(gnd),
+	.o(\SW[2]~input_o ));
+// synopsys translate_off
+defparam \SW[2]~input .bus_hold = "false";
+defparam \SW[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X11_Y0_N32
+arriaii_io_ibuf \SW[3]~input (
+	.i(SW[3]),
+	.ibar(gnd),
+	.o(\SW[3]~input_o ));
+// synopsys translate_off
+defparam \SW[3]~input .bus_hold = "false";
+defparam \SW[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X3_Y0_N63
+arriaii_io_ibuf \SW[4]~input (
+	.i(SW[4]),
+	.ibar(gnd),
+	.o(\SW[4]~input_o ));
+// synopsys translate_off
+defparam \SW[4]~input .bus_hold = "false";
+defparam \SW[4]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X30_Y0_N32
+arriaii_io_ibuf \SW[5]~input (
+	.i(SW[5]),
+	.ibar(gnd),
+	.o(\SW[5]~input_o ));
+// synopsys translate_off
+defparam \SW[5]~input .bus_hold = "false";
+defparam \SW[5]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X56_Y0_N32
+arriaii_io_ibuf \SW[6]~input (
+	.i(SW[6]),
+	.ibar(gnd),
+	.o(\SW[6]~input_o ));
+// synopsys translate_off
+defparam \SW[6]~input .bus_hold = "false";
+defparam \SW[6]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X56_Y0_N94
+arriaii_io_ibuf \SW[7]~input (
+	.i(SW[7]),
+	.ibar(gnd),
+	.o(\SW[7]~input_o ));
+// synopsys translate_off
+defparam \SW[7]~input .bus_hold = "false";
+defparam \SW[7]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X5_Y0_N63
+arriaii_io_ibuf \SW[8]~input (
+	.i(SW[8]),
+	.ibar(gnd),
+	.o(\SW[8]~input_o ));
+// synopsys translate_off
+defparam \SW[8]~input .bus_hold = "false";
+defparam \SW[8]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X48_Y0_N32
+arriaii_io_ibuf \SW[9]~input (
+	.i(SW[9]),
+	.ibar(gnd),
+	.o(\SW[9]~input_o ));
+// synopsys translate_off
+defparam \SW[9]~input .bus_hold = "false";
+defparam \SW[9]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X3_Y0_N1
+arriaii_io_ibuf \BTN[1]~input (
+	.i(BTN[1]),
+	.ibar(gnd),
+	.o(\BTN[1]~input_o ));
+// synopsys translate_off
+defparam \BTN[1]~input .bus_hold = "false";
+defparam \BTN[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X48_Y0_N94
+arriaii_io_ibuf \BTN[2]~input (
+	.i(BTN[2]),
+	.ibar(gnd),
+	.o(\BTN[2]~input_o ));
+// synopsys translate_off
+defparam \BTN[2]~input .bus_hold = "false";
+defparam \BTN[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+assign HEX0[0] = \HEX0[0]~output_o ;
+
+assign HEX0[1] = \HEX0[1]~output_o ;
+
+assign HEX0[2] = \HEX0[2]~output_o ;
+
+assign HEX0[3] = \HEX0[3]~output_o ;
+
+assign HEX0[4] = \HEX0[4]~output_o ;
+
+assign HEX0[5] = \HEX0[5]~output_o ;
+
+assign HEX0[6] = \HEX0[6]~output_o ;
+
+assign HEX1[0] = \HEX1[0]~output_o ;
+
+assign HEX1[1] = \HEX1[1]~output_o ;
+
+assign HEX1[2] = \HEX1[2]~output_o ;
+
+assign HEX1[3] = \HEX1[3]~output_o ;
+
+assign HEX1[4] = \HEX1[4]~output_o ;
+
+assign HEX1[5] = \HEX1[5]~output_o ;
+
+assign HEX1[6] = \HEX1[6]~output_o ;
+
+assign HEX2[0] = \HEX2[0]~output_o ;
+
+assign HEX2[1] = \HEX2[1]~output_o ;
+
+assign HEX2[2] = \HEX2[2]~output_o ;
+
+assign HEX2[3] = \HEX2[3]~output_o ;
+
+assign HEX2[4] = \HEX2[4]~output_o ;
+
+assign HEX2[5] = \HEX2[5]~output_o ;
+
+assign HEX2[6] = \HEX2[6]~output_o ;
+
+assign HEX3[0] = \HEX3[0]~output_o ;
+
+assign HEX3[1] = \HEX3[1]~output_o ;
+
+assign HEX3[2] = \HEX3[2]~output_o ;
+
+assign HEX3[3] = \HEX3[3]~output_o ;
+
+assign HEX3[4] = \HEX3[4]~output_o ;
+
+assign HEX3[5] = \HEX3[5]~output_o ;
+
+assign HEX3[6] = \HEX3[6]~output_o ;
+
+assign LED[0] = \LED[0]~output_o ;
+
+assign LED[1] = \LED[1]~output_o ;
+
+assign LED[2] = \LED[2]~output_o ;
+
+assign LED[3] = \LED[3]~output_o ;
+
+assign LED[4] = \LED[4]~output_o ;
+
+assign LED[5] = \LED[5]~output_o ;
+
+assign LED[6] = \LED[6]~output_o ;
+
+assign LED[7] = \LED[7]~output_o ;
+
+assign LED[8] = \LED[8]~output_o ;
+
+assign LED[9] = \LED[9]~output_o ;
+
+assign RX = \RX~output_o ;
+
+endmodule

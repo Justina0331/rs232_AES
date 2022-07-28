@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at rs232.v(3): object "RX" differs only in case from object "rx" in the same scope
+Info (10281): Verilog HDL Declaration information at rs232.v(4): object "TX" differs only in case from object "tx" in the same scope

@@ -1,0 +1,15 @@
+E:/user/just/Desktop/rs-232/rs232_test.v {1 {vlog -work work E:/user/just/Desktop/rs-232/rs232_test.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module rs232_test
+
+Top level modules:
+	rs232_test
+
+} {} {}} E:/user/just/Desktop/rs-232/bits64_test.v {1 {vlog -work work E:/user/just/Desktop/rs-232/bits64_test.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module bits64_test
+
+Top level modules:
+	bits64_test
+
+} {} {}}

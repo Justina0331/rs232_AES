@@ -1,0 +1,182 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.1
+vAES
+Z1 !s100 B6@X[jE;V]iYEYijOko8:1
+Z2 I47HXa53Y0ifOIK8fifIiX1
+Z3 VW@70KPz?@>WQS:1fU1SGR0
+Z4 dE:\user\just\Desktop\rs-232
+Z5 w1657291480
+Z6 8E:/user/just/Desktop/rs-232/AES.v
+Z7 FE:/user/just/Desktop/rs-232/AES.v
+L0 1
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/AES.v|
+Z10 o-work work -O0
+Z11 n@a@e@s
+Z12 !s108 1657292790.944000
+Z13 !s107 E:/user/just/Desktop/rs-232/AES.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vbits64_test
+Z14 !s100 EjC5Kj?E:WS1VaRI>OWj50
+Z15 IKhX7]a6ROm5N;TmDheUR?3
+Z16 V4d8>eWADS3dfihAcJYDH^1
+R4
+Z17 w1658778243
+Z18 8E:/user/just/Desktop/rs-232/bits64_test.v
+Z19 FE:/user/just/Desktop/rs-232/bits64_test.v
+L0 1
+R8
+r1
+31
+Z20 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/bits64_test.v|
+R10
+Z21 !s108 1658831166.645000
+Z22 !s107 E:/user/just/Desktop/rs-232/bits64_test.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vrs232
+Z23 !s100 CShYgDC]YiCLhaLTWR@IX2
+Z24 I^Y@[hFDdAZnFRjhbU:6Q`1
+Z25 V?i6:h2KXfTYGoAjnENaL83
+R4
+Z26 w1658829279
+Z27 8E:/user/just/Desktop/rs-232/rs232.v
+Z28 FE:/user/just/Desktop/rs-232/rs232.v
+L0 1
+R8
+r1
+31
+Z29 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/rs232.v|
+R10
+Z30 !s108 1658831166.405000
+Z31 !s107 E:/user/just/Desktop/rs-232/rs232.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vrs232_test
+Z32 !s100 JVTTML82]je_=?n[`FWWS3
+Z33 I3YzhNjS0:Wzn^8<RNc7=83
+Z34 VRihdKJjeRKIK?z:Vi@H0O3
+R4
+Z35 w1657458040
+Z36 8E:/user/just/Desktop/rs-232/rs232_test.v
+Z37 FE:/user/just/Desktop/rs-232/rs232_test.v
+L0 1
+R8
+r1
+31
+Z38 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/rs232_test.v|
+R10
+Z39 !s108 1658831166.518000
+Z40 !s107 E:/user/just/Desktop/rs-232/rs232_test.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vRX
+Z41 !s100 7WP6zgWjMN:7J208?IhA23
+Z42 I=8AB6Z<bUj2QAfL6eK`XA3
+Z43 V4o5BVR6KPe`:IQ9WM<Pkf1
+R4
+Z44 w1657295653
+Z45 8E:/user/just/Desktop/rs-232/RX.v
+Z46 FE:/user/just/Desktop/rs-232/RX.v
+L0 1
+R8
+r1
+31
+Z47 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/RX.v|
+R10
+n@r@x
+Z48 !s108 1657449554.985000
+Z49 !s107 E:/user/just/Desktop/rs-232/RX.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vRX_code
+Z50 !s100 nhhRkS85dJN5aUkZJEFe82
+Z51 IhnPnV6l3?RZoZDzIHo93R0
+Z52 V60RC92O>[zOR1>OoGXa3I2
+R4
+Z53 w1658831167
+Z54 8E:/user/just/Desktop/rs-232/RX_code.v
+Z55 FE:/user/just/Desktop/rs-232/RX_code.v
+L0 1
+R8
+r1
+31
+Z56 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/RX_code.v|
+R10
+Z57 n@r@x_code
+!i10b 1
+!s85 0
+Z58 !s108 1658831167.870000
+Z59 !s107 E:/user/just/Desktop/rs-232/RX_code.v|
+!s101 -O0
+vSeven_Segment_Decoder
+Z60 !s100 ?a]0==X]K?H;_Ldo6<GkD1
+Z61 IQ[Z;]D0BmlURf?85VNg080
+Z62 Vcj:n?Z34;8n_4K@]WMT`F3
+R4
+Z63 w1641404124
+Z64 8E:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v
+Z65 FE:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v
+L0 1
+R8
+r1
+31
+Z66 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v|
+R10
+Z67 n@seven_@segment_@decoder
+Z68 !s108 1657186584.969000
+Z69 !s107 E:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vTX
+Z70 !s100 ljD<SL`akTU3EAzSJ=PcO0
+Z71 IeeoW@bio97?H1mZ`:`WDn3
+Z72 Vz=7YzbQOG0oz:^>Je7Z[A1
+R4
+Z73 w1658225810
+Z74 8E:/user/just/Desktop/rs-232/TX.v
+Z75 FE:/user/just/Desktop/rs-232/TX.v
+L0 1
+R8
+r1
+31
+Z76 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/TX.v|
+R10
+n@t@x
+Z77 !s108 1658226035.606000
+Z78 !s107 E:/user/just/Desktop/rs-232/TX.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vTX_code
+!i10b 1
+Z79 !s100 Lg0lVz`djN]B=9<oS?Omf1
+Z80 I9N61`:VE2=Om7PAH4lL653
+Z81 VGmZ]CZ1Jm36PTB6k[cR?>2
+R4
+w1658831168
+Z82 8E:/user/just/Desktop/rs-232/TX_code.v
+Z83 FE:/user/just/Desktop/rs-232/TX_code.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1658831168.947000
+!s107 E:/user/just/Desktop/rs-232/TX_code.v|
+Z84 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/TX_code.v|
+!s101 -O0
+R10
+Z85 n@t@x_code

@@ -1,0 +1,173 @@
+module rs232(TX, RX, clk, rst, port_b_out, high_segment_q, low_segment_q);
+
+	input  clk, rst, TX;
+	output RX, port_b_out, high_segment_q, low_segment_q;
+	
+	
+	wire rst;
+	reg CHECK_TIME;
+	reg s, d;			//正負元檢查
+	reg start;
+	reg load_port_b;
+	reg [7:0]data;
+	reg [5:0]check_q;
+	reg [4:0]div;
+	reg [7:0]port_b_out;
+	wire [6:0]high_segment_q;
+	wire [6:0]low_segment_q;
+  reg [2:0]ps,ns;
+  
+  parameter T0 = 0;
+  parameter T1 = 1;
+  parameter T2 = 2;
+  parameter T3 = 3;
+  parameter T4 = 4;
+  parameter T5 = 5;
+  parameter T6 = 6;
+  
+	//檢查開始及結束
+	always @(posedge clk) 
+	begin
+		if(rst)
+			begin
+				s <= 0;
+				d <= 0;
+				check_q <= 0;
+				start <= 0;
+			end
+		else
+			begin
+				{s, d} <= {d, TX};
+				if(start == 0)
+				  begin
+				    data <= 0;
+				    start  <= ~d&s;
+				    CHECK_TIME <= 1;
+				  end
+				if(check_q >= 20)start  <= d&~s;
+			end
+	end
+
+  //CHECK_TIME
+	always @(posedge clk)
+	begin
+		if(rst)
+			begin
+				div <= 0;
+				CHECK_TIME <= 0;
+			end
+		else
+			if(div == 10)
+				begin
+					CHECK_TIME <= ~CHECK_TIME;
+					div <= 0;
+				end
+			else
+			  if(start)  div <= div+1;	
+	end
+	
+	//接收bit
+	always @(posedge CHECK_TIME)
+	begin
+		if(rst)
+			check_q <= 0;
+		else
+			if(start) check_q <= check_q + 1;
+	end
+	
+	always @(check_q)
+	begin
+		case(check_q)
+			3:
+			begin	
+				data[7] <= TX;
+			end
+			5:	
+			begin	
+				data[6] <= TX;
+			end
+			7:	
+			begin	
+				data[5] <= TX;
+			end
+			9:	
+			begin	
+				data[4] <= TX;
+			end
+			11:	
+			begin	
+				data[3] <= TX;
+			end
+			13:	
+			begin	
+				data[2] <= TX;
+			end
+			15:	
+			begin	
+				data[1] <= TX;
+			end
+			17:	
+			begin	
+				data[0] <= TX;
+			end
+			default:	
+			begin	
+				
+			end
+		endcase	
+	end
+	
+	//States
+    always@(posedge clk)
+    begin
+      if(rst)
+        ps <= T0;
+      else
+        ps <= ns;
+    end
+    
+    always@(*)
+    begin
+      load_port_b=0;
+      ns = T0;
+      case(ps)
+        T0://等待數字進來
+        begin
+          
+          if(check_q>=3)ns = T1;
+        end
+        T1://8bit數字進來
+        begin
+          
+          if(check_q>=17)ns = T2;
+        end
+        T2://數字讀完顯示於LED
+        begin
+          load_port_b=1;
+          if(start == 0)
+          begin
+            s <= 0;
+					  d <= 0;
+					  check_q <= 0;
+					  start  <= ~d&s;
+            ns = T0;
+          end
+        end
+      endcase 
+    end
+    
+	//Port B out
+    always@(posedge clk)
+    begin
+      if(rst)
+        port_b_out <= 0;
+      else
+        port_b_out <= load_port_b ? data : port_b_out;
+    end
+    
+    //Seven Segment Decoder
+    Seven_Segment_Decoder high(.bcd(port_b_out[7:4]),.seg(high_segment_q));
+    Seven_Segment_Decoder low(.bcd(port_b_out[3:0]),.seg(low_segment_q));
+    
+endmodule
+
