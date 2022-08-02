@@ -97,7 +97,7 @@ module TX_code(data_out, data_in, tx_start, clk, rst);
 				CHECK_TIME <= 1;
 			end
 		else
-			if(div == 1298)	//1298
+			if(div == 10)	//1298
 				begin
 					CHECK_TIME <= ~CHECK_TIME;
 					div <= 0;
@@ -141,7 +141,6 @@ module TX_code(data_out, data_in, tx_start, clk, rst);
   end
     
   assign data_out = data;
-  //assign data_out = 1;
 
 endmodule
 

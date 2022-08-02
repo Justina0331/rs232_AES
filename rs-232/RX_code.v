@@ -34,8 +34,8 @@ module RX_code(data_out, data_in, load_port_b, tx_start, clk, rst);
 	 if(rst) package_start <= 0;
 	 else
 			begin
-				if(~package_start & start)  package_start <= 1;
-				if(package_q >= 8)          package_start <= 0;
+				if(ps == T1)  package_start <= 1;
+				if(ps == T0)  package_start <= 0;
 			end
 	end
   
@@ -86,10 +86,10 @@ module RX_code(data_out, data_in, load_port_b, tx_start, clk, rst);
 	//紀錄接收byte
 	always @(posedge clk)
 	begin
-	  if(rst || ~package_start & start || package_q == 9)
-      package_q <= 0;
-		if(package_start & restart) package_q <= package_q + 1; 
-		if(package_q == 8)          package_q <= package_q + 1; 
+	  if(rst || ps == T0 || package_q == 9)
+       package_q <= 0;
+		if(package_start & restart)  package_q <= package_q + 1; 
+		if(package_q == 8)           package_q <= package_q + 1; 
 	end
 	
 	//將接收的bit存入data
@@ -146,24 +146,65 @@ module RX_code(data_out, data_in, load_port_b, tx_start, clk, rst);
     restart = 0;
     ns = T0;
     case(ps)
-      T0://等待數字進來
+      T0://等待第1組byte開始
       begin
         ns = T0;
 		    load_port_b = 1;
         if(check_q >= 2)  ns = T1;
       end
-      T1://8bit數字進來
+      T1://正在傳送第1組byte
       begin
         ns = T1;
-        if(check_q >= 18)ns = T2;
+        if(check_q >= 18) ns = T2;
       end
-      T2://數字讀完顯示於LED
+      T2://檢查第1組byte是否為02
       begin
         ns = T2;
         if(~start) 
         begin
-          restart = 1;
-          ns = T0;
+          //判斷使否為02
+          ////YES////
+          if(data_out[7:0] == 8'h02)
+            begin
+              restart = 1;
+              ns = T3;
+            end
+          ////NO////
+          else
+            begin
+              restart = 1;
+              ns = T0;
+            end
+        end
+      end
+      T3://等待2~8組bytes開始
+      begin
+        ns = T3;
+        if(check_q >= 2)  ns = T4;
+      end
+      T4://正在傳送byte
+      begin
+        ns = T4;
+        if(check_q >= 18) ns = T5;
+      end
+      T5://檢查是否傳送完8組bytes
+      begin
+        ns = T5;
+        if(~start) 
+        begin
+          //判斷package_q是傳送完畢
+          ////YES////
+          if(package_q >= 7)
+            begin
+              restart = 1;
+              ns = T0;
+            end
+          ////NO////
+          else
+            begin
+              restart = 1;
+              ns = T3;
+            end
         end
       end
     endcase 

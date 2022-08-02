@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP3C16F484) Path("E:/user/just/Desktop/de0/output_files/") File("mcu.sof") MfrSpec(OpMask(1));
+		Device PartName(EP3C16F484) Path("E:/user/just/Documents/GitHub/rs232_AES/de0/output_files/") File("mcu.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
