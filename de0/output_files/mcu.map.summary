@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Mon Aug 01 11:56:54 2022
+Analysis & Synthesis Status : Successful - Mon Aug 29 21:39:20 2022
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : mcu
 Top-level Entity Name : mcu
 Family : Cyclone III
-Total logic elements : 417
-    Total combinational functions : 417
-    Dedicated logic registers : 140
-Total registers : 140
+Total logic elements : 7,385
+    Total combinational functions : 3,289
+    Dedicated logic registers : 4,260
+Total registers : 4260
 Total pins : 54
 Total virtual pins : 0
 Total memory bits : 0

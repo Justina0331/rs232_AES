@@ -4,8 +4,8 @@ module TX_code(data_out, data_in, tx_start, clk, rst);
   input   data_in, tx_start, clk, rst; 
     
   wire  data_out;
-  wire  [63:0]data_in;
-  reg   [63:0]data_r;
+  wire  [31:0]data_in;
+  reg   [31:0]data_r;
   reg   package_start, CHECK_TIME, restart, data;
   reg   start;
   reg   [5:0] check_q, package_q;
@@ -31,14 +31,14 @@ module TX_code(data_out, data_in, tx_start, clk, rst);
 				  package_start <= 1;
 				  data_r <= data_in;
 				end
-				if(package_q >= 8)            package_start <= 0;
+				if(package_q >= 4)            package_start <= 0;
 			end
 	end
 	
 	//檢查開始及結束(byte)
 	always @(posedge clk) 
 	begin
-	 if(rst | restart | package_q == 8)   start <= 0;
+	 if(rst | restart | package_q == 4)   start <= 0;
 	 else 
 	   begin
 				if(package_start & ~start) start <= 1;
@@ -59,10 +59,10 @@ module TX_code(data_out, data_in, tx_start, clk, rst);
 	//紀錄接收byte
 	always @(posedge clk)
 	begin
-	  if(rst || ~package_start & start || package_q == 9)
+	  if(rst || ~package_start & start || package_q == 5)
       package_q <= 0;
 		if(package_start & restart) package_q <= package_q + 1;
-		if(package_q == 8)          package_q <= package_q + 1;  
+		if(package_q == 4)          package_q <= package_q + 1;  
 	end
 
   //當package_start則開始傳送
@@ -102,7 +102,7 @@ module TX_code(data_out, data_in, tx_start, clk, rst);
 				CHECK_TIME <= 1;
 			end
 		else
-			if(div == 1286)	//1302
+			if(div == 1246)	//1276
 				begin
 					CHECK_TIME <= ~CHECK_TIME;
 					div <= 0;

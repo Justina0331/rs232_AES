@@ -12,7 +12,7 @@ entity TX_code is
     );
     port(
         data_out        : out    vl_logic;
-        data_in         : in     vl_logic_vector(63 downto 0);
+        data_in         : in     vl_logic_vector(31 downto 0);
         tx_start        : in     vl_logic;
         clk             : in     vl_logic;
         rst             : in     vl_logic

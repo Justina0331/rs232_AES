@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mcu
-Mon Aug 01 11:56:54 2022
+Mon Aug 29 21:39:20 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -21,9 +21,10 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
  14. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx
  15. Parameter Settings for User Entity Instance: rs232:f_rs232|TX_code:tx
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
- 18. Analysis & Synthesis Suppressed Messages
+ 16. Port Connectivity Checks: "rs232:f_rs232|RX_code:rx"
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -49,15 +50,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug 01 11:56:54 2022      ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug 29 21:39:20 2022      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; mcu                                        ;
 ; Top-level Entity Name              ; mcu                                        ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 417                                        ;
-;     Total combinational functions  ; 417                                        ;
-;     Dedicated logic registers      ; 140                                        ;
-; Total registers                    ; 140                                        ;
+; Total logic elements               ; 7,385                                      ;
+;     Total combinational functions  ; 3,289                                      ;
+;     Dedicated logic registers      ; 4,260                                      ;
+; Total registers                    ; 4260                                       ;
 ; Total pins                         ; 54                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -162,25 +163,26 @@ applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-8         ;   0.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
+;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                        ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
-; TX_code.v                        ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/TX_code.v ;         ;
-; RX_code.v                        ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/RX_code.v ;         ;
-; rs232.v                          ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/rs232.v   ;         ;
-; mcu.v                            ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/mcu.v     ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                             ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
+; ram_128x32.v                     ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/ram_128x32.v ;         ;
+; TX_code.v                        ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/TX_code.v    ;         ;
+; RX_code.v                        ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/RX_code.v    ;         ;
+; rs232.v                          ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/rs232.v      ;         ;
+; mcu.v                            ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/mcu.v        ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -188,41 +190,42 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 417       ;
+; Estimated Total logic elements              ; 7,385     ;
 ;                                             ;           ;
-; Total combinational functions               ; 417       ;
+; Total combinational functions               ; 3289      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 133       ;
-;     -- 3 input functions                    ; 232       ;
-;     -- <=2 input functions                  ; 52        ;
+;     -- 4 input functions                    ; 2907      ;
+;     -- 3 input functions                    ; 287       ;
+;     -- <=2 input functions                  ; 95        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 375       ;
-;     -- arithmetic mode                      ; 42        ;
+;     -- normal mode                          ; 3227      ;
+;     -- arithmetic mode                      ; 62        ;
 ;                                             ;           ;
-; Total registers                             ; 140       ;
-;     -- Dedicated logic registers            ; 140       ;
+; Total registers                             ; 4260      ;
+;     -- Dedicated logic registers            ; 4260      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 54        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 128       ;
-; Total fan-out                               ; 1830      ;
-; Average fan-out                             ; 2.75      ;
+; Maximum fan-out                             ; 4248      ;
+; Total fan-out                               ; 25547     ;
+; Average fan-out                             ; 3.34      ;
 +---------------------------------------------+-----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                   ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
-; |mcu                       ; 417 (0)           ; 140 (0)      ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |mcu                          ; work         ;
-;    |rs232:f_rs232|         ; 417 (41)          ; 140 (8)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232            ; work         ;
-;       |RX_code:rx|         ; 275 (275)         ; 37 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx ; work         ;
-;       |TX_code:tx|         ; 101 (101)         ; 95 (95)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|TX_code:tx ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                  ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
+; |mcu                       ; 3289 (0)          ; 4260 (0)     ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |mcu                                         ; work         ;
+;    |rs232:f_rs232|         ; 3289 (26)         ; 4260 (8)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232                           ; work         ;
+;       |RX_code:rx|         ; 3186 (315)        ; 4189 (61)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx                ; work         ;
+;          |ram_128x32:RAM|  ; 2871 (2871)       ; 4128 (4128)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM ; work         ;
+;       |TX_code:tx|         ; 77 (77)           ; 63 (63)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|TX_code:tx                ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -259,71 +262,63 @@ Encoding Type:  One-Hot
 ; Latch Name                                          ; Latch Enable Signal                  ; Free of Timing Hazards ;
 +-----------------------------------------------------+--------------------------------------+------------------------+
 ; rs232:f_rs232|TX_code:tx|data                       ; rs232:f_rs232|TX_code:tx|WideOr0     ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[16]               ; rs232:f_rs232|RX_code:rx|Selector87  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[8]                ; rs232:f_rs232|RX_code:rx|Selector79  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[0]                ; rs232:f_rs232|RX_code:rx|Selector71  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[24]               ; rs232:f_rs232|RX_code:rx|Selector95  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[40]               ; rs232:f_rs232|RX_code:rx|Selector111 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[48]               ; rs232:f_rs232|RX_code:rx|Selector119 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[32]               ; rs232:f_rs232|RX_code:rx|Selector103 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[56]               ; rs232:f_rs232|RX_code:rx|Selector127 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[17]               ; rs232:f_rs232|RX_code:rx|Selector88  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[9]                ; rs232:f_rs232|RX_code:rx|Selector80  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[1]                ; rs232:f_rs232|RX_code:rx|Selector72  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[25]               ; rs232:f_rs232|RX_code:rx|Selector96  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[41]               ; rs232:f_rs232|RX_code:rx|Selector112 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[49]               ; rs232:f_rs232|RX_code:rx|Selector120 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[33]               ; rs232:f_rs232|RX_code:rx|Selector104 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[57]               ; rs232:f_rs232|RX_code:rx|Selector128 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[18]               ; rs232:f_rs232|RX_code:rx|Selector89  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[10]               ; rs232:f_rs232|RX_code:rx|Selector81  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[2]                ; rs232:f_rs232|RX_code:rx|Selector73  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[26]               ; rs232:f_rs232|RX_code:rx|Selector97  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[42]               ; rs232:f_rs232|RX_code:rx|Selector113 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[50]               ; rs232:f_rs232|RX_code:rx|Selector121 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[34]               ; rs232:f_rs232|RX_code:rx|Selector105 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[58]               ; rs232:f_rs232|RX_code:rx|Selector129 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[19]               ; rs232:f_rs232|RX_code:rx|Selector90  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[11]               ; rs232:f_rs232|RX_code:rx|Selector82  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[3]                ; rs232:f_rs232|RX_code:rx|Selector74  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[27]               ; rs232:f_rs232|RX_code:rx|Selector98  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[43]               ; rs232:f_rs232|RX_code:rx|Selector114 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[51]               ; rs232:f_rs232|RX_code:rx|Selector122 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[35]               ; rs232:f_rs232|RX_code:rx|Selector106 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[59]               ; rs232:f_rs232|RX_code:rx|Selector130 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[20]               ; rs232:f_rs232|RX_code:rx|Selector91  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[12]               ; rs232:f_rs232|RX_code:rx|Selector83  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[4]                ; rs232:f_rs232|RX_code:rx|Selector75  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[28]               ; rs232:f_rs232|RX_code:rx|Selector99  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[44]               ; rs232:f_rs232|RX_code:rx|Selector115 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[52]               ; rs232:f_rs232|RX_code:rx|Selector123 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[36]               ; rs232:f_rs232|RX_code:rx|Selector107 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[60]               ; rs232:f_rs232|RX_code:rx|Selector131 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[21]               ; rs232:f_rs232|RX_code:rx|Selector92  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[13]               ; rs232:f_rs232|RX_code:rx|Selector84  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[5]                ; rs232:f_rs232|RX_code:rx|Selector76  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[29]               ; rs232:f_rs232|RX_code:rx|Selector100 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[45]               ; rs232:f_rs232|RX_code:rx|Selector116 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[53]               ; rs232:f_rs232|RX_code:rx|Selector124 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[37]               ; rs232:f_rs232|RX_code:rx|Selector108 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[61]               ; rs232:f_rs232|RX_code:rx|Selector132 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[22]               ; rs232:f_rs232|RX_code:rx|Selector93  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[14]               ; rs232:f_rs232|RX_code:rx|Selector85  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[6]                ; rs232:f_rs232|RX_code:rx|Selector77  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[30]               ; rs232:f_rs232|RX_code:rx|Selector101 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[46]               ; rs232:f_rs232|RX_code:rx|Selector117 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[54]               ; rs232:f_rs232|RX_code:rx|Selector125 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[38]               ; rs232:f_rs232|RX_code:rx|Selector109 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[62]               ; rs232:f_rs232|RX_code:rx|Selector133 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[23]               ; rs232:f_rs232|RX_code:rx|Selector94  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[1]                    ; rs232:f_rs232|RX_code:rx|Selector80  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[0]                    ; rs232:f_rs232|RX_code:rx|Selector79  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[3]                    ; rs232:f_rs232|RX_code:rx|Selector82  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[2]                    ; rs232:f_rs232|RX_code:rx|Selector81  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[5]                    ; rs232:f_rs232|RX_code:rx|Selector84  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[4]                    ; rs232:f_rs232|RX_code:rx|Selector83  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[6]                    ; rs232:f_rs232|RX_code:rx|Selector85  ; yes                    ;
 ; rs232:f_rs232|RX_code:rx|data_out[15]               ; rs232:f_rs232|RX_code:rx|Selector86  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[7]                ; rs232:f_rs232|RX_code:rx|Selector78  ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[31]               ; rs232:f_rs232|RX_code:rx|Selector102 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[47]               ; rs232:f_rs232|RX_code:rx|Selector118 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[55]               ; rs232:f_rs232|RX_code:rx|Selector126 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|data_out[39]               ; rs232:f_rs232|RX_code:rx|Selector110 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[56]               ; rs232:f_rs232|RX_code:rx|Selector127 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[57]               ; rs232:f_rs232|RX_code:rx|Selector128 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[58]               ; rs232:f_rs232|RX_code:rx|Selector129 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[59]               ; rs232:f_rs232|RX_code:rx|Selector130 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[60]               ; rs232:f_rs232|RX_code:rx|Selector131 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[61]               ; rs232:f_rs232|RX_code:rx|Selector132 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[62]               ; rs232:f_rs232|RX_code:rx|Selector133 ; yes                    ;
 ; rs232:f_rs232|RX_code:rx|data_out[63]               ; rs232:f_rs232|RX_code:rx|Selector134 ; yes                    ;
-; Number of user-specified and inferred latches = 65  ;                                      ;                        ;
+; rs232:f_rs232|RX_code:rx|data_out[1]                ; rs232:f_rs232|RX_code:rx|Selector72  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[2]                ; rs232:f_rs232|RX_code:rx|Selector73  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[3]                ; rs232:f_rs232|RX_code:rx|Selector74  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[4]                ; rs232:f_rs232|RX_code:rx|Selector75  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[5]                ; rs232:f_rs232|RX_code:rx|Selector76  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[6]                ; rs232:f_rs232|RX_code:rx|Selector77  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[7]                ; rs232:f_rs232|RX_code:rx|Selector78  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[0]                ; rs232:f_rs232|RX_code:rx|Selector71  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[32]               ; rs232:f_rs232|RX_code:rx|Selector103 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[24]               ; rs232:f_rs232|RX_code:rx|Selector95  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[16]               ; rs232:f_rs232|RX_code:rx|Selector87  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[40]               ; rs232:f_rs232|RX_code:rx|Selector111 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[25]               ; rs232:f_rs232|RX_code:rx|Selector96  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[33]               ; rs232:f_rs232|RX_code:rx|Selector104 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[17]               ; rs232:f_rs232|RX_code:rx|Selector88  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[41]               ; rs232:f_rs232|RX_code:rx|Selector112 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[34]               ; rs232:f_rs232|RX_code:rx|Selector105 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[26]               ; rs232:f_rs232|RX_code:rx|Selector97  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[18]               ; rs232:f_rs232|RX_code:rx|Selector89  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[42]               ; rs232:f_rs232|RX_code:rx|Selector113 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[27]               ; rs232:f_rs232|RX_code:rx|Selector98  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[35]               ; rs232:f_rs232|RX_code:rx|Selector106 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[19]               ; rs232:f_rs232|RX_code:rx|Selector90  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[43]               ; rs232:f_rs232|RX_code:rx|Selector114 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[36]               ; rs232:f_rs232|RX_code:rx|Selector107 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[28]               ; rs232:f_rs232|RX_code:rx|Selector99  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[20]               ; rs232:f_rs232|RX_code:rx|Selector91  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[44]               ; rs232:f_rs232|RX_code:rx|Selector115 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[29]               ; rs232:f_rs232|RX_code:rx|Selector100 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[37]               ; rs232:f_rs232|RX_code:rx|Selector108 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[21]               ; rs232:f_rs232|RX_code:rx|Selector92  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[45]               ; rs232:f_rs232|RX_code:rx|Selector116 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[38]               ; rs232:f_rs232|RX_code:rx|Selector109 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[30]               ; rs232:f_rs232|RX_code:rx|Selector101 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[22]               ; rs232:f_rs232|RX_code:rx|Selector93  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[46]               ; rs232:f_rs232|RX_code:rx|Selector117 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[31]               ; rs232:f_rs232|RX_code:rx|Selector102 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[39]               ; rs232:f_rs232|RX_code:rx|Selector110 ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[23]               ; rs232:f_rs232|RX_code:rx|Selector94  ; yes                    ;
+; rs232:f_rs232|RX_code:rx|data_out[47]               ; rs232:f_rs232|RX_code:rx|Selector118 ; yes                    ;
+; Number of user-specified and inferred latches = 57  ;                                      ;                        ;
 +-----------------------------------------------------+--------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -346,12 +341,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 140   ;
-; Number of registers using Synchronous Clear  ; 55    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 4260  ;
+; Number of registers using Synchronous Clear  ; 68    ;
+; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 12    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 94    ;
+; Number of registers using Clock Enable       ; 4211  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -361,11 +356,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|div[7]       ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|div[9]       ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|package_q[3] ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|package_q[3] ;
-; 17:1               ; 8 bits    ; 88 LEs        ; 48 LEs               ; 40 LEs                 ; Yes        ; |mcu|rs232:f_rs232|port_b_out[7]           ;
+; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|t[12]        ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|div[1]       ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|div[1]       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|package_q[5] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|package_q[0] ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 24 LEs               ; 40 LEs                 ; Yes        ; |mcu|rs232:f_rs232|port_b_out[5]           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
@@ -401,12 +397,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rs232:f_rs232|RX_code:rx"                                                               ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; data_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -416,9 +421,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Aug 01 11:56:51 2022
+    Info: Processing started: Mon Aug 29 21:39:09 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mcu -c mcu
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file ram_128x32.v
+    Info (12023): Found entity 1: ram_128x32
 Info (12021): Found 1 design units, including 1 entities, in source file tx_code.v
     Info (12023): Found entity 1: TX_code
 Info (12021): Found 1 design units, including 1 entities, in source file rx_code.v
@@ -431,7 +438,9 @@ Warning (10227): Verilog HDL Port Declaration warning at TX_code.v(7): data type
 Info (10499): HDL info at TX_code.v(4): see declaration for object "data_in"
 Warning (10227): Verilog HDL Port Declaration warning at RX_code.v(11): data type declaration for "data_out" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at RX_code.v(4): see declaration for object "data_out"
-Warning (10227): Verilog HDL Port Declaration warning at rs232.v(10): data type declaration for "port_b_out" declares packed dimensions but the port declaration declaration does not
+Warning (10227): Verilog HDL Port Declaration warning at RX_code.v(12): data type declaration for "ram_out" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RX_code.v(4): see declaration for object "ram_out"
+Warning (10227): Verilog HDL Port Declaration warning at rs232.v(11): data type declaration for "port_b_out" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at rs232.v(4): see declaration for object "port_b_out"
 Info (12127): Elaborating entity "mcu" for the top level hierarchy
 Warning (10034): Output port "HEX0" at mcu.v(12) has no driver
@@ -441,94 +450,96 @@ Warning (10034): Output port "HEX3" at mcu.v(15) has no driver
 Warning (10034): Output port "LED[9..8]" at mcu.v(18) has no driver
 Info (12128): Elaborating entity "rs232" for hierarchy "rs232:f_rs232"
 Info (12128): Elaborating entity "RX_code" for hierarchy "rs232:f_rs232|RX_code:rx"
-Warning (10230): Verilog HDL assignment warning at RX_code.v(74): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(83): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(91): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(92): truncated value with size 32 to match size of target (6)
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(98): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(99): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(103): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(103): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(107): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(107): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(111): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(111): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(115): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(115): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(119): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(119): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(123): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(123): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(127): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(127): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at RX_code.v(131): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at RX_code.v(76): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(95): truncated value with size 32 to match size of target (21)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(105): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(113): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(114): truncated value with size 32 to match size of target (6)
 Warning (10235): Verilog HDL Always Construct warning at RX_code.v(131): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10270): Verilog HDL Case Statement warning at RX_code.v(100): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at RX_code.v(96): inferring latch(es) for variable "data_out", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "data_out[0]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[1]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[2]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[3]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[4]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[5]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[6]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[7]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[8]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[9]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[10]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[11]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[12]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[13]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[14]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[15]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[16]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[17]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[18]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[19]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[20]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[21]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[22]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[23]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[24]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[25]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[26]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[27]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[28]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[29]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[30]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[31]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[32]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[33]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[34]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[35]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[36]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[37]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[38]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[39]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[40]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[41]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[42]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[43]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[44]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[45]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[46]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[47]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[48]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[49]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[50]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[51]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[52]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[53]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[54]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[55]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[56]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[57]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[58]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[59]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[60]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[61]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[62]" at RX_code.v(96)
-Info (10041): Inferred latch for "data_out[63]" at RX_code.v(96)
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(132): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(136): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(136): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(140): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(140): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(144): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(144): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(148): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(148): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(152): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(152): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(156): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(156): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(160): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(160): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(164): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RX_code.v(164): variable "package_q" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at RX_code.v(133): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at RX_code.v(129): inferring latch(es) for variable "data_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "data_out[0]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[1]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[2]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[3]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[4]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[5]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[6]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[7]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[8]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[9]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[10]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[11]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[12]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[13]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[14]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[15]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[16]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[17]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[18]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[19]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[20]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[21]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[22]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[23]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[24]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[25]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[26]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[27]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[28]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[29]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[30]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[31]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[32]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[33]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[34]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[35]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[36]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[37]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[38]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[39]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[40]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[41]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[42]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[43]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[44]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[45]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[46]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[47]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[48]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[49]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[50]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[51]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[52]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[53]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[54]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[55]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[56]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[57]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[58]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[59]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[60]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[61]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[62]" at RX_code.v(129)
+Info (10041): Inferred latch for "data_out[63]" at RX_code.v(129)
+Info (12128): Elaborating entity "ram_128x32" for hierarchy "rs232:f_rs232|RX_code:rx|ram_128x32:RAM"
 Info (12128): Elaborating entity "TX_code" for hierarchy "rs232:f_rs232|TX_code:tx"
 Warning (10230): Verilog HDL assignment warning at TX_code.v(56): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at TX_code.v(64): truncated value with size 32 to match size of target (6)
@@ -561,135 +572,121 @@ Warning (10270): Verilog HDL Case Statement warning at TX_code.v(71): incomplete
 Warning (10240): Verilog HDL Always Construct warning at TX_code.v(69): inferring latch(es) for variable "data", which holds its previous value in one or more paths through the always construct
 Warning (10230): Verilog HDL assignment warning at TX_code.v(111): truncated value with size 32 to match size of target (13)
 Info (10041): Inferred latch for "data" at TX_code.v(69)
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|ram" is uninferred due to asynchronous read logic
 Warning (13012): Latch rs232:f_rs232|TX_code:tx|data has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|TX_code:tx|check_q[5]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[16] has unsafe behavior
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|addr[1] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[8] has unsafe behavior
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|addr[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[0] has unsafe behavior
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|addr[3] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[24] has unsafe behavior
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|addr[2] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[40] has unsafe behavior
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|addr[5] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[48] has unsafe behavior
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|addr[4] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[32] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[56] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[41] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[49] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[33] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[57] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[42] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[50] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[34] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[58] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[43] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[51] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[35] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[59] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[44] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[52] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[36] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[60] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[45] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[53] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[37] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[61] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[46] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[54] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[38] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[62] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[23] has unsafe behavior
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|addr[6] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
 Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[15] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[56] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[57] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[58] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[59] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[60] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[61] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[62] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[63] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
 Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[32] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[40] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[33] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[41] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[34] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[42] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[35] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[43] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[36] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[44] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[37] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[45] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[38] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[46] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
 Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[31] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[47] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[55] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
 Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[39] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
-Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[63] has unsafe behavior
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|data_out[47] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|check_q[0]
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX0[0]" is stuck at GND
@@ -737,15 +734,15 @@ Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "BTN[1]"
     Warning (15610): No output dependent on input pin "BTN[2]"
-Info (21057): Implemented 536 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 7471 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 39 output pins
-    Info (21061): Implemented 482 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 233 warnings
-    Info: Peak virtual memory: 4637 megabytes
-    Info: Processing ended: Mon Aug 01 11:56:54 2022
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info (21061): Implemented 7417 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 219 warnings
+    Info: Peak virtual memory: 4682 megabytes
+    Info: Processing ended: Mon Aug 29 21:39:20 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:11
 
 
 +------------------------------------------+

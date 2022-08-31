@@ -5,12 +5,19 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	TX_code
 
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v
+} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/bits64_test.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/bits64_test.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module single_port_ram_128x8
+-- Compiling module bits64_test
 
 Top level modules:
-	single_port_ram_128x8
+	bits64_test
+
+} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ram_128x32
+
+Top level modules:
+	ram_128x32
 
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232_test.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232_test.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -19,12 +26,12 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	rs232_test
 
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/bits64_test.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/bits64_test.v
+} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/RX_code.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/RX_code.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module bits64_test
+-- Compiling module RX_code
 
 Top level modules:
-	bits64_test
+	RX_code
 
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -32,12 +39,5 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 
 Top level modules:
 	rs232
-
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/RX_code.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/RX_code.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module RX_code
-
-Top level modules:
-	RX_code
 
 } {} {}}

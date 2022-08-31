@@ -109,6 +109,7 @@ set_location_assignment PIN_H5 -to SW[1]
 set_location_assignment PIN_J6 -to SW[0]
 set_location_assignment PIN_AA13 -to TX
 set_location_assignment PIN_AB14 -to RX
+set_global_assignment -name VERILOG_FILE ram_128x32.v
 set_global_assignment -name VERILOG_FILE TX_code.v
 set_global_assignment -name VERILOG_FILE RX_code.v
 set_global_assignment -name VERILOG_FILE rs232.v
