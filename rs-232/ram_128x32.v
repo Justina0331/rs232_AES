@@ -22,3 +22,8 @@ module ram_128x32(data_in, addr, en, action, clk, data_out);
 
 endmodule
 
+// i~4i :in
+// 5i   :AES加密
+// 6i~9i:out
+// 10i  :如果AES加密完成->FF FF FF FF
+// 沒用到:0, 121~128
