@@ -1,2 +1,1700 @@
 # Reading C:/Users/taiju/modelsim_ase/tcl/vsim/pref.tcl 
-# OpenFile E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v 
+# OpenFile E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs-232.mpf 
+# Loading project rs-232
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Load canceled
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+vsim -gui work.aes_data_tb
+# vsim -gui work.aes_data_tb 
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+add wave -position insertpoint sim:/aes_data_tb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: taiju  Hostname: LAPTOP-B3SCIA5J  ProcessID: 19236
+# 
+#           Attempting to use alternate WLF file "./wlfth00acm".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlfth00acm
+# 
+add wave -position insertpoint  \
+sim:/aes_data_tb/TX
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[1]}
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[2]}
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[3]}
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[4]}
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[5]}
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[6]}
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[7]}
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[8]}
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[9]}
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[10]}
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 767
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+add wave -position insertpoint  \
+sim:/aes_data_tb/f_rs232/rx/RAM/e128_in
+add wave -position insertpoint  \
+sim:/aes_data_tb/f_rs232/rx/RAM/e128_out
+add wave -position insertpoint  \
+sim:/aes_data_tb/f_rs232/rx/RAM/aes/encrypted128
+add wave -position insertpoint  \
+sim:/aes_data_tb/f_rs232/rx/RAM/aes/decrypted128
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 767
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+# Break key hit 
+# Break key hit 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 767
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 767
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 767
+add wave -position insertpoint  \
+sim:/aes_data_tb/f_rs232/rx/RAM/d128
+restart
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 767
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+# ** Error: (vsim-3053) E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v(17): Illegal output or inout port connection for "port 'd128'".
+# 
+#         Region: /aes_data_tb/f_rs232/rx/RAM/aes
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+# Break key hit 
+# Break key hit 
+vsim -gui work.aes_data_tb
+# vsim -gui work.aes_data_tb 
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: taiju  Hostname: LAPTOP-B3SCIA5J  ProcessID: 19236
+# 
+#           Attempting to use alternate WLF file "./wlft2icmf8".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft2icmf8
+# 
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 767
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 767
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 767
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[110]} \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[109]} \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[108]} \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[107]} \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[106]} \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[105]} \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[104]} \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[103]} \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[102]} \
+{sim:/aes_data_tb/f_rs232/rx/RAM/ram[101]}
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v failed with 1 errors.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 1 failed with 1 error. 
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v failed with 1 errors.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 1 failed with 1 error. 
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+add wave -position insertpoint  \
+sim:/aes_data_tb/f_rs232/rx/RAM/d128
+restart
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+restart
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.addRoundKey
+# Loading work.shiftRows
+# Loading work.TX_code
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+run -all
+# Break key hit 
+# Simulation stop requested.
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v failed with 1 errors.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 1 failed with 1 error. 
+# WARNING: No extended dataflow license exists
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v failed with 1 errors.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 1 failed with 1 error. 
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v failed with 1 errors.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 1 failed with 1 error. 
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v failed with 1 errors.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 1 failed with 1 error. 
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.sbox
+# Loading work.inverseSbox
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+restart
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+# ** Error: (vsim-3053) E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v(17): Illegal output or inout port connection for "port 'd128'".
+# 
+#         Region: /aes_data_tb/f_rs232/rx/RAM/aes
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+vsim -gui work.aes_data_tb
+# vsim -gui work.aes_data_tb 
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: taiju  Hostname: LAPTOP-B3SCIA5J  ProcessID: 19236
+# 
+#           Attempting to use alternate WLF file "./wlftffjv5t".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftffjv5t
+# 
+restart
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+# ** Error: (vsim-3053) E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v(17): Illegal output or inout port connection for "port 'd128'".
+# 
+#         Region: /aes_data_tb/f_rs232/rx/RAM/aes
+# A time value could not be extracted from the current line
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+vsim -gui work.aes_data_tb
+# vsim -gui work.aes_data_tb 
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: taiju  Hostname: LAPTOP-B3SCIA5J  ProcessID: 19236
+# 
+#           Attempting to use alternate WLF file "./wlftq0w498".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftq0w498
+# 
+restart
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969
+# Compile of bits64_test.v was successful.
+# Compile of rs232.v was successful.
+# Compile of RX_code.v was successful.
+# Compile of TX_code.v was successful.
+# Compile of ram_128x32.v was successful.
+# Compile of addRoundKey.v was successful.
+# Compile of AES.v was successful.
+# Compile of encryptRound.v was successful.
+# Compile of mixColumns.v was successful.
+# Compile of shiftRows.v was successful.
+# Compile of subBytes.v was successful.
+# Compile of decryptRound.v was successful.
+# Compile of inverseMixColumns.v was successful.
+# Compile of inverseSbox.v was successful.
+# Compile of inverseShiftRows.v was successful.
+# Compile of inverseSubBytes.v was successful.
+# Compile of sbox.v was successful.
+# Compile of aes_data_tb.v was successful.
+# Compile of AES_Decrypt.v was successful.
+# Compile of AES_Encrypt.v was successful.
+# Compile of keyExpansion.v was successful.
+# 21 compiles, 0 failed with no errors. 
+restart
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.ram_128x32
+# Loading work.AES
+# Loading work.AES_Encrypt
+# Loading work.keyExpansion
+# Loading work.addRoundKey
+# Loading work.subBytes
+# Loading work.shiftRows
+# Loading work.AES_Decrypt
+# Loading work.inverseShiftRows
+# Loading work.inverseSubBytes
+# Loading work.TX_code
+# Loading work.sbox
+# Loading work.encryptRound
+# Loading work.mixColumns
+# Loading work.inverseSbox
+# Loading work.decryptRound
+# Loading work.inverseMixColumns
+run -all
+# Break in Module aes_data_tb at E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v line 969

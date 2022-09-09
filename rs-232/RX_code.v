@@ -12,10 +12,13 @@ module RX_code(data_out, data_in, load_port_b, tx_start, clk, rst, ram_out);
 	wire  [31:0]ram_out;
 	reg  [5:0]check_q, package_q;
 	reg  [12:0]div;
-  reg  [2:0]ps, ns;
+  reg  [2:0]ps, ns,aes_q;
   reg  [20:0]t;
   reg  en;          //控制讀出/寫入
   wire [6:0]addr;   //讀出/寫入位置
+  wire d128;   //判斷aes_in加密再解密後是否一樣
+  wire [127:0]aes_in,aes_out;
+  reg [31:0] aes_data[15:0]; //1-4:data_in/5:encrypt_start/6-9:data_out/10:encrypt_finish
   
   parameter T0 = 0;
   parameter T1 = 1;
@@ -124,6 +127,42 @@ module RX_code(data_out, data_in, load_port_b, tx_start, clk, rst, ram_out);
 	  tx_start <= 0;
 	  if(finish & ~data_out[15] & data_out[63:56] == 8'h03) tx_start <= 1;
 	end
+	/*
+	//紀錄加密資料(寫入1-9)
+	assign aes_start = (aes_data[5] == 32'hffffffff)?1:0;
+	always @(posedge clk)
+	begin
+	  if(rst) aes_q <= 1;
+	  if(aes_q == 5) 
+	  begin
+	  aes_q <=1;
+	  end
+	  else
+	    if(en) 
+	    begin
+	    if(aes_q == 4) aes_data[5] <= 32'hffffffff;
+	    if(aes_q == 1) aes_data[5] <= 32'h00000000;
+	    aes_data[aes_q] <= data_out[15] ? data_out[47:16] : ram_out;
+	    aes_q <= aes_q + 1;
+	 end
+  end	
+
+	//紀錄加密資料(寫出10)
+	always @(posedge clk && aes_out, posedge aes_q)
+	begin
+	  if(rst || aes_q==2) aes_data[10] <= 32'h00000000;
+	  else
+	     if(aes_start)aes_data[10] <= 32'hffffffff; 
+	end
+	
+	//加密
+	assign aes_in = {aes_data[1],aes_data[2],aes_data[3],aes_data[4]};
+	always @(posedge clk) 
+	begin
+	 {aes_data[6],aes_data[7],aes_data[8],aes_data[9]} <= aes_out;
+	end
+	AES aes(aes_start, aes_in, aes_out,d128);
+	*/
 	
 	//將接收的bit存入data
 	always @(check_q)
