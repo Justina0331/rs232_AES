@@ -68,7 +68,7 @@ module RX_code(data_out, data_in, load_port_b, tx_start, clk, rst, ram_out);
 				div <= 0;
 				CHECK_TIME <= 1;
 			end
-		else if(div == 1246)	//1256
+		else if(div == 1206)	//1256
 		  begin
 				CHECK_TIME <= ~CHECK_TIME;
 				div <= 0;

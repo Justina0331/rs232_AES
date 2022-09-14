@@ -19,19 +19,19 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	encryptRound
 
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module aes_data_tb
-
-Top level modules:
-	aes_data_tb
-
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module ram_128x32
 
 Top level modules:
 	ram_128x32
+
+} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module aes_data_tb
+
+Top level modules:
+	aes_data_tb
 
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -54,13 +54,6 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	AES_Decrypt
 
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/RX_code.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/RX_code.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module RX_code
-
-Top level modules:
-	RX_code
-
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module rs232
@@ -75,19 +68,19 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	AES_Encrypt
 
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/TX_code.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/TX_code.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module TX_code
-
-Top level modules:
-	TX_code
-
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/keyExpansion.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/keyExpansion.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module keyExpansion
 
 Top level modules:
 	keyExpansion
+
+} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/TX_code.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/TX_code.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TX_code
+
+Top level modules:
+	TX_code
 
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/mixColumns.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/mixColumns.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012

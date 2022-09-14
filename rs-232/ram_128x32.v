@@ -35,13 +35,16 @@ module ram_128x32(data_in, addr, en, action, clk, data_out);
 	  e128_in <= {ram[addr-1],ram[addr-2],ram[addr-3],ram[addr-4]};
 	end
 	
-	always @ (posedge d128)
+	always @ (posedge clk)
 	begin
-	  ram[addr+1] <= e128_out[31:0];
-	  ram[addr+2] <= e128_out[63:32];
-	  ram[addr+3] <= e128_out[95:64];
-	  ram[addr+4] <= e128_out[127:96];
-	  ram[addr+5] <= 32'hffffffff;
+	  if(d128)
+	    begin
+	       ram[addr+1] <= e128_out[31:0];
+	       ram[addr+2] <= e128_out[63:32];
+	       ram[addr+3] <= e128_out[95:64];
+	       ram[addr+4] <= e128_out[127:96];
+	       ram[addr+5] <= 32'hffffffff;
+	     end
 	end
   
 endmodule
