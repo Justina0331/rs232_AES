@@ -3,231 +3,39 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLK'
-Slack : -7.205
-TNS   : -24070.646
-
-Type  : Slow 1200mV 85C Model Setup 'rs232:f_rs232|TX_code:tx|check_q[0]'
-Slack : -5.657
-TNS   : -5.657
-
-Type  : Slow 1200mV 85C Model Setup 'BTN[0]'
-Slack : -3.304
-TNS   : -103.008
-
-Type  : Slow 1200mV 85C Model Setup 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : -1.526
-TNS   : -8.846
-
-Type  : Slow 1200mV 85C Model Setup 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -1.471
-TNS   : -8.281
-
-Type  : Slow 1200mV 85C Model Hold 'BTN[0]'
-Slack : -1.178
-TNS   : -7.102
-
-Type  : Slow 1200mV 85C Model Hold 'rs232:f_rs232|TX_code:tx|check_q[0]'
-Slack : -0.422
-TNS   : -0.422
-
-Type  : Slow 1200mV 85C Model Hold 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -0.367
-TNS   : -1.424
+Slack : -5.156
+TNS   : -17368.812
 
 Type  : Slow 1200mV 85C Model Hold 'CLK'
-Slack : -0.147
-TNS   : -0.147
-
-Type  : Slow 1200mV 85C Model Hold 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : 0.382
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Recovery 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : -2.655
-TNS   : -15.590
-
-Type  : Slow 1200mV 85C Model Recovery 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -2.127
-TNS   : -12.592
-
-Type  : Slow 1200mV 85C Model Removal 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : 1.734
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Removal 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : 2.040
+Slack : 0.358
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -4251.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BTN[0]'
-Slack : -3.000
-TNS   : -3.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : -1.000
-TNS   : -6.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -1.000
-TNS   : -6.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'rs232:f_rs232|TX_code:tx|check_q[0]'
-Slack : -0.051
-TNS   : -0.107
+TNS   : -4322.000
 
 Type  : Slow 1200mV 0C Model Setup 'CLK'
-Slack : -6.400
-TNS   : -21433.955
-
-Type  : Slow 1200mV 0C Model Setup 'rs232:f_rs232|TX_code:tx|check_q[0]'
-Slack : -5.065
-TNS   : -5.065
-
-Type  : Slow 1200mV 0C Model Setup 'BTN[0]'
-Slack : -2.863
-TNS   : -87.576
-
-Type  : Slow 1200mV 0C Model Setup 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : -1.321
-TNS   : -7.637
-
-Type  : Slow 1200mV 0C Model Setup 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -1.254
-TNS   : -7.009
-
-Type  : Slow 1200mV 0C Model Hold 'BTN[0]'
-Slack : -1.134
-TNS   : -7.263
-
-Type  : Slow 1200mV 0C Model Hold 'rs232:f_rs232|TX_code:tx|check_q[0]'
-Slack : -0.370
-TNS   : -0.370
-
-Type  : Slow 1200mV 0C Model Hold 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -0.349
-TNS   : -1.376
+Slack : -4.526
+TNS   : -15150.509
 
 Type  : Slow 1200mV 0C Model Hold 'CLK'
-Slack : -0.143
-TNS   : -0.143
-
-Type  : Slow 1200mV 0C Model Hold 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : 0.333
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Recovery 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : -2.317
-TNS   : -13.607
-
-Type  : Slow 1200mV 0C Model Recovery 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -1.813
-TNS   : -10.713
-
-Type  : Slow 1200mV 0C Model Removal 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : 1.640
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Removal 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : 1.923
+Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -4251.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BTN[0]'
-Slack : -3.000
-TNS   : -3.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : -1.000
-TNS   : -6.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -1.000
-TNS   : -6.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rs232:f_rs232|TX_code:tx|check_q[0]'
-Slack : 0.045
-TNS   : 0.000
+TNS   : -4322.000
 
 Type  : Fast 1200mV 0C Model Setup 'CLK'
-Slack : -3.803
-TNS   : -11980.635
-
-Type  : Fast 1200mV 0C Model Setup 'rs232:f_rs232|TX_code:tx|check_q[0]'
-Slack : -3.023
-TNS   : -3.023
-
-Type  : Fast 1200mV 0C Model Setup 'BTN[0]'
-Slack : -1.633
-TNS   : -41.160
-
-Type  : Fast 1200mV 0C Model Setup 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : -0.499
-TNS   : -2.820
-
-Type  : Fast 1200mV 0C Model Setup 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -0.439
-TNS   : -2.399
-
-Type  : Fast 1200mV 0C Model Hold 'BTN[0]'
-Slack : -0.730
-TNS   : -5.246
-
-Type  : Fast 1200mV 0C Model Hold 'rs232:f_rs232|TX_code:tx|check_q[0]'
-Slack : -0.273
-TNS   : -0.273
-
-Type  : Fast 1200mV 0C Model Hold 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -0.211
-TNS   : -0.863
+Slack : -2.684
+TNS   : -8408.409
 
 Type  : Fast 1200mV 0C Model Hold 'CLK'
-Slack : -0.165
-TNS   : -0.165
-
-Type  : Fast 1200mV 0C Model Hold 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : 0.201
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Recovery 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : -1.387
-TNS   : -8.172
-
-Type  : Fast 1200mV 0C Model Recovery 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -1.299
-TNS   : -7.709
-
-Type  : Fast 1200mV 0C Model Removal 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : 0.971
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Removal 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : 1.112
+Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -4573.382
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BTN[0]'
-Slack : -3.000
-TNS   : -3.097
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rs232:f_rs232|RX_code:rx|CHECK_TIME'
-Slack : -1.000
-TNS   : -6.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rs232:f_rs232|TX_code:tx|CHECK_TIME'
-Slack : -1.000
-TNS   : -6.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rs232:f_rs232|TX_code:tx|check_q[0]'
-Slack : 0.135
-TNS   : 0.000
+TNS   : -4620.270
 
 ------------------------------------------------------------

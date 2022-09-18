@@ -26,13 +26,6 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	ram_128x32
 
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/aes_data_tb.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module aes_data_tb
-
-Top level modules:
-	aes_data_tb
-
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module inverseSbox
@@ -54,6 +47,13 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	AES_Decrypt
 
+} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/RX_code.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/RX_code.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module RX_code
+
+Top level modules:
+	RX_code
+
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module rs232
@@ -68,19 +68,19 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	AES_Encrypt
 
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/keyExpansion.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/keyExpansion.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module keyExpansion
-
-Top level modules:
-	keyExpansion
-
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/TX_code.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/TX_code.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module TX_code
 
 Top level modules:
 	TX_code
+
+} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/keyExpansion.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/keyExpansion.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module keyExpansion
+
+Top level modules:
+	keyExpansion
 
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/mixColumns.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/mixColumns.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -89,12 +89,12 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	mixColumns
 
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/AES.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/AES.v
+} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/shiftRows.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/shiftRows.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module AES
+-- Compiling module shiftRows
 
 Top level modules:
-	AES
+	shiftRows
 
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/subBytes.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/subBytes.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -103,19 +103,19 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	subBytes
 
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/shiftRows.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/shiftRows.v
+} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/AES.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/AES.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module shiftRows
+-- Compiling module AES
 
 Top level modules:
-	shiftRows
+	AES
 
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/bits64_test.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/bits64_test.v
+} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseMixColumns.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseMixColumns.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module bits64_test
+-- Compiling module inverseMixColumns
 
 Top level modules:
-	bits64_test
+	inverseMixColumns
 
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/decryptRound.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/decryptRound.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -124,12 +124,12 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	decryptRound
 
-} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseMixColumns.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseMixColumns.v
+} {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/bits64_test.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/bits64_test.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module inverseMixColumns
+-- Compiling module bits64_test
 
 Top level modules:
-	inverseMixColumns
+	bits64_test
 
 } {} {}} E:/user/just/Documents/GitHub/rs232_AES/rs-232/sbox.v {1 {vlog -work work E:/user/just/Documents/GitHub/rs232_AES/rs-232/sbox.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012

@@ -30,9 +30,9 @@ module ram_128x32(data_in, addr, en, action, clk, data_out);
 		  end
 	end
 	
-	always @ (aes_en)
+	always @ (posedge clk)
 	begin
-	  e128_in <= {ram[addr-1],ram[addr-2],ram[addr-3],ram[addr-4]};
+		if(aes_en)	e128_in <= {ram[addr-1],ram[addr-2],ram[addr-3],ram[addr-4]};
 	end
 	
 	always @ (posedge clk)
