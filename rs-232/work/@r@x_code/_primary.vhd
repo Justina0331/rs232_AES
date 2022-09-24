@@ -12,8 +12,7 @@ entity RX_code is
         T7              : integer := 7;
         T8              : integer := 8;
         T9              : integer := 9;
-        T10             : integer := 10;
-        T11             : integer := 11
+        T10             : integer := 10
     );
     port(
         data_out        : out    vl_logic_vector(63 downto 0);
@@ -36,5 +35,4 @@ entity RX_code is
     attribute mti_svvh_generic_type of T8 : constant is 1;
     attribute mti_svvh_generic_type of T9 : constant is 1;
     attribute mti_svvh_generic_type of T10 : constant is 1;
-    attribute mti_svvh_generic_type of T11 : constant is 1;
 end RX_code;

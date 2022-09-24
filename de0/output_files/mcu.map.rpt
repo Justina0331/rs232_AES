@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mcu
-Mon Sep 19 00:52:09 2022
+Sat Sep 24 21:46:57 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -25,10 +25,9 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  17. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Decrypt:a2|keyExpansion:ke
  18. Parameter Settings for User Entity Instance: rs232:f_rs232|TX_code:tx
  19. Port Connectivity Checks: "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes"
- 20. Port Connectivity Checks: "rs232:f_rs232|RX_code:rx"
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
- 23. Analysis & Synthesis Suppressed Messages
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -54,15 +53,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 19 00:52:09 2022      ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep 24 21:46:56 2022      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; mcu                                        ;
 ; Top-level Entity Name              ; mcu                                        ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 7,344                                      ;
-;     Total combinational functions  ; 3,216                                      ;
-;     Dedicated logic registers      ; 4,319                                      ;
-; Total registers                    ; 4319                                       ;
+; Total logic elements               ; 7,287                                      ;
+;     Total combinational functions  ; 3,190                                      ;
+;     Dedicated logic registers      ; 4,341                                      ;
+; Total registers                    ; 4341                                       ;
 ; Total pins                         ; 54                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -209,27 +208,27 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 7,344     ;
+; Estimated Total logic elements              ; 7,287     ;
 ;                                             ;           ;
-; Total combinational functions               ; 3216      ;
+; Total combinational functions               ; 3190      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2944      ;
-;     -- 3 input functions                    ; 62        ;
-;     -- <=2 input functions                  ; 210       ;
+;     -- 4 input functions                    ; 2912      ;
+;     -- 3 input functions                    ; 63        ;
+;     -- <=2 input functions                  ; 215       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 3152      ;
-;     -- arithmetic mode                      ; 64        ;
+;     -- normal mode                          ; 3118      ;
+;     -- arithmetic mode                      ; 72        ;
 ;                                             ;           ;
-; Total registers                             ; 4319      ;
-;     -- Dedicated logic registers            ; 4319      ;
+; Total registers                             ; 4341      ;
+;     -- Dedicated logic registers            ; 4341      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 54        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 4319      ;
-; Total fan-out                               ; 25368     ;
+; Maximum fan-out                             ; 4341      ;
+; Total fan-out                               ; 25383     ;
 ; Average fan-out                             ; 3.32      ;
 +---------------------------------------------+-----------+
 
@@ -239,27 +238,32 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
-; |mcu                       ; 3216 (0)          ; 4319 (0)     ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |mcu                                         ; work         ;
-;    |rs232:f_rs232|         ; 3216 (26)         ; 4319 (8)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232                           ; work         ;
-;       |RX_code:rx|         ; 3116 (235)        ; 4247 (119)   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx                ; work         ;
-;          |ram_128x32:RAM|  ; 2881 (2881)       ; 4128 (4128)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM ; work         ;
-;       |TX_code:tx|         ; 74 (74)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|TX_code:tx                ; work         ;
+; |mcu                       ; 3190 (0)          ; 4341 (0)     ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |mcu                                         ; work         ;
+;    |rs232:f_rs232|         ; 3190 (41)         ; 4341 (8)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232                           ; work         ;
+;       |RX_code:rx|         ; 3068 (194)        ; 4266 (138)   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx                ; work         ;
+;          |ram_128x32:RAM|  ; 2874 (2874)       ; 4128 (4128)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM ; work         ;
+;       |TX_code:tx|         ; 81 (81)           ; 67 (67)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|TX_code:tx                ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------+
-; State Machine - |mcu|rs232:f_rs232|TX_code:tx|ps ;
-+-------+-------+-------+-------+-------+----------+
-; Name  ; ps.T3 ; ps.T2 ; ps.T1 ; ps.T0 ; ps.T4    ;
-+-------+-------+-------+-------+-------+----------+
-; ps.T0 ; 0     ; 0     ; 0     ; 0     ; 0        ;
-; ps.T1 ; 0     ; 0     ; 1     ; 1     ; 0        ;
-; ps.T2 ; 0     ; 1     ; 0     ; 1     ; 0        ;
-; ps.T3 ; 1     ; 0     ; 0     ; 1     ; 0        ;
-; ps.T4 ; 0     ; 0     ; 0     ; 1     ; 1        ;
-+-------+-------+-------+-------+-------+----------+
++---------------------------------------------------------------------------------------+
+; State Machine - |mcu|rs232:f_rs232|TX_code:tx|ps                                      ;
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; Name  ; ps.T9 ; ps.T8 ; ps.T7 ; ps.T6 ; ps.T5 ; ps.T4 ; ps.T3 ; ps.T2 ; ps.T1 ; ps.T0 ;
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; ps.T0 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
+; ps.T1 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
+; ps.T2 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
+; ps.T3 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
+; ps.T4 ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T5 ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T6 ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T7 ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T8 ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T9 ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
 
 
 Encoding Type:  One-Hot
@@ -288,11 +292,13 @@ Encoding Type:  One-Hot
 +---------------------------------------+--------------------+
 ; rs232:f_rs232|TX_code:tx|ps~2         ; Lost fanout        ;
 ; rs232:f_rs232|TX_code:tx|ps~3         ; Lost fanout        ;
+; rs232:f_rs232|TX_code:tx|ps~4         ; Lost fanout        ;
+; rs232:f_rs232|TX_code:tx|ps~5         ; Lost fanout        ;
 ; rs232:f_rs232|RX_code:rx|ps~2         ; Lost fanout        ;
 ; rs232:f_rs232|RX_code:rx|ps~3         ; Lost fanout        ;
 ; rs232:f_rs232|RX_code:rx|ps~4         ; Lost fanout        ;
 ; rs232:f_rs232|RX_code:rx|ps~5         ; Lost fanout        ;
-; Total Number of Removed Registers = 6 ;                    ;
+; Total Number of Removed Registers = 8 ;                    ;
 +---------------------------------------+--------------------+
 
 
@@ -301,12 +307,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4319  ;
-; Number of registers using Synchronous Clear  ; 79    ;
+; Total registers                              ; 4341  ;
+; Number of registers using Synchronous Clear  ; 108   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4213  ;
+; Number of registers using Clock Enable       ; 4272  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -316,15 +322,15 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|package_q[1]                ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|check_q[3]                  ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|counter[7]                  ;
-; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|watch_dog[13]               ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|check_q[4]                  ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|counter[7]                  ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|package_q[3]                ;
-; 128:1              ; 32 bits   ; 2720 LEs      ; 2720 LEs             ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM|data_out[27] ;
-; 13:1               ; 8 bits    ; 64 LEs        ; 24 LEs               ; 40 LEs                 ; Yes        ; |mcu|rs232:f_rs232|port_b_out[7]                          ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bits[3]              ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bytes[4]             ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|data_out[38]                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bits[0]              ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bytes[2]             ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|watch_dog[12]               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|data_r[31]                  ;
+; 128:1              ; 32 bits   ; 2720 LEs      ; 2720 LEs             ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM|data_out[16] ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 48 LEs               ; 40 LEs                 ; Yes        ; |mcu|rs232:f_rs232|port_b_out[7]                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
@@ -344,7 +350,6 @@ Encoding Type:  One-Hot
 ; T8             ; 8     ; Signed Integer                               ;
 ; T9             ; 9     ; Signed Integer                               ;
 ; T10            ; 10    ; Signed Integer                               ;
-; T11            ; 11    ; Signed Integer                               ;
 +----------------+-------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -407,6 +412,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; T4             ; 4     ; Signed Integer                               ;
 ; T5             ; 5     ; Signed Integer                               ;
 ; T6             ; 6     ; Signed Integer                               ;
+; T7             ; 7     ; Signed Integer                               ;
+; T8             ; 8     ; Signed Integer                               ;
+; T9             ; 9     ; Signed Integer                               ;
 +----------------+-------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -421,21 +429,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "rs232:f_rs232|RX_code:rx"                                                               ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; data_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:11     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -445,7 +444,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Sep 19 00:51:52 2022
+    Info: Processing started: Sat Sep 24 21:46:41 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mcu -c mcu
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file subbytes.v
@@ -493,9 +492,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file mcu.v
     Info (12023): Found entity 1: mcu
 Warning (10227): Verilog HDL Port Declaration warning at rs232.v(11): data type declaration for "port_b_out" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at rs232.v(4): see declaration for object "port_b_out"
-Warning (10227): Verilog HDL Port Declaration warning at RX_code.v(9): data type declaration for "data_out" declares packed dimensions but the port declaration declaration does not
+Warning (10227): Verilog HDL Port Declaration warning at RX_code.v(131): data type declaration for "data_out" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at RX_code.v(4): see declaration for object "data_out"
-Warning (10227): Verilog HDL Port Declaration warning at RX_code.v(10): data type declaration for "ram_out" declares packed dimensions but the port declaration declaration does not
+Warning (10227): Verilog HDL Port Declaration warning at RX_code.v(9): data type declaration for "ram_out" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at RX_code.v(4): see declaration for object "ram_out"
 Warning (10227): Verilog HDL Port Declaration warning at TX_code.v(7): data type declaration for "data_in" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at TX_code.v(4): see declaration for object "data_in"
@@ -507,10 +506,13 @@ Warning (10034): Output port "HEX3" at mcu.v(15) has no driver
 Warning (10034): Output port "LED[9..8]" at mcu.v(18) has no driver
 Info (12128): Elaborating entity "rs232" for hierarchy "rs232:f_rs232"
 Info (12128): Elaborating entity "RX_code" for hierarchy "rs232:f_rs232|RX_code:rx"
-Warning (10230): Verilog HDL assignment warning at RX_code.v(67): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(80): truncated value with size 32 to match size of target (21)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(87): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(94): truncated value with size 32 to match size of target (6)
+Warning (10036): Verilog HDL or VHDL warning at RX_code.v(7): object "rst_counter" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at RX_code.v(8): object "load_finish" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at RX_code.v(58): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(78): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(93): truncated value with size 32 to match size of target (21)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(103): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(113): truncated value with size 32 to match size of target (5)
 Info (12128): Elaborating entity "ram_128x32" for hierarchy "rs232:f_rs232|RX_code:rx|ram_128x32:RAM"
 Info (12128): Elaborating entity "AES" for hierarchy "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes"
 Info (12128): Elaborating entity "AES_Encrypt" for hierarchy "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Encrypt:a"
@@ -528,9 +530,9 @@ Info (12128): Elaborating entity "inverseSubBytes" for hierarchy "rs232:f_rs232|
 Info (12128): Elaborating entity "inverseSbox" for hierarchy "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Decrypt:a2|decryptRound:loop[1].dr|inverseSubBytes:s|inverseSbox:sub_Bytes[0].s"
 Info (12128): Elaborating entity "inverseMixColumns" for hierarchy "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Decrypt:a2|decryptRound:loop[1].dr|inverseMixColumns:m"
 Info (12128): Elaborating entity "TX_code" for hierarchy "rs232:f_rs232|TX_code:tx"
-Warning (10230): Verilog HDL assignment warning at TX_code.v(53): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at TX_code.v(61): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at TX_code.v(68): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at TX_code.v(68): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at TX_code.v(88): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at TX_code.v(105): truncated value with size 32 to match size of target (5)
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX0[0]" is stuck at GND
     Warning (13410): Pin "HEX0[1]" is stuck at GND
@@ -563,7 +565,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LED[8]" is stuck at GND
     Warning (13410): Pin "LED[9]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file E:/user/just/Documents/GitHub/rs232_AES/de0/output_files/mcu.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -577,15 +579,15 @@ Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "BTN[1]"
     Warning (15610): No output dependent on input pin "BTN[2]"
-Info (21057): Implemented 7398 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 7341 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 39 output pins
-    Info (21061): Implemented 7344 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 58 warnings
-    Info: Peak virtual memory: 4718 megabytes
-    Info: Processing ended: Mon Sep 19 00:52:09 2022
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:17
+    Info (21061): Implemented 7287 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 61 warnings
+    Info: Peak virtual memory: 4706 megabytes
+    Info: Processing ended: Sat Sep 24 21:46:57 2022
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:14
 
 
 +------------------------------------------+

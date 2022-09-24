@@ -1,5 +1,5 @@
 EDA Netlist Writer report for mcu
-Mon Sep 19 00:53:30 2022
+Sat Sep 24 21:48:11 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Sep 19 00:53:30 2022 ;
+; EDA Netlist Writer Status ; Successful - Sat Sep 24 21:48:11 2022 ;
 ; Revision Name             ; mcu                                   ;
 ; Top-level Entity Name     ; mcu                                   ;
 ; Family                    ; Cyclone III                           ;
@@ -88,7 +88,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Sep 19 00:53:21 2022
+    Info: Processing started: Sat Sep 24 21:48:03 2022
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off mcu -c mcu
 Info (204019): Generated file mcu_6_1200mv_85c_slow.vo in folder "E:/user/just/Documents/GitHub/rs232_AES/de0/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file mcu_6_1200mv_0c_slow.vo in folder "E:/user/just/Documents/GitHub/rs232_AES/de0/simulation/modelsim/" for EDA simulation tool
@@ -99,9 +99,9 @@ Info (204019): Generated file mcu_6_1200mv_0c_v_slow.sdo in folder "E:/user/just
 Info (204019): Generated file mcu_min_1200mv_0c_v_fast.sdo in folder "E:/user/just/Documents/GitHub/rs232_AES/de0/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file mcu_v.sdo in folder "E:/user/just/Documents/GitHub/rs232_AES/de0/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4612 megabytes
-    Info: Processing ended: Mon Sep 19 00:53:30 2022
-    Info: Elapsed time: 00:00:09
+    Info: Peak virtual memory: 4607 megabytes
+    Info: Processing ended: Sat Sep 24 21:48:11 2022
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:08
 
 
