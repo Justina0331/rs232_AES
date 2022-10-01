@@ -18,7 +18,7 @@ r1
 Z9 !s90 -reportprogress|300|addRoundKey.v|
 o-O0
 Z10 nadd@round@key
-Z11 !s108 1664011803.718000
+Z11 !s108 1664558856.254000
 Z12 !s107 addRoundKey.v|
 !i10b 1
 !s85 0
@@ -38,501 +38,501 @@ r1
 Z19 !s90 -reportprogress|300|AES.v|
 o-O0
 Z20 n@a@e@s
-Z21 !s108 1664011803.411000
+Z21 !s108 1664558855.959000
 Z22 !s107 AES.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vaes_data_tb
+!i10b 1
 Z23 !s100 1MCD>9z8VJ]<Ro0RVPFL]3
 Z24 I48OB@cR[i4[[J1kVoX<4N2
 Z25 V1]?U2=3cE[dSeCHi4FfC^1
 R4
-Z26 w1664007868
+Z26 w1664112768
 Z27 8aes_data_tb.v
 Z28 Faes_data_tb.v
 L0 1
 R8
 r1
-31
-Z29 !s90 -reportprogress|300|aes_data_tb.v|
-o-O0
-Z30 !s108 1664011804.989000
-Z31 !s107 aes_data_tb.v|
-!i10b 1
 !s85 0
+31
+!s108 1664558857.436000
+!s107 aes_data_tb.v|
+Z29 !s90 -reportprogress|300|aes_data_tb.v|
 !s101 -O0
+o-O0
 vAES_Decrypt
-Z32 !s100 nLB4Q7A0^BnglgP`iN2Wm2
-Z33 IKDP54hEMIFL<dHeD4mjJm3
-Z34 V=B>TdQ=Sgh8HN8zJ`Zm9>2
+Z30 !s100 nLB4Q7A0^BnglgP`iN2Wm2
+Z31 IKDP54hEMIFL<dHeD4mjJm3
+Z32 V=B>TdQ=Sgh8HN8zJ`Zm9>2
 R4
-Z35 w1659297488
-Z36 8AES_Decrypt.v
-Z37 FAES_Decrypt.v
+Z33 w1659297488
+Z34 8AES_Decrypt.v
+Z35 FAES_Decrypt.v
 L0 1
 R8
 r1
 31
-Z38 !s90 -reportprogress|300|AES_Decrypt.v|
+Z36 !s90 -reportprogress|300|AES_Decrypt.v|
 o-O0
-Z39 n@a@e@s_@decrypt
-Z40 !s108 1664011804.314000
-Z41 !s107 AES_Decrypt.v|
+Z37 n@a@e@s_@decrypt
+Z38 !s108 1664558856.819000
+Z39 !s107 AES_Decrypt.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vAES_Encrypt
-Z42 !s100 b8cz9:S@JROnD>lIR>jBK1
-Z43 I2WZ3UH[^z]hc@4i_TeTeo0
-Z44 VgLZn:dLQm8z9d_PFU[fYa0
+Z40 !s100 b8cz9:S@JROnD>lIR>jBK1
+Z41 I2WZ3UH[^z]hc@4i_TeTeo0
+Z42 VgLZn:dLQm8z9d_PFU[fYa0
 R4
-Z45 w1662621024
-Z46 8AES_Encrypt.v
-Z47 FAES_Encrypt.v
+Z43 w1662621024
+Z44 8AES_Encrypt.v
+Z45 FAES_Encrypt.v
 L0 1
 R8
 r1
 31
-Z48 !s90 -reportprogress|300|AES_Encrypt.v|
+Z46 !s90 -reportprogress|300|AES_Encrypt.v|
 o-O0
-Z49 n@a@e@s_@encrypt
-Z50 !s108 1664011803.524000
-Z51 !s107 AES_Encrypt.v|
+Z47 n@a@e@s_@encrypt
+Z48 !s108 1664558856.065000
+Z49 !s107 AES_Encrypt.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vAES_tb
-Z52 !s100 4];a2G^lVha5WFZCPV1Ni1
-Z53 If]1USTA4c0<kN;M;A^=gY1
-Z54 VO6mY5nU]8iUz0<7O_I]ec1
+Z50 !s100 4];a2G^lVha5WFZCPV1Ni1
+Z51 If]1USTA4c0<kN;M;A^=gY1
+Z52 VO6mY5nU]8iUz0<7O_I]ec1
 R4
-R35
-Z55 8E:/user/just/Documents/GitHub/rs232_AES/rs-232/AES_tb.v
-Z56 FE:/user/just/Documents/GitHub/rs232_AES/rs-232/AES_tb.v
+R33
+Z53 8E:/user/just/Documents/GitHub/rs232_AES/rs-232/AES_tb.v
+Z54 FE:/user/just/Documents/GitHub/rs232_AES/rs-232/AES_tb.v
 L0 1
 R8
 r1
 31
-Z57 !s90 -reportprogress|300|-work|work|E:/user/just/Documents/GitHub/rs232_AES/rs-232/AES_tb.v|
-Z58 o-work work -O0
-Z59 n@a@e@s_tb
-Z60 !s108 1662621041.769000
-Z61 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs-232/AES_tb.v|
+Z55 !s90 -reportprogress|300|-work|work|E:/user/just/Documents/GitHub/rs232_AES/rs-232/AES_tb.v|
+Z56 o-work work -O0
+Z57 n@a@e@s_tb
+Z58 !s108 1662621041.769000
+Z59 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs-232/AES_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vbits64_test
-Z62 !s100 Ek=U_J]T>BVfEK<AO]@Xh1
-Z63 IaFS3X:dH5a?9P@PXoe3Eg0
-Z64 V4d8>eWADS3dfihAcJYDH^1
+Z60 !s100 Ek=U_J]T>BVfEK<AO]@Xh1
+Z61 IaFS3X:dH5a?9P@PXoe3Eg0
+Z62 V4d8>eWADS3dfihAcJYDH^1
 R4
-Z65 w1661776454
-Z66 8bits64_test.v
-Z67 Fbits64_test.v
+Z63 w1661776454
+Z64 8bits64_test.v
+Z65 Fbits64_test.v
 L0 1
 R8
 r1
 31
-Z68 !s90 -reportprogress|300|bits64_test.v|
+Z66 !s90 -reportprogress|300|bits64_test.v|
 o-O0
-Z69 !s108 1664011804.890000
-Z70 !s107 bits64_test.v|
 !i10b 1
 !s85 0
+Z67 !s108 1664558857.331000
+Z68 !s107 bits64_test.v|
 !s101 -O0
 vdecryptRound
-Z71 !s100 5CeMTW^jJ7K=Gm9S0X^`J1
-Z72 IhS8?4MI=[O;lLe;lobfXL0
-Z73 Vhlg>QC8[@;_KWVOENK6ZD3
+Z69 !s100 5CeMTW^jJ7K=Gm9S0X^`J1
+Z70 IhS8?4MI=[O;lLe;lobfXL0
+Z71 Vhlg>QC8[@;_KWVOENK6ZD3
 R4
-R35
-Z74 8decryptRound.v
-Z75 FdecryptRound.v
+R33
+Z72 8decryptRound.v
+Z73 FdecryptRound.v
 L0 1
 R8
 r1
 31
-Z76 !s90 -reportprogress|300|decryptRound.v|
+Z74 !s90 -reportprogress|300|decryptRound.v|
 o-O0
-Z77 ndecrypt@round
-Z78 !s108 1664011804.415000
-Z79 !s107 decryptRound.v|
+Z75 ndecrypt@round
+Z76 !s108 1664558856.910000
+Z77 !s107 decryptRound.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vencryptRound
-Z80 !s100 ;_NfSoTdY<`YKX`MWe8<d2
-Z81 IL1?zk>l1jGc`LEc8>XHao3
-Z82 VBUbm5LT=V16znfS[mGAXi0
+Z78 !s100 ;_NfSoTdY<`YKX`MWe8<d2
+Z79 IL1?zk>l1jGc`LEc8>XHao3
+Z80 VBUbm5LT=V16znfS[mGAXi0
 R4
-Z83 w1662482803
-Z84 8encryptRound.v
-Z85 FencryptRound.v
+Z81 w1662482803
+Z82 8encryptRound.v
+Z83 FencryptRound.v
 L0 1
 R8
 r1
 31
-Z86 !s90 -reportprogress|300|encryptRound.v|
+Z84 !s90 -reportprogress|300|encryptRound.v|
 o-O0
-Z87 nencrypt@round
-Z88 !s108 1664011803.850000
-Z89 !s107 encryptRound.v|
+Z85 nencrypt@round
+Z86 !s108 1664558856.378000
+Z87 !s107 encryptRound.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vinverseMixColumns
-Z90 !s100 1ma0;0GMJ[7UE^jLMZRQ;0
-Z91 I2iS>O=zLno]K@Q`BL`bWf0
-Z92 V3IXX;MW24TlVH7`XnmjWz0
+Z88 !s100 1ma0;0GMJ[7UE^jLMZRQ;0
+Z89 I2iS>O=zLno]K@Q`BL`bWf0
+Z90 V3IXX;MW24TlVH7`XnmjWz0
 R4
-R35
-Z93 8inverseMixColumns.v
-Z94 FinverseMixColumns.v
+R33
+Z91 8inverseMixColumns.v
+Z92 FinverseMixColumns.v
 L0 1
 R8
 r1
 31
-Z95 !s90 -reportprogress|300|inverseMixColumns.v|
+Z93 !s90 -reportprogress|300|inverseMixColumns.v|
 o-O0
-Z96 ninverse@mix@columns
-Z97 !s108 1664011804.783000
-Z98 !s107 inverseMixColumns.v|
+Z94 ninverse@mix@columns
+Z95 !s108 1664558857.242000
+Z96 !s107 inverseMixColumns.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vinverseSbox
-Z99 !s100 nie[:BD;?9V;V^5@7AbAg0
-Z100 Ibh^CHK94CBhY6=Jm_5h_R1
-Z101 VYBi4=0C:lz`7]gOfPJS?P2
+Z97 !s100 nie[:BD;?9V;V^5@7AbAg0
+Z98 Ibh^CHK94CBhY6=Jm_5h_R1
+Z99 VYBi4=0C:lz`7]gOfPJS?P2
 R4
-R35
-Z102 8E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v
-Z103 FE:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v
+R33
+Z100 8E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v
+Z101 FE:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v
 L0 1
 R8
 r1
 31
-Z104 !s90 -reportprogress|300|-work|work|E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v|
-R58
-Z105 ninverse@sbox
-Z106 !s108 1663161676.203000
-Z107 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v|
+Z102 !s90 -reportprogress|300|-work|work|E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v|
+R56
+Z103 ninverse@sbox
+Z104 !s108 1663161676.203000
+Z105 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs-232/inverseSbox.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vinverseShiftRows
-Z108 !s100 gNRRRn0YQNMcCW80gI9HE0
-Z109 IbAJ@YUkUG7P?DE>mf[iAU2
-Z110 V1`bzgQX8iVkQHBGPdURkR0
+Z106 !s100 gNRRRn0YQNMcCW80gI9HE0
+Z107 IbAJ@YUkUG7P?DE>mf[iAU2
+Z108 V1`bzgQX8iVkQHBGPdURkR0
 R4
-R35
-Z111 8inverseShiftRows.v
-Z112 FinverseShiftRows.v
+R33
+Z109 8inverseShiftRows.v
+Z110 FinverseShiftRows.v
 L0 1
 R8
 r1
 31
-Z113 !s90 -reportprogress|300|inverseShiftRows.v|
+Z111 !s90 -reportprogress|300|inverseShiftRows.v|
 o-O0
-Z114 ninverse@shift@rows
-Z115 !s108 1664011804.552000
-Z116 !s107 inverseShiftRows.v|
+Z112 ninverse@shift@rows
+Z113 !s108 1664558857.030000
+Z114 !s107 inverseShiftRows.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vinverseSubBytes
-Z117 !s100 Pc[@02doZF?PWW23QW`U<3
-Z118 IGn2GX]agVN1XK<g67zXiU3
-Z119 VzGVOg[`6UI3:4]S9X;b@g1
+Z115 !s100 Pc[@02doZF?PWW23QW`U<3
+Z116 IGn2GX]agVN1XK<g67zXiU3
+Z117 VzGVOg[`6UI3:4]S9X;b@g1
 R4
-R35
-Z120 8inverseSubBytes.v
-Z121 FinverseSubBytes.v
+R33
+Z118 8inverseSubBytes.v
+Z119 FinverseSubBytes.v
 L0 1
 R8
 r1
 31
-Z122 !s90 -reportprogress|300|inverseSubBytes.v|
+Z120 !s90 -reportprogress|300|inverseSubBytes.v|
 o-O0
-Z123 ninverse@sub@bytes
-Z124 !s108 1664011804.649000
-Z125 !s107 inverseSubBytes.v|
+Z121 ninverse@sub@bytes
+Z122 !s108 1664558857.122000
+Z123 !s107 inverseSubBytes.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vkeyExpansion
-Z126 !s100 Od>I:D_PeZ>kSziT=E9aS2
-Z127 Ik>Fgda0z9B8;74:6hX_BJ1
-Z128 Vko]QP`A0[iYhD<NXi[d=g2
+Z124 !s100 Od>I:D_PeZ>kSziT=E9aS2
+Z125 Ik>Fgda0z9B8;74:6hX_BJ1
+Z126 Vko]QP`A0[iYhD<NXi[d=g2
 R4
-Z129 w1662482231
-Z130 8keyExpansion.v
-Z131 FkeyExpansion.v
+Z127 w1662482231
+Z128 8keyExpansion.v
+Z129 FkeyExpansion.v
 L0 1
 R8
 r1
 31
-Z132 !s90 -reportprogress|300|keyExpansion.v|
+Z130 !s90 -reportprogress|300|keyExpansion.v|
 o-O0
-Z133 nkey@expansion
-Z134 !s108 1664011803.618000
-Z135 !s107 keyExpansion.v|
+Z131 nkey@expansion
+Z132 !s108 1664558856.152000
+Z133 !s107 keyExpansion.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vmixColumns
-Z136 !s100 S?T@[an^]4zcadRdDO8Xn3
-Z137 IahYP^SRz;fA1=13cDeOVz1
-Z138 V@OccRC_8TLL4JSjIG7dX_0
+Z134 !s100 S?T@[an^]4zcadRdDO8Xn3
+Z135 IahYP^SRz;fA1=13cDeOVz1
+Z136 V@OccRC_8TLL4JSjIG7dX_0
 R4
-Z139 w1662483208
-Z140 8mixColumns.v
-Z141 FmixColumns.v
+Z137 w1662483208
+Z138 8mixColumns.v
+Z139 FmixColumns.v
 L0 1
 R8
 r1
 31
-Z142 !s90 -reportprogress|300|mixColumns.v|
+Z140 !s90 -reportprogress|300|mixColumns.v|
 o-O0
-Z143 nmix@columns
-Z144 !s108 1664011804.215000
-Z145 !s107 mixColumns.v|
+Z141 nmix@columns
+Z142 !s108 1664558856.721000
+Z143 !s107 mixColumns.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vram_128x32
-Z146 !s100 Af?ceOb6g4AVn3zSXF1^j1
-Z147 IN9ARX:<SK?@V:ZI]^VW>K2
-Z148 VW@az7bg1kW76lSKMR27`V1
+Z144 !s100 Af?ceOb6g4AVn3zSXF1^j1
+Z145 IN9ARX:<SK?@V:ZI]^VW>K2
+Z146 VW@az7bg1kW76lSKMR27`V1
 R4
-Z149 w1663152561
-Z150 8E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v
-Z151 FE:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v
+Z147 w1663152561
+Z148 8E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v
+Z149 FE:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v
 L0 1
 R8
 r1
 31
-Z152 !s90 -reportprogress|300|-work|work|E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v|
-R58
-Z153 !s108 1663161675.117000
-Z154 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v|
+Z150 !s90 -reportprogress|300|-work|work|E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v|
+R56
+Z151 !s108 1663161675.117000
+Z152 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs-232/ram_128x32.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vrs232
-Z155 !s100 Qb>DD4RDcX]W7HZ3oUB493
-Z156 IAjzNd1mjl`GRDGHTk[?R:0
-Z157 V?i6:h2KXfTYGoAjnENaL83
+Z153 !s100 6@0T>KHHhlQY>jg@2h1=d2
+Z154 I_^TK1[iQ91Y5bLFdaZ1:b1
+Z155 V?i6:h2KXfTYGoAjnENaL83
 R4
-Z158 w1660126362
-Z159 8rs232.v
-Z160 Frs232.v
+Z156 w1664287496
+Z157 8rs232.v
+Z158 Frs232.v
 L0 1
 R8
 r1
 31
-Z161 !s90 -reportprogress|300|rs232.v|
+Z159 !s90 -reportprogress|300|rs232.v|
 o-O0
-Z162 !s108 1664028410.596000
-Z163 !s107 rs232.v|
+Z160 !s108 1664558855.576000
+Z161 !s107 rs232.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vrs232_test
-Z164 !s100 LzU`Rzc=]H;C`O]Be71h:3
-Z165 Ifl_i;_9;ga2[VQW8zZkXh0
-Z166 VRihdKJjeRKIK?z:Vi@H0O3
+Z162 !s100 LzU`Rzc=]H;C`O]Be71h:3
+Z163 Ifl_i;_9;ga2[VQW8zZkXh0
+Z164 VRihdKJjeRKIK?z:Vi@H0O3
 R4
-Z167 w1657458042
-Z168 8E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232_test.v
-Z169 FE:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232_test.v
+Z165 w1657458042
+Z166 8E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232_test.v
+Z167 FE:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232_test.v
 L0 1
 R8
 r1
 31
-Z170 !s90 -reportprogress|300|-work|work|E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232_test.v|
-R58
-Z171 !s108 1662619603.617000
-Z172 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232_test.v|
+Z168 !s90 -reportprogress|300|-work|work|E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232_test.v|
+R56
+Z169 !s108 1662619603.617000
+Z170 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs-232/rs232_test.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vRX
-Z173 !s100 7WP6zgWjMN:7J208?IhA23
-Z174 I=8AB6Z<bUj2QAfL6eK`XA3
-Z175 V4o5BVR6KPe`:IQ9WM<Pkf1
-Z176 dE:\user\just\Desktop\rs-232
-Z177 w1657295653
-Z178 8E:/user/just/Desktop/rs-232/RX.v
-Z179 FE:/user/just/Desktop/rs-232/RX.v
+Z171 !s100 7WP6zgWjMN:7J208?IhA23
+Z172 I=8AB6Z<bUj2QAfL6eK`XA3
+Z173 V4o5BVR6KPe`:IQ9WM<Pkf1
+Z174 dE:\user\just\Desktop\rs-232
+Z175 w1657295653
+Z176 8E:/user/just/Desktop/rs-232/RX.v
+Z177 FE:/user/just/Desktop/rs-232/RX.v
 L0 1
 R8
 r1
 31
-Z180 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/RX.v|
-R58
+Z178 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/RX.v|
+R56
 n@r@x
-Z181 !s108 1657449554.985000
-Z182 !s107 E:/user/just/Desktop/rs-232/RX.v|
+Z179 !s108 1657449554.985000
+Z180 !s107 E:/user/just/Desktop/rs-232/RX.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vRX_code
-Z183 Id6dRFc>oG2;7LTzHDAePK3
-Z184 VBh8<CQmIj8RH6FNJEVdX`1
+Z181 !s100 @CI5WC7[4ZWD2>TEHaz6z1
+Z182 IfeEU6NAA05Y0b;cE6YUXN0
+Z183 VP:[aGYCKU<OL=N^lARPhF0
 R4
-Z185 w1664027983
-Z186 8RX_code.v
-Z187 FRX_code.v
+Z184 w1664550963
+Z185 8RX_code.v
+Z186 FRX_code.v
 L0 1
 R8
 r1
 31
-Z188 !s90 -reportprogress|300|RX_code.v|
+Z187 !s90 -reportprogress|300|RX_code.v|
 o-O0
-Z189 n@r@x_code
+Z188 n@r@x_code
+Z189 !s108 1664558855.773000
+Z190 !s107 RX_code.v|
 !i10b 1
-Z190 !s100 C]?aeFJO1Ieg_^UgE4K<m0
 !s85 0
-Z191 !s108 1664028411.029000
-Z192 !s107 RX_code.v|
 !s101 -O0
 vsbox
-Z193 !s100 GY`=?Onc2Q_=lzD3eSZgL0
-Z194 Ic[G3PeM5WQL]IYGPeQ=4X0
-Z195 V[bZ`e:R4HD;YiPAM>fb1i0
+Z191 !s100 GY`=?Onc2Q_=lzD3eSZgL0
+Z192 Ic[G3PeM5WQL]IYGPeQ=4X0
+Z193 V[bZ`e:R4HD;YiPAM>fb1i0
 R4
-Z196 w1662483313
-Z197 8E:/user/just/Documents/GitHub/rs232_AES/rs-232/sbox.v
-Z198 FE:/user/just/Documents/GitHub/rs232_AES/rs-232/sbox.v
+Z194 w1662483313
+Z195 8E:/user/just/Documents/GitHub/rs232_AES/rs-232/sbox.v
+Z196 FE:/user/just/Documents/GitHub/rs232_AES/rs-232/sbox.v
 L0 1
 R8
 r1
 31
-Z199 !s90 -reportprogress|300|-work|work|E:/user/just/Documents/GitHub/rs232_AES/rs-232/sbox.v|
-R58
-Z200 !s108 1663161676.563000
-Z201 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs-232/sbox.v|
+Z197 !s90 -reportprogress|300|-work|work|E:/user/just/Documents/GitHub/rs232_AES/rs-232/sbox.v|
+R56
+Z198 !s108 1663161676.563000
+Z199 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs-232/sbox.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vSeven_Segment_Decoder
-Z202 !s100 ?a]0==X]K?H;_Ldo6<GkD1
-Z203 IQ[Z;]D0BmlURf?85VNg080
-Z204 Vcj:n?Z34;8n_4K@]WMT`F3
-R176
-Z205 w1641404124
-Z206 8E:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v
-Z207 FE:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v
+Z200 !s100 ?a]0==X]K?H;_Ldo6<GkD1
+Z201 IQ[Z;]D0BmlURf?85VNg080
+Z202 Vcj:n?Z34;8n_4K@]WMT`F3
+R174
+Z203 w1641404124
+Z204 8E:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v
+Z205 FE:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v
 L0 1
 R8
 r1
 31
-Z208 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v|
-R58
-Z209 n@seven_@segment_@decoder
-Z210 !s108 1657186584.969000
-Z211 !s107 E:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v|
+Z206 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v|
+R56
+Z207 n@seven_@segment_@decoder
+Z208 !s108 1657186584.969000
+Z209 !s107 E:/user/just/Desktop/rs-232/Seven_Segment_Decoder.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vshiftRows
-Z212 !s100 c0KEj6A=?zOo8NjVmNOZD0
-Z213 IOzh42DK0O2z=4EUC]V`VF0
-Z214 Vmn?AddhkB0RfXXUM:TzeT1
+Z210 !s100 c0KEj6A=?zOo8NjVmNOZD0
+Z211 IOzh42DK0O2z=4EUC]V`VF0
+Z212 Vmn?AddhkB0RfXXUM:TzeT1
 R4
-Z215 w1662482987
-Z216 8shiftRows.v
-Z217 FshiftRows.v
+Z213 w1662482987
+Z214 8shiftRows.v
+Z215 FshiftRows.v
 L0 1
 R8
 r1
 31
-Z218 !s90 -reportprogress|300|shiftRows.v|
+Z216 !s90 -reportprogress|300|shiftRows.v|
 o-O0
-Z219 nshift@rows
-Z220 !s108 1664011804.126000
-Z221 !s107 shiftRows.v|
+Z217 nshift@rows
+Z218 !s108 1664558856.628000
+Z219 !s107 shiftRows.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vsingle_port_ram_128x8
-Z222 I0khmQ=<Be0Eg4k2lgL@MQ2
-Z223 VIEff:H3KQncIhKFY63en:0
+Z220 I0khmQ=<Be0Eg4k2lgL@MQ2
+Z221 VIEff:H3KQncIhKFY63en:0
 R4
-Z224 w1659344004
-R150
-R151
+Z222 w1659344004
+R148
+R149
 L0 1
 R8
 r1
 31
-R58
-Z225 !s100 iEf?[DOWYlkB4UnJIbYZD3
-Z226 !s108 1659344004.983000
-R154
+R56
+Z223 !s100 iEf?[DOWYlkB4UnJIbYZD3
+Z224 !s108 1659344004.983000
 R152
+R150
 !i10b 1
 !s85 0
 !s101 -O0
 vsubBytes
-Z227 !s100 ;72Bl]Uc<bBnU46hYOPnV0
-Z228 IlQQX<Eg^z8;B<V=bJmeC^1
-Z229 VjdC3^:EjRjaGdYJd:j9CF0
+Z225 !s100 ;72Bl]Uc<bBnU46hYOPnV0
+Z226 IlQQX<Eg^z8;B<V=bJmeC^1
+Z227 VjdC3^:EjRjaGdYJd:j9CF0
 R4
-Z230 w1662482937
-Z231 8subBytes.v
-Z232 FsubBytes.v
+Z228 w1662482937
+Z229 8subBytes.v
+Z230 FsubBytes.v
 L0 1
 R8
 r1
 31
-Z233 !s90 -reportprogress|300|subBytes.v|
+Z231 !s90 -reportprogress|300|subBytes.v|
 o-O0
-Z234 nsub@bytes
-Z235 !s108 1664011803.999000
-Z236 !s107 subBytes.v|
+Z232 nsub@bytes
+Z233 !s108 1664558856.500000
+Z234 !s107 subBytes.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vTX
-Z237 !s100 ljD<SL`akTU3EAzSJ=PcO0
-Z238 IeeoW@bio97?H1mZ`:`WDn3
-Z239 Vz=7YzbQOG0oz:^>Je7Z[A1
-R176
-Z240 w1658225810
-Z241 8E:/user/just/Desktop/rs-232/TX.v
-Z242 FE:/user/just/Desktop/rs-232/TX.v
+Z235 !s100 ljD<SL`akTU3EAzSJ=PcO0
+Z236 IeeoW@bio97?H1mZ`:`WDn3
+Z237 Vz=7YzbQOG0oz:^>Je7Z[A1
+R174
+Z238 w1658225810
+Z239 8E:/user/just/Desktop/rs-232/TX.v
+Z240 FE:/user/just/Desktop/rs-232/TX.v
 L0 1
 R8
 r1
 31
-Z243 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/TX.v|
-R58
+Z241 !s90 -reportprogress|300|-work|work|E:/user/just/Desktop/rs-232/TX.v|
+R56
 n@t@x
-Z244 !s108 1658226035.606000
-Z245 !s107 E:/user/just/Desktop/rs-232/TX.v|
+Z242 !s108 1658226035.606000
+Z243 !s107 E:/user/just/Desktop/rs-232/TX.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vTX_code
-Z246 I5mhYQGUcRjQ]iGTMAF0Lm3
-Z247 VNSd5Jd@3EA=mAaYdlSGN41
+Z244 !s100 Sm7GUOfo]g>LIzP?ImXkL2
+Z245 IHe1fG0jE4z]@XXlX>W2<F3
+Z246 VNSd5Jd@3EA=mAaYdlSGN41
 R4
-Z248 w1664011797
-Z249 8TX_code.v
-Z250 FTX_code.v
+Z247 w1664551023
+Z248 8TX_code.v
+Z249 FTX_code.v
 L0 1
 R8
 r1
 31
-Z251 !s90 -reportprogress|300|TX_code.v|
+Z250 !s90 -reportprogress|300|TX_code.v|
 o-O0
-Z252 n@t@x_code
-Z253 !s100 =ol1IRk:C9H_fQkfb:XTV3
-Z254 !s108 1664011803.314000
-Z255 !s107 TX_code.v|
+Z251 n@t@x_code
+Z252 !s108 1664558855.870000
+Z253 !s107 TX_code.v|
 !i10b 1
 !s85 0
 !s101 -O0

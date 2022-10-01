@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mcu
-Sat Sep 24 21:46:57 2022
+Sat Oct 01 01:33:28 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -25,9 +25,10 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  17. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Decrypt:a2|keyExpansion:ke
  18. Parameter Settings for User Entity Instance: rs232:f_rs232|TX_code:tx
  19. Port Connectivity Checks: "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes"
- 20. Elapsed Time Per Partition
- 21. Analysis & Synthesis Messages
- 22. Analysis & Synthesis Suppressed Messages
+ 20. Port Connectivity Checks: "rs232:f_rs232|RX_code:rx"
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -53,15 +54,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 24 21:46:56 2022      ;
+; Analysis & Synthesis Status        ; Successful - Sat Oct 01 01:33:28 2022      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; mcu                                        ;
 ; Top-level Entity Name              ; mcu                                        ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 7,287                                      ;
-;     Total combinational functions  ; 3,190                                      ;
-;     Dedicated logic registers      ; 4,341                                      ;
-; Total registers                    ; 4341                                       ;
+; Total logic elements               ; 7,263                                      ;
+;     Total combinational functions  ; 3,166                                      ;
+;     Dedicated logic registers      ; 4,333                                      ;
+; Total registers                    ; 4333                                       ;
 ; Total pins                         ; 54                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -208,27 +209,27 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 7,287     ;
+; Estimated Total logic elements              ; 7,263     ;
 ;                                             ;           ;
-; Total combinational functions               ; 3190      ;
+; Total combinational functions               ; 3166      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2912      ;
+;     -- 4 input functions                    ; 2889      ;
 ;     -- 3 input functions                    ; 63        ;
-;     -- <=2 input functions                  ; 215       ;
+;     -- <=2 input functions                  ; 214       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 3118      ;
+;     -- normal mode                          ; 3094      ;
 ;     -- arithmetic mode                      ; 72        ;
 ;                                             ;           ;
-; Total registers                             ; 4341      ;
-;     -- Dedicated logic registers            ; 4341      ;
+; Total registers                             ; 4333      ;
+;     -- Dedicated logic registers            ; 4333      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 54        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 4341      ;
-; Total fan-out                               ; 25383     ;
+; Maximum fan-out                             ; 4333      ;
+; Total fan-out                               ; 25258     ;
 ; Average fan-out                             ; 3.32      ;
 +---------------------------------------------+-----------+
 
@@ -238,10 +239,10 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
-; |mcu                       ; 3190 (0)          ; 4341 (0)     ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |mcu                                         ; work         ;
-;    |rs232:f_rs232|         ; 3190 (41)         ; 4341 (8)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232                           ; work         ;
-;       |RX_code:rx|         ; 3068 (194)        ; 4266 (138)   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx                ; work         ;
-;          |ram_128x32:RAM|  ; 2874 (2874)       ; 4128 (4128)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM ; work         ;
+; |mcu                       ; 3166 (0)          ; 4333 (0)     ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |mcu                                         ; work         ;
+;    |rs232:f_rs232|         ; 3166 (25)         ; 4333 (8)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232                           ; work         ;
+;       |RX_code:rx|         ; 3060 (185)        ; 4258 (130)   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx                ; work         ;
+;          |ram_128x32:RAM|  ; 2875 (2875)       ; 4128 (4128)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM ; work         ;
 ;       |TX_code:tx|         ; 81 (81)           ; 67 (67)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|TX_code:tx                ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -307,31 +308,31 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4341  ;
-; Number of registers using Synchronous Clear  ; 108   ;
+; Total registers                              ; 4333  ;
+; Number of registers using Synchronous Clear  ; 100   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4272  ;
+; Number of registers using Clock Enable       ; 4264  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bits[3]              ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bytes[4]             ;
-; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|data_out[38]                ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bits[0]              ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bytes[2]             ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|watch_dog[12]               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|data_r[31]                  ;
-; 128:1              ; 32 bits   ; 2720 LEs      ; 2720 LEs             ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM|data_out[16] ;
-; 17:1               ; 8 bits    ; 88 LEs        ; 48 LEs               ; 40 LEs                 ; Yes        ; |mcu|rs232:f_rs232|port_b_out[7]                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bits[4]             ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bytes[1]            ;
+; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|data_out[17]               ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bits[3]             ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bytes[4]            ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|watch_dog[17]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|data_r[9]                  ;
+; 128:1              ; 32 bits   ; 2720 LEs      ; 2720 LEs             ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM|data_out[4] ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 24 LEs               ; 40 LEs                 ; Yes        ; |mcu|rs232:f_rs232|port_b_out[2]                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -429,12 +430,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rs232:f_rs232|RX_code:rx"                                                               ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; data_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:00:10     ;
 +----------------+--------------+
 
 
@@ -444,7 +454,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Sep 24 21:46:41 2022
+    Info: Processing started: Sat Oct 01 01:33:13 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mcu -c mcu
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file subbytes.v
@@ -579,15 +589,15 @@ Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "BTN[1]"
     Warning (15610): No output dependent on input pin "BTN[2]"
-Info (21057): Implemented 7341 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 7318 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 39 output pins
-    Info (21061): Implemented 7287 logic cells
+    Info (21061): Implemented 7264 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 61 warnings
-    Info: Peak virtual memory: 4706 megabytes
-    Info: Processing ended: Sat Sep 24 21:46:57 2022
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 4707 megabytes
+    Info: Processing ended: Sat Oct 01 01:33:28 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:15
 
 
 +------------------------------------------+

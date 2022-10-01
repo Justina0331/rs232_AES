@@ -16,7 +16,7 @@ module rs232(TX, RX, sw2, sw1 ,sw0, clk, rst, port_b_out);
 	TX_code tx(.data_out(TX), .data_in(ram_out), .tx_start(tx_start), .rst(rst), .clk(clk));	
     
 	//3to1Mux Port B out
-	always@(posedge clk)
+	/*always@(posedge clk)
 	begin
 		if(rst) port_b_out <= 0;
 		else
@@ -32,9 +32,9 @@ module rs232(TX, RX, sw2, sw1 ,sw0, clk, rst, port_b_out);
 				3'b111:  port_b_out <= load_port_b ? data[63:56] : port_b_out;
 			endcase
 		end
-	end
+	end*/
 	
-	/*always@(posedge clk)
+	always@(posedge clk)
 	begin
 		if(rst) port_b_out <= 0;
 		else
@@ -47,7 +47,7 @@ module rs232(TX, RX, sw2, sw1 ,sw0, clk, rst, port_b_out);
 				default: port_b_out <= 0;
 			endcase
 		end
-	end*/
+	end
 	
     
 endmodule

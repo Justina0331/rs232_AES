@@ -13,9 +13,6 @@ module TX_code(data_out, data_in, tx_start, clk, rst);
 	parameter T7 = 7;
 	parameter T8 = 8;
 	parameter T9 = 9;
-	
-	wire data_out;
-	assign data_out = data;
   
 	//檢查開始及結束(package)
 	wire [31:0]data_in;
@@ -141,7 +138,7 @@ module TX_code(data_out, data_in, tx_start, clk, rst);
 				if (delta_time_1_flag)	ns = T4;
 				else 					ns = T3;
 			end
-			T4://receive 1 bit
+			T4://send 1 bit
 			begin
 				tx_bit = 1;
 				inc_cnt_tx_bits = 1;
@@ -159,9 +156,9 @@ module TX_code(data_out, data_in, tx_start, clk, rst);
 				if (delta_time_1_flag)	ns = T7;
 				else 					ns = T6;
 			end
-			T7://receive 1 byte
+			T7://send 1 byte
 			begin
-			  rst_data = 1;
+				rst_data = 1;
 				rst_cnt_1 = 1;
 				inc_cnt_tx_bytes = 1;
 				ns = T8;
@@ -180,6 +177,7 @@ module TX_code(data_out, data_in, tx_start, clk, rst);
 		endcase 
 	end
     
-	
+	wire data_out;
+	assign data_out = data;
 
 endmodule

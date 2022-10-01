@@ -15,7 +15,6 @@ entity RX_code is
         T10             : integer := 10
     );
     port(
-        data_out        : out    vl_logic_vector(63 downto 0);
         data_in         : in     vl_logic;
         load_port_b     : out    vl_logic;
         tx_start        : out    vl_logic;
