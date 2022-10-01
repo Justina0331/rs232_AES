@@ -33,4 +33,6 @@ vlog bits64_test.v
 vlog aes_data_tb.v
 
 
-
+#################################
+## ram
+vlog ram_128x32.v

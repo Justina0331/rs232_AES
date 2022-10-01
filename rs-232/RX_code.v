@@ -3,7 +3,16 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 	input  data_in, clk, rst;
 	output load_port_b, tx_start, ram_out;
 	
-	reg  load_port_b;
+	reg  s, d;			       //正負元檢查
+	reg  start, rst_start, rst_data, rst_counter, package_start, tx_start, finish;
+	reg  load_port_b, load_package, load_finish, packet_loss, idle;
+	wire [31:0]ram_out;
+	reg  [5:0]check_q, package_q;
+	reg  [12:0]counter;
+    reg  [3:0]ps, ns;
+    reg  [20:0]watch_dog;
+    reg  en;          //控制讀出/寫入
+    wire [6:0]addr;   //讀出/寫入位置
   
 	parameter T0 = 0;
 	parameter T1 = 1;
@@ -18,9 +27,6 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 	parameter T10 = 10;
   
 	//檢查開始及結束(byte)
-	reg s, d;
-	reg start;
-	reg rst_start;
 	always @(posedge clk) 
 	begin
 		if(rst | rst_start)
@@ -76,9 +82,6 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 	end
 	
 	//watch dog
-	reg packet_loss;
-	reg idle;
-	reg [20:0]watch_dog;
 	always @(posedge clk)
 	begin
 		if(rst | idle) 
@@ -110,37 +113,30 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 		else if (inc_cnt_rx_bytes)	cnt_rx_bytes <= cnt_rx_bytes + 1;
 	end
 	
-	//將接收的bit存入data
-	reg shift_reg;
-	reg rst_data;
-	reg [63:0] data;
-	always @(posedge clk)
-	begin
-		if(rst | rst_data)	data <= 0;
-		else if(shift_reg)	data <= {data_in, data[63:1]};
-	end
-	
-	//addr
-	wire [6:0]addr;
-	assign addr = data[14:8];
-	
 	//RAM
-	wire [31:0]ram_out;
-	reg  en;          //控制讀出/寫入
-	ram_128x32 RAM(data[47:16], addr, en, data[15], clk, ram_out);
+	reg write_en;
+	reg read_en;
+	reg [63:0] data_out;
+	assign addr = data_out[14:8];
+	ram_128x32 RAM(data_out[47:16], addr, write_en, read_en, clk, ram_out);
 	
 	//TX_start
-	//data[15]=0 -> tx傳輸資料
-	reg load_tx;
-	reg tx_start;
+	//data_out[15]=0 -> tx傳輸資料
 	always @(posedge clk)
 	begin
-		if(load_tx)	tx_start <= 1;
+		if(read_en)	tx_start <= 1;
 		else		tx_start <= 0;
 	end
 	
+	//將接收的bit存入data
+	reg shift_reg;
+	always @(posedge clk)
+	begin
+		if(rst | rst_data)	data_out <= 0;
+		else if(shift_reg)	data_out <= {data_in, data_out[63:1]};
+	end
+	
 	//States
-	reg [3:0]ps, ns;
 	always@(posedge clk)
 	begin
 		if(rst) ps <= T0;
@@ -151,6 +147,7 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 	begin
 		ns = T0;
 		load_port_b = 0;
+		load_finish = 0;
 		idle = 0;
 		
 		rst_cnt_1_5 = 0;
@@ -167,8 +164,9 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 		rst_start = 0;
 		rst_data = 0;
 		en = 0;
-		load_tx = 0;
-		
+		write_en = 0;
+		read_en = 0;
+
 		case(ps)
 			T0:
 			begin
@@ -253,7 +251,7 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 			begin
 				rst_start = 1;
 				//if this is first byte, check 02?
-				if (cnt_rx_bytes == 1 & data[63:56] != 8'h02)	ns = T1;
+				if (cnt_rx_bytes == 1 & data_out[63:56] != 8'h02)	ns = T1;
 
 				//check package finish?
 				else if (cnt_rx_bytes > 7)	ns = T9;
@@ -264,15 +262,17 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 			T9://CHECK DATA
 			begin
 				//check last byte 03?
-				if(data[63:56] == 8'h03)
+				if(data_out[63:56] == 8'h03)
 				begin
-					en = 1;
-					if(~data[15])	load_tx = 1;
+					if(data_out[15])  write_en = 1;
+					else					read_en = 1;
 				end
 				ns = T1;
 				
 				if(packet_loss) ns = T1;
 			end
+			
+
 		endcase 
   end
     

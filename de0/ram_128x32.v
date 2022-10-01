@@ -1,15 +1,15 @@
-module ram_128x32(data_in, addr, en, action, clk, data_out);
+module ram_128x32(data_in, addr, write_en, read_en, clk, data_out);
   
 	input [6:0] addr;
 	input [31:0] data_in;
-	input en, clk, action;
+	input clk, write_en, read_en;
 	output [31:0] data_out;
 	reg   [31:0]data_out;
 	
 	reg  aes_en;
 	wire  d128;
 	wire [127:0] e128_out;
-  reg [127:0] e128_in;
+	reg [127:0] e128_in;
 	
 	//reg [DATA_WIDTH-1:0] ram[2**ADDR_WIDTH-1:0];
 	reg [31:0] ram[127:0];
@@ -18,16 +18,13 @@ module ram_128x32(data_in, addr, en, action, clk, data_out);
 	
 	always @ (posedge clk)
 	begin
-	  aes_en = 0;
-	  if(en)
-		  begin
-		    //AES start
-		    if(addr%6 == 0 && addr%12 != 0)  aes_en = 1;
-		    //Write
-		    if(action)  ram[addr] <= data_in;
-		    //Read
-		    else        data_out <= ram[addr];
-		  end
+		aes_en = 0;
+		if(write_en)	
+		begin
+			ram[addr] <= data_in;
+			if(addr%6 == 0 && addr%12 != 0)  aes_en = 1;
+		end
+		
 		if(d128)
 	    begin
 	       ram[addr+1] <= {1'b1,e128_out[27:21],1'b1,e128_out[20:14],1'b1,e128_out[13:7],1'b1,e128_out[6:0]};
@@ -46,6 +43,11 @@ module ram_128x32(data_in, addr, en, action, clk, data_out);
 		                       ram[addr-3][30:24],ram[addr-3][22:16],ram[addr-3][14:8],ram[addr-3][6:0],
 		                       ram[addr-4][30:24],ram[addr-4][22:16],ram[addr-4][14:8],ram[addr-4][6:0],
 		                       ram[addr-5][30:24],ram[addr-5][22:16],ram[addr-5][14:8],ram[addr-5][6:0]};
+	end
+	
+	always@(posedge clk)
+	begin
+		if(read_en)	data_out <= ram[addr];
 	end
 	
 	//1package輸出32bit

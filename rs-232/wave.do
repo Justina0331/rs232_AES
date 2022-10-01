@@ -27,9 +27,7 @@ add wave -noupdate -radix unsigned /aes_data_tb/f_rs232/tx/ps
 add wave -noupdate -divider RX
 add wave -noupdate /aes_data_tb/f_rs232/rx/start
 add wave -noupdate /aes_data_tb/f_rs232/rx/rst_start
-add wave -noupdate /aes_data_tb/f_rs232/rx/en
 add wave -noupdate /aes_data_tb/f_rs232/rx/tx_start
-add wave -noupdate -radix hexadecimal /aes_data_tb/f_rs232/rx/data_out
 add wave -noupdate /aes_data_tb/f_rs232/rx/rst_cnt_1_5
 add wave -noupdate -radix decimal /aes_data_tb/f_rs232/rx/cnt_1_5
 add wave -noupdate /aes_data_tb/f_rs232/rx/delta_time_1_5_flag
@@ -47,14 +45,26 @@ add wave -noupdate /aes_data_tb/f_rs232/rx/watch_dog
 add wave -noupdate /aes_data_tb/f_rs232/rx/packet_loss
 add wave -noupdate -radix unsigned /aes_data_tb/f_rs232/rx/ps
 add wave -noupdate -divider AES
+add wave -noupdate /aes_data_tb/f_rs232/rx/RAM/aes_en
 add wave -noupdate -radix hexadecimal /aes_data_tb/f_rs232/rx/RAM/aes/e128_in
 add wave -noupdate -radix hexadecimal /aes_data_tb/f_rs232/rx/RAM/aes/e128_out
 add wave -noupdate -radix hexadecimal /aes_data_tb/f_rs232/rx/RAM/aes/encrypted128
 add wave -noupdate -radix hexadecimal /aes_data_tb/f_rs232/rx/RAM/aes/decrypted128
 add wave -noupdate -divider RAM
-add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[106]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[109]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[110]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[111]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[112]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[113]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[114]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[115]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[116]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[117]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[118]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[119]}
+add wave -noupdate -radix hexadecimal {/aes_data_tb/f_rs232/rx/RAM/ram[120]}
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {1049345 ps} 0}
+WaveRestoreCursors {{Cursor 1} {1675750 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 133
@@ -70,4 +80,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {994401 ps} {1114209 ps}
+WaveRestoreZoom {446248 ps} {2363176 ps}

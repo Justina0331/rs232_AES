@@ -114,15 +114,16 @@ module RX_code(data_out, data_in, load_port_b, tx_start, clk, rst, ram_out);
 	end
 	
 	//RAM
+	reg write_en;
+	reg read_en;
 	assign addr = data_out[14:8];
-	ram_128x32 RAM(data_out[47:16], addr, en, data_out[15], clk, ram_out);
+	ram_128x32 RAM(data_out[47:16], addr, write_en, read_en, clk, ram_out);
 	
 	//TX_start
 	//data_out[15]=0 -> tx傳輸資料
-	reg load_tx;
 	always @(posedge clk)
 	begin
-		if(load_tx)	tx_start <= 1;
+		if(read_en)	tx_start <= 1;
 		else		tx_start <= 0;
 	end
 	
@@ -163,8 +164,9 @@ module RX_code(data_out, data_in, load_port_b, tx_start, clk, rst, ram_out);
 		rst_start = 0;
 		rst_data = 0;
 		en = 0;
-		load_tx = 0;
-		rst_counter = 0;
+		write_en = 0;
+		read_en = 0;
+
 		case(ps)
 			T0:
 			begin
@@ -262,96 +264,15 @@ module RX_code(data_out, data_in, load_port_b, tx_start, clk, rst, ram_out);
 				//check last byte 03?
 				if(data_out[63:56] == 8'h03)
 				begin
-					en = 1;
-					if(~data_out[15])	load_tx = 1;
+					if(data_out[15])  write_en = 1;
+					else					read_en = 1;
 				end
 				ns = T1;
 				
 				if(packet_loss) ns = T1;
 			end
 			
-			/*T1://reset counter
-			begin
-				ns = T2;
-				load_package = 1;
-				rst_counter = 1;
-			end
-			T2://正在傳送第1組byte
-			begin
-				ns = T2;
-				if(check_q >= 18) ns = T3;
-				if(packet_loss) ns = T0;
-			end
-			T3://檢查第1組byte是否為02
-			begin
-				ns = T3;
-				if(~start) 
-				begin
-				//判斷使否為02
-				////YES////
-				if(data_out[7:0] == 8'h02)
-				begin
-					restart = 1;
-					ns = T4;
-				end
-				////NO////
-				else						ns = T0;
-			end
-			if(packet_loss) ns = T0;
-			end
-			T4://reset counter
-			begin
-				ns = T5;
-				rst_counter = 1;
-			end
-			T5://等待2~8組bytes開始
-			begin
-				ns = T5;
-				if(start)  ns = T6;
-				if(packet_loss) ns = T0;
-			end
-			T6://reset counter
-			begin
-				ns = T7;
-				rst_counter = 1;
-			end
-			T7://正在傳送byte
-			begin
-				ns = T7;
-				if(check_q >= 18) ns = T8;
-				if(packet_loss) ns = T0;
-			end
-			T8://檢查是否傳送完8組bytes
-			begin
-				ns = T8;
-				if(~start) //判斷package_q是傳送完畢
-				begin
-					////YES////
-					if(package_q >= 7 & data_out[63:56] == 8'h03)
-					begin
-						restart = 1;
-						en = 1;
-						ns = T9;
-					end
-					if(package_q >= 7)
-					begin
-						restart = 1;
-						ns = T9;
-					end
-					////NO////
-					else
-					begin
-						restart = 1;
-						ns = T4;
-					end
-				end
-				if(packet_loss) ns = T0;
-			end
-			T9:
-			begin
-				load_finish = 1;
-				ns = T0;
-			end*/
+
 		endcase 
   end
     

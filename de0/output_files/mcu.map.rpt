@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mcu
-Sat Oct 01 01:33:28 2022
+Sat Oct 01 23:00:16 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,22 +13,26 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |mcu|rs232:f_rs232|TX_code:tx|ps
-  9. State Machine - |mcu|rs232:f_rs232|RX_code:rx|ps
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx
- 14. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Encrypt:a
- 15. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Encrypt:a|keyExpansion:ke
- 16. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Decrypt:a2
- 17. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Decrypt:a2|keyExpansion:ke
- 18. Parameter Settings for User Entity Instance: rs232:f_rs232|TX_code:tx
- 19. Port Connectivity Checks: "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes"
- 20. Port Connectivity Checks: "rs232:f_rs232|RX_code:rx"
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
- 23. Analysis & Synthesis Suppressed Messages
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |mcu|rs232:f_rs232|TX_code:tx|ps
+ 10. State Machine - |mcu|rs232:f_rs232|RX_code:rx|ps
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1|altsyncram_brd1:auto_generated
+ 15. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx
+ 16. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Encrypt:a
+ 17. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Encrypt:a|keyExpansion:ke
+ 18. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Decrypt:a2
+ 19. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Decrypt:a2|keyExpansion:ke
+ 20. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1
+ 21. Parameter Settings for User Entity Instance: rs232:f_rs232|TX_code:tx
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes"
+ 24. Port Connectivity Checks: "rs232:f_rs232|RX_code:rx"
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -54,18 +58,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Oct 01 01:33:28 2022      ;
+; Analysis & Synthesis Status        ; Successful - Sat Oct 01 23:00:16 2022      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; mcu                                        ;
 ; Top-level Entity Name              ; mcu                                        ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 7,263                                      ;
-;     Total combinational functions  ; 3,166                                      ;
-;     Dedicated logic registers      ; 4,333                                      ;
-; Total registers                    ; 4333                                       ;
+; Total logic elements               ; 298                                        ;
+;     Total combinational functions  ; 297                                        ;
+;     Dedicated logic registers      ; 205                                        ;
+; Total registers                    ; 205                                        ;
 ; Total pins                         ; 54                                         ;
 ; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0                                          ;
+; Total memory bits                  ; 4,096                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
 ; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
@@ -167,41 +171,50 @@ applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ; < 0.1%      ;
-;     Processors 5-8         ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                  ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
-; subBytes.v                       ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/subBytes.v          ;         ;
-; shiftRows.v                      ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/shiftRows.v         ;         ;
-; sbox.v                           ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/sbox.v              ;         ;
-; mixColumns.v                     ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/mixColumns.v        ;         ;
-; keyExpansion.v                   ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/keyExpansion.v      ;         ;
-; inverseSubBytes.v                ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/inverseSubBytes.v   ;         ;
-; inverseShiftRows.v               ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/inverseShiftRows.v  ;         ;
-; inverseSbox.v                    ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/inverseSbox.v       ;         ;
-; inverseMixColumns.v              ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/inverseMixColumns.v ;         ;
-; encryptRound.v                   ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/encryptRound.v      ;         ;
-; decryptRound.v                   ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/decryptRound.v      ;         ;
-; AES_Encrypt.v                    ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/AES_Encrypt.v       ;         ;
-; AES_Decrypt.v                    ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/AES_Decrypt.v       ;         ;
-; AES.v                            ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/AES.v               ;         ;
-; addRoundKey.v                    ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/addRoundKey.v       ;         ;
-; ram_128x32.v                     ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/ram_128x32.v        ;         ;
-; TX_code.v                        ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/TX_code.v           ;         ;
-; RX_code.v                        ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/RX_code.v           ;         ;
-; rs232.v                          ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/rs232.v             ;         ;
-; mcu.v                            ; yes             ; User Verilog HDL File  ; E:/user/just/Documents/GitHub/rs232_AES/de0/mcu.v               ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+; subBytes.v                       ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/subBytes.v               ;         ;
+; shiftRows.v                      ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/shiftRows.v              ;         ;
+; sbox.v                           ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/sbox.v                   ;         ;
+; mixColumns.v                     ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/mixColumns.v             ;         ;
+; keyExpansion.v                   ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/keyExpansion.v           ;         ;
+; inverseSubBytes.v                ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/inverseSubBytes.v        ;         ;
+; inverseShiftRows.v               ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/inverseShiftRows.v       ;         ;
+; inverseSbox.v                    ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/inverseSbox.v            ;         ;
+; inverseMixColumns.v              ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/inverseMixColumns.v      ;         ;
+; encryptRound.v                   ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/encryptRound.v           ;         ;
+; decryptRound.v                   ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/decryptRound.v           ;         ;
+; AES_Encrypt.v                    ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/AES_Encrypt.v            ;         ;
+; AES_Decrypt.v                    ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/AES_Decrypt.v            ;         ;
+; AES.v                            ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/AES.v                    ;         ;
+; addRoundKey.v                    ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/addRoundKey.v            ;         ;
+; ram_128x32.v                     ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/ram_128x32.v             ;         ;
+; TX_code.v                        ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/TX_code.v                ;         ;
+; RX_code.v                        ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/RX_code.v                ;         ;
+; rs232.v                          ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/rs232.v                  ;         ;
+; mcu.v                            ; yes             ; User Verilog HDL File        ; E:/user/just/Documents/GitHub/rs232_AES/de0/mcu.v                    ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/users/taiju/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/users/taiju/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/users/taiju/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/users/taiju/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/users/taiju/quartus/libraries/megafunctions/aglobal131.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/users/taiju/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/users/taiju/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/users/taiju/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/users/taiju/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_brd1.tdf           ; yes             ; Auto-Generated Megafunction  ; E:/user/just/Documents/GitHub/rs232_AES/de0/db/altsyncram_brd1.tdf   ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -209,43 +222,55 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 7,263     ;
+; Estimated Total logic elements              ; 298       ;
 ;                                             ;           ;
-; Total combinational functions               ; 3166      ;
+; Total combinational functions               ; 297       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2889      ;
-;     -- 3 input functions                    ; 63        ;
-;     -- <=2 input functions                  ; 214       ;
+;     -- 4 input functions                    ; 177       ;
+;     -- 3 input functions                    ; 31        ;
+;     -- <=2 input functions                  ; 89        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 3094      ;
+;     -- normal mode                          ; 225       ;
 ;     -- arithmetic mode                      ; 72        ;
 ;                                             ;           ;
-; Total registers                             ; 4333      ;
-;     -- Dedicated logic registers            ; 4333      ;
+; Total registers                             ; 205       ;
+;     -- Dedicated logic registers            ; 205       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 54        ;
+; Total memory bits                           ; 4096      ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 4333      ;
-; Total fan-out                               ; 25258     ;
-; Average fan-out                             ; 3.32      ;
+; Maximum fan-out                             ; 237       ;
+; Total fan-out                               ; 2031      ;
+; Average fan-out                             ; 3.16      ;
 +---------------------------------------------+-----------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                  ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
-; |mcu                       ; 3166 (0)          ; 4333 (0)     ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |mcu                                         ; work         ;
-;    |rs232:f_rs232|         ; 3166 (25)         ; 4333 (8)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232                           ; work         ;
-;       |RX_code:rx|         ; 3060 (185)        ; 4258 (130)   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx                ; work         ;
-;          |ram_128x32:RAM|  ; 2875 (2875)       ; 4128 (4128)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM ; work         ;
-;       |TX_code:tx|         ; 81 (81)           ; 67 (67)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|TX_code:tx                ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                               ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Library Name ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+--------------+
+; |mcu                                            ; 297 (0)           ; 205 (0)      ; 4096        ; 0            ; 0       ; 0         ; 54   ; 0            ; |mcu                                                                                                 ; work         ;
+;    |rs232:f_rs232|                              ; 297 (25)          ; 205 (8)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232                                                                                   ; work         ;
+;       |RX_code:rx|                              ; 191 (191)         ; 130 (130)    ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx                                                                        ; work         ;
+;          |ram_128x32:RAM|                       ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM                                                         ; work         ;
+;             |altsyncram:ram[0][31]__1|          ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1                                ; work         ;
+;                |altsyncram_brd1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1|altsyncram_brd1:auto_generated ; work         ;
+;       |TX_code:tx|                              ; 81 (81)           ; 67 (67)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|TX_code:tx                                                                        ; work         ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                               ;
++------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                       ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1|altsyncram_brd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 128          ; 32           ; 128          ; 32           ; 4096 ; None ;
++------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 
 
 Encoding Type:  One-Hot
@@ -308,31 +333,40 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4333  ;
+; Total registers                              ; 205   ;
 ; Number of registers using Synchronous Clear  ; 100   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4264  ;
+; Number of registers using Clock Enable       ; 136   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bits[4]             ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bytes[1]            ;
-; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|data_out[17]               ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bits[3]             ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bytes[4]            ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|watch_dog[17]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|data_r[9]                  ;
-; 128:1              ; 32 bits   ; 2720 LEs      ; 2720 LEs             ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram_128x32:RAM|data_out[4] ;
-; 13:1               ; 8 bits    ; 64 LEs        ; 24 LEs               ; 40 LEs                 ; Yes        ; |mcu|rs232:f_rs232|port_b_out[2]                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bits[4]  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bytes[4] ;
+; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|data_out[32]    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bits[2]  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bytes[0] ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|watch_dog[19]   ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|data_r[4]       ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 24 LEs               ; 40 LEs                 ; Yes        ; |mcu|rs232:f_rs232|port_b_out[0]              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|write_en        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1|altsyncram_brd1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                       ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                        ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -401,6 +435,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1 ;
++------------------------------------+----------------------+---------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                              ;
++------------------------------------+----------------------+---------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                           ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                    ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                           ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                           ;
+; WIDTH_A                            ; 32                   ; Untyped                                           ;
+; WIDTHAD_A                          ; 7                    ; Untyped                                           ;
+; NUMWORDS_A                         ; 128                  ; Untyped                                           ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                           ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                           ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                           ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                           ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                           ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                           ;
+; WIDTH_B                            ; 32                   ; Untyped                                           ;
+; WIDTHAD_B                          ; 7                    ; Untyped                                           ;
+; NUMWORDS_B                         ; 128                  ; Untyped                                           ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                           ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                           ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                           ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                           ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                           ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                           ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                           ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                           ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                           ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                           ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                           ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                           ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                           ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                           ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                           ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                           ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                           ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                           ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                           ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                           ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                           ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                           ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                           ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                           ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                           ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                           ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                           ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                           ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                           ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                           ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                           ;
+; DEVICE_FAMILY                      ; Cyclone III          ; Untyped                                           ;
+; CBXI_PARAMETER                     ; altsyncram_brd1      ; Untyped                                           ;
++------------------------------------+----------------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: rs232:f_rs232|TX_code:tx ;
 +----------------+-------+----------------------------------------------+
@@ -418,6 +513,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; T9             ; 9     ; Signed Integer                               ;
 +----------------+-------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                             ;
++-------------------------------------------+------------------------------------------------------------------+
+; Name                                      ; Value                                                            ;
++-------------------------------------------+------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                ;
+; Entity Instance                           ; rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                        ;
+;     -- WIDTH_A                            ; 32                                                               ;
+;     -- NUMWORDS_A                         ; 128                                                              ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                     ;
+;     -- WIDTH_B                            ; 32                                                               ;
+;     -- NUMWORDS_B                         ; 128                                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                           ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                     ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                             ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                        ;
++-------------------------------------------+------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -444,7 +559,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -454,7 +569,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Oct 01 01:33:13 2022
+    Info: Processing started: Sat Oct 01 23:00:12 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mcu -c mcu
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file subbytes.v
@@ -502,7 +617,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file mcu.v
     Info (12023): Found entity 1: mcu
 Warning (10227): Verilog HDL Port Declaration warning at rs232.v(11): data type declaration for "port_b_out" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at rs232.v(4): see declaration for object "port_b_out"
-Warning (10227): Verilog HDL Port Declaration warning at RX_code.v(131): data type declaration for "data_out" declares packed dimensions but the port declaration declaration does not
+Warning (10227): Verilog HDL Port Declaration warning at RX_code.v(132): data type declaration for "data_out" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at RX_code.v(4): see declaration for object "data_out"
 Warning (10227): Verilog HDL Port Declaration warning at RX_code.v(9): data type declaration for "ram_out" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at RX_code.v(4): see declaration for object "ram_out"
@@ -516,8 +631,8 @@ Warning (10034): Output port "HEX3" at mcu.v(15) has no driver
 Warning (10034): Output port "LED[9..8]" at mcu.v(18) has no driver
 Info (12128): Elaborating entity "rs232" for hierarchy "rs232:f_rs232"
 Info (12128): Elaborating entity "RX_code" for hierarchy "rs232:f_rs232|RX_code:rx"
-Warning (10036): Verilog HDL or VHDL warning at RX_code.v(7): object "rst_counter" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at RX_code.v(8): object "load_finish" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at RX_code.v(14): object "en" assigned a value but never read
 Warning (10230): Verilog HDL assignment warning at RX_code.v(58): truncated value with size 32 to match size of target (13)
 Warning (10230): Verilog HDL assignment warning at RX_code.v(78): truncated value with size 32 to match size of target (13)
 Warning (10230): Verilog HDL assignment warning at RX_code.v(93): truncated value with size 32 to match size of target (21)
@@ -539,6 +654,26 @@ Info (12128): Elaborating entity "inverseShiftRows" for hierarchy "rs232:f_rs232
 Info (12128): Elaborating entity "inverseSubBytes" for hierarchy "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Decrypt:a2|decryptRound:loop[1].dr|inverseSubBytes:s"
 Info (12128): Elaborating entity "inverseSbox" for hierarchy "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Decrypt:a2|decryptRound:loop[1].dr|inverseSubBytes:s|inverseSbox:sub_Bytes[0].s"
 Info (12128): Elaborating entity "inverseMixColumns" for hierarchy "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|AES:aes|AES_Decrypt:a2|decryptRound:loop[1].dr|inverseMixColumns:m"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1"
+Info (12130): Elaborated megafunction instantiation "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1"
+Info (12133): Instantiated megafunction "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "7"
+    Info (12134): Parameter "NUMWORDS_A" = "128"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "7"
+    Info (12134): Parameter "NUMWORDS_B" = "128"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_brd1.tdf
+    Info (12023): Found entity 1: altsyncram_brd1
+Info (12128): Elaborating entity "altsyncram_brd1" for hierarchy "rs232:f_rs232|RX_code:rx|ram_128x32:RAM|altsyncram:ram[0][31]__1|altsyncram_brd1:auto_generated"
 Info (12128): Elaborating entity "TX_code" for hierarchy "rs232:f_rs232|TX_code:tx"
 Warning (10230): Verilog HDL assignment warning at TX_code.v(68): truncated value with size 32 to match size of target (13)
 Warning (10230): Verilog HDL assignment warning at TX_code.v(88): truncated value with size 32 to match size of target (5)
@@ -589,15 +724,16 @@ Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "BTN[1]"
     Warning (15610): No output dependent on input pin "BTN[2]"
-Info (21057): Implemented 7318 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 384 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 39 output pins
-    Info (21061): Implemented 7264 logic cells
+    Info (21061): Implemented 298 logic cells
+    Info (21064): Implemented 32 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 61 warnings
-    Info: Peak virtual memory: 4707 megabytes
-    Info: Processing ended: Sat Oct 01 01:33:28 2022
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Peak virtual memory: 4714 megabytes
+    Info: Processing ended: Sat Oct 01 23:00:16 2022
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +------------------------------------------+
