@@ -1,19 +1,22 @@
-module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
+module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_data_out);
 
 	input  data_in, clk, rst;
-	output load_port_b, tx_start, ram_out;
+	output load_port_b, tx_start, ram_data_out;
 	
 	reg  s, d;			       //正負元檢查
 	reg  start, rst_start, rst_data, rst_counter, package_start, tx_start, finish;
 	reg  load_port_b, load_package, load_finish, packet_loss, idle;
-	wire [31:0]ram_out;
+	wire [31:0]ram_data_out;
 	reg  [5:0]check_q, package_q;
 	reg  [12:0]counter;
-    reg  [3:0]ps, ns;
+    reg  [3:0]ps, ns, ram_ps, ram_ns;
     reg  [20:0]watch_dog;
     reg  en;          //控制讀出/寫入
     wire [6:0]addr;   //讀出/寫入位置
-  
+	wire [31:0]ram_data_in;   //讀出/寫入資料
+	wire [127:0] aes_in;
+	wire [127:0] aes_out;
+	
 	parameter T0 = 0;
 	parameter T1 = 1;
 	parameter T2 = 2;
@@ -113,19 +116,119 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 		else if (inc_cnt_rx_bytes)	cnt_rx_bytes <= cnt_rx_bytes + 1;
 	end
 	
+	//紀錄接收e128_in
+	reg [4:0] cnt_aes_packages;
+	reg inc_cnt_aes_packages;
+	reg rst_cnt_aes_packages;
+	reg [127:0] e128_in;
+	always @(posedge clk)
+	begin
+		if(rst | rst_cnt_aes_packages)	cnt_aes_packages <= 1;
+		else if (inc_cnt_aes_packages)	cnt_aes_packages <= cnt_aes_packages + 1;
+	end
+	
+	//將接收的aes_out存入e128_out
+	reg	rst_e128_out;
+	reg shift_e128_out;
+	reg aes_write_finished;
+	reg [31:0] aes_write_data;
+	reg [127:0] e128_out;
+	always @(posedge clk)
+	begin
+		if(rst | rst_e128_out)	
+		begin
+			e128_out <= 0;
+			aes_write_data <= 0;
+		end
+		else if(aes_write_finished)	//if finished
+		begin
+			aes_write_data <= 32'hffffffff;
+		end
+		else if(shift_e128_out)	//shift encrypted data
+		begin
+			if(cnt_aes_packages == 1)	
+			begin
+				e128_out <= {aes_out[27:0],aes_out[127:28]};
+				aes_write_data <= {1'b1,aes_out[27:21],1'b1,aes_out[20:14],1'b1,aes_out[13:7],1'b1,aes_out[6:0]};
+			end
+			else if(cnt_aes_packages == 5)	
+			begin
+				aes_write_data <= {1'b1,7'b0,1'b1,5'b0,e128_out[15:14],1'b1,e128_out[13:7],1'b1,e128_out[6:0]};
+			end
+			else	
+			begin
+				e128_out <= {aes_out[27:0],e128_out[127:28]};
+				aes_write_data <= {1'b1,e128_out[27:21],1'b1,e128_out[20:14],1'b1,e128_out[13:7],1'b1,e128_out[6:0]};
+			end
+		end
+	end
+	
+	
+	//AES
+	reg  aes_en;
+	reg	 aes_flag;
+	wire  d128;
+	reg load_aes_in;
+	assign aes_in = load_aes_in ? e128_in : aes_in;
+	AES aes(aes_en, aes_in, aes_out, d128);
+	
+	//check_addr
+	reg	rst_check_addr;
+	reg [6:0] check_addr;
+	always @(posedge clk)
+	begin
+		if(rst_check_addr) check_addr <= 0;
+		else if(aes_flag)  check_addr <= addr;
+	end
+	
 	//RAM
-	reg write_en;
-	reg read_en;
+	reg write_data_en;
+	reg read_data_en;
+	reg load_ram_data_in;
+	reg load_ram_data_out;
+	reg load_addr;
+	reg load_aes_write_data;
+	reg load_aes_read_addr;
+	reg load_aes_write_addr;
+	reg write_aes_en;
+	reg read_aes_en;
 	reg [63:0] data_out;
-	assign addr = data_out[14:8];
-	ram_128x32 RAM(data_out[47:16], addr, write_en, read_en, clk, ram_out);
+	wire [31:0]ram_out;
+	assign addr = load_addr ? data_out[14:8] : (load_aes_read_addr ? check_addr-(6-cnt_aes_packages) :(load_aes_write_addr ? check_addr+cnt_aes_packages : addr));
+	assign ram_data_in = load_ram_data_in ? data_out[47:16] : (load_aes_write_data ? aes_write_data : ram_data_in);
+	assign ram_data_out = load_ram_data_out ? ram_out : ram_data_out;
+	
+	ram_128x32 RAM(ram_data_in, addr, (write_data_en | write_aes_en), (read_data_en | read_aes_en), clk, ram_out);
+
+		
+	//將接收的ram_out存入e128_in
+	reg	rst_e128_in;
+	reg shift_e128_in;
+	always @(posedge clk)
+	begin
+		if(rst | rst_e128_in)	e128_in <= 0;
+		else if(shift_e128_in)	
+		begin
+			if(cnt_aes_packages == 5)	e128_in <= {ram_out[17:16],ram_out[14:8],ram_out[6:0],e128_in[127:16]};
+			else	e128_in <= {ram_out[30:24],ram_out[22:16],ram_out[14:8],ram_out[6:0],e128_in[127:28]};
+		end
+	end
+	
 	
 	//TX_start
 	//data_out[15]=0 -> tx傳輸資料
 	always @(posedge clk)
 	begin
-		if(read_en)	tx_start <= 1;
-		else		tx_start <= 0;
+		if(read_data_en)	
+		begin
+			tx_start <= 1;
+			load_ram_data_out <= 1;
+		end
+		else
+		begin
+			tx_start <= 0;
+			load_ram_data_out <= 0;
+		end
 	end
 	
 	//將接收的bit存入data
@@ -139,8 +242,119 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 	//States
 	always@(posedge clk)
 	begin
-		if(rst) ps <= T0;
-		else    ps <= ns;
+		if(rst) 
+		begin
+			ps <= T0;
+			ram_ps <= T0;
+		end
+		else    
+		begin
+			ps <= ns;
+			ram_ps <= ram_ns;
+		end
+	end
+	
+	//RAM讀寫fsm
+	always@(*)
+	begin
+		ram_ns = T0;
+		
+		rst_cnt_aes_packages = 0;
+		inc_cnt_aes_packages = 0;
+		
+		rst_e128_in = 0;
+		shift_e128_in = 0;
+		
+		load_aes_in = 0;
+		aes_en = 0;
+		
+		load_aes_write_data = 0;
+		load_aes_read_addr = 0;
+		load_aes_write_addr = 0;
+		write_aes_en = 0;
+		read_aes_en = 0;
+		
+		rst_e128_out = 0;
+		shift_e128_out = 0;
+		
+		aes_write_finished = 0;
+		
+		rst_check_addr = 0;
+		
+		case(ram_ps)
+			T0:
+			begin
+				ram_ns = T1;
+			end
+			T1://wait_aes_flag
+			begin
+				if (aes_flag)
+				begin
+					rst_cnt_aes_packages = 1;
+					rst_e128_in = 1;
+					ram_ns = T2;
+				end
+				else 
+				begin
+					rst_check_addr = 1;
+					ram_ns = T1;
+				end
+			end
+			T2://receive 1 e128_in package from RAM
+			begin
+				load_aes_read_addr = 1;
+				read_aes_en = 1;
+				ram_ns = T3;
+			end
+			T3://put the package into e128_in
+			begin
+				shift_e128_in = 1;
+				inc_cnt_aes_packages = 1;
+				ram_ns = T4;
+			end
+			T4://count 5 e128_in packages
+			begin
+				if (cnt_aes_packages > 5) ram_ns = T5;
+				else 					  ram_ns = T2;
+			end
+			T5://have complete aes input and output
+			begin
+				aes_en = 1;
+				load_aes_in = 1;
+				rst_cnt_aes_packages = 1;
+				
+				ram_ns = T6;
+			end
+			T6://adjust aes_write_addr
+			begin
+				load_aes_write_addr = 1;
+				ram_ns = T7;
+			end
+			T7://shift complete aes output to get correct aes_write_data package
+			begin
+				shift_e128_out = 1;
+				inc_cnt_aes_packages = 1;
+				ram_ns = T8;
+			end
+			T8://write the aes_write_data package back to RAM &count times
+			begin
+				load_aes_write_data = 1;
+				write_aes_en = 1;
+				if (cnt_aes_packages > 5) 
+				begin
+					aes_write_finished = 1;
+					ram_ns = T9;
+				end
+				else 	ram_ns = T6;
+			end
+			T9://write aes_write_finished
+			begin
+				write_aes_en = 1;
+				load_aes_write_addr = 1;
+				ram_ns = T1;
+			end
+			
+		endcase 
 	end
 
 	always@(*)
@@ -164,9 +378,12 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 		rst_start = 0;
 		rst_data = 0;
 		en = 0;
-		write_en = 0;
-		read_en = 0;
-
+		write_data_en = 0;
+		read_data_en = 0;
+		load_ram_data_in = 0;
+		load_addr = 0;
+		aes_flag = 0;
+		
 		case(ps)
 			T0:
 			begin
@@ -264,17 +481,40 @@ module RX_code(data_in, load_port_b, tx_start, clk, rst, ram_out);
 				//check last byte 03?
 				if(data_out[63:56] == 8'h03)
 				begin
-					if(data_out[15])  write_en = 1;
-					else					read_en = 1;
+					if(data_out[15])  
+					begin
+						if(addr%12 > 0 && addr%12 <= 6)
+						begin
+							write_data_en = 1;
+							if(addr%6 == 0 && addr%12 != 0)  ns = T10;
+							else ns = T1;
+						end
+					end
+					else	
+					begin
+						read_data_en = 1;
+						ns = T1;
+					end
+					
+					load_ram_data_in = 1;
+					load_addr = 1;
 				end
+				else ns = T1;
+				
+				if(packet_loss) ns = T1;
+			end
+			T10://AES FLAG
+			begin
+				aes_flag = 1;
 				ns = T1;
 				
 				if(packet_loss) ns = T1;
 			end
-			
 
 		endcase 
   end
+  
+  
     
 endmodule
 

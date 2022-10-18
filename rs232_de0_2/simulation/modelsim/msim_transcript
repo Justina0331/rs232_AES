@@ -1,0 +1,398 @@
+# Reading C:/Users/taiju/modelsim_ase/tcl/vsim/pref.tcl 
+# do mcu_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\Users\taiju\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\Users\taiju\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/rs232.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module rs232
+# 
+# Top level modules:
+# 	rs232
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/TX_code.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module TX_code
+# 
+# Top level modules:
+# 	TX_code
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/RX_code.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RX_code
+# 
+# Top level modules:
+# 	RX_code
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_sbox.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_sbox
+# 
+# Top level modules:
+# 	aes_sbox
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_key_mem.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_key_mem
+# 
+# Top level modules:
+# 	aes_key_mem
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_inv_sbox.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_inv_sbox
+# 
+# Top level modules:
+# 	aes_inv_sbox
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_encipher_block.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_encipher_block
+# 
+# Top level modules:
+# 	aes_encipher_block
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_decipher_block.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_decipher_block
+# 
+# Top level modules:
+# 	aes_decipher_block
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_core.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_core
+# 
+# Top level modules:
+# 	aes_core
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mcu
+# 
+# Top level modules:
+# 	mcu
+# 
+do mcu_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/rs232.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module rs232
+# 
+# Top level modules:
+# 	rs232
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/TX_code.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module TX_code
+# 
+# Top level modules:
+# 	TX_code
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/RX_code.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RX_code
+# 
+# Top level modules:
+# 	RX_code
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_sbox.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_sbox
+# 
+# Top level modules:
+# 	aes_sbox
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_key_mem.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_key_mem
+# 
+# Top level modules:
+# 	aes_key_mem
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_inv_sbox.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_inv_sbox
+# 
+# Top level modules:
+# 	aes_inv_sbox
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_encipher_block.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_encipher_block
+# 
+# Top level modules:
+# 	aes_encipher_block
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_decipher_block.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_decipher_block
+# 
+# Top level modules:
+# 	aes_decipher_block
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/aes_core.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_core
+# 
+# Top level modules:
+# 	aes_core
+# vlog -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 {E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mcu
+# 
+# Top level modules:
+# 	mcu
+# 
+do compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# ../../
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module rs232
+# 
+# Top level modules:
+# 	rs232
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RX_code
+# 
+# Top level modules:
+# 	RX_code
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module TX_code
+# 
+# Top level modules:
+# 	TX_code
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_core
+# 
+# Top level modules:
+# 	aes_core
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_decipher_block
+# 
+# Top level modules:
+# 	aes_decipher_block
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_encipher_block
+# 
+# Top level modules:
+# 	aes_encipher_block
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_inv_sbox
+# 
+# Top level modules:
+# 	aes_inv_sbox
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_key_mem
+# 
+# Top level modules:
+# 	aes_key_mem
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_sbox
+# 
+# Top level modules:
+# 	aes_sbox
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_data_tb
+# 
+# Top level modules:
+# 	aes_data_tb
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# vsim -voptargs=\"+acc\" work.aes_data_tb 
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.aes_core
+# Loading work.aes_encipher_block
+# Loading work.aes_decipher_block
+# Loading work.aes_inv_sbox
+# Loading work.aes_key_mem
+# Loading work.aes_sbox
+# Loading work.TX_code
+# ** Fatal: (vsim-3365) ../../aes_data_tb.v(7): Too many port connections. Expected 4, found 8.
+#    Time: 0 ps  Iteration: 0  Instance: /aes_data_tb/f_rs232 File: ../../rs232.v
+# FATAL ERROR while loading design
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./sim.do PAUSED at line 2
+# Error opening E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/simulation/modelsim/aes_data_tb.v
+# Path name 'E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/simulation/modelsim/aes_data_tb.v' doesn't exist.
+do compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# ../../
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module rs232
+# 
+# Top level modules:
+# 	rs232
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RX_code
+# 
+# Top level modules:
+# 	RX_code
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module TX_code
+# 
+# Top level modules:
+# 	TX_code
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_core
+# 
+# Top level modules:
+# 	aes_core
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_decipher_block
+# 
+# Top level modules:
+# 	aes_decipher_block
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_encipher_block
+# 
+# Top level modules:
+# 	aes_encipher_block
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_inv_sbox
+# 
+# Top level modules:
+# 	aes_inv_sbox
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_key_mem
+# 
+# Top level modules:
+# 	aes_key_mem
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_sbox
+# 
+# Top level modules:
+# 	aes_sbox
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_data_tb
+# 
+# Top level modules:
+# 	aes_data_tb
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# vsim -voptargs=\"+acc\" work.aes_data_tb 
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.aes_core
+# Loading work.aes_encipher_block
+# Loading work.aes_decipher_block
+# Loading work.aes_inv_sbox
+# Loading work.aes_key_mem
+# Loading work.aes_sbox
+# Loading work.TX_code
+# ** Warning: (vsim-3015) ../../RX_code.v(145): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'encdec'. The port definition is at: ../../aes_core.v(46).
+# 
+#         Region: /aes_data_tb/f_rs232/rx/aes
+# ** Warning: (vsim-3015) ../../RX_code.v(145): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'keylen'. The port definition is at: ../../aes_core.v(52).
+# 
+#         Region: /aes_data_tb/f_rs232/rx/aes
+# .main_pane.structure.interior.cs.body.struct .main_pane.wave.interior.cs.body.pw.wf .main_pane.objects.interior.cs.body.tree
+# ** Error: (vish-4014) No objects found matching '/aes_data_tb/port_b_out'.
+# Executing ONERROR command at macro ./wave.do line 4
+# ** Error: (vish-4014) No objects found matching '/aes_data_tb/f_rs232/rx/load_aes_read_addr'.
+# Executing ONERROR command at macro ./wave.do line 48
+# ** Error: (vish-4014) No objects found matching '/aes_data_tb/f_rs232/rx/read_aes_en'.
+# Executing ONERROR command at macro ./wave.do line 49
+# ** Error: (vish-4014) No objects found matching '/aes_data_tb/f_rs232/rx/write_aes_en'.
+# Executing ONERROR command at macro ./wave.do line 53
+# ** Error: (vish-4014) No objects found matching '/aes_data_tb/f_rs232/rx/read_aes_en'.
+# Executing ONERROR command at macro ./wave.do line 55
+# ** Error: (vish-4014) No objects found matching '/aes_data_tb/f_rs232/rx/aes_en'.
+# Executing ONERROR command at macro ./wave.do line 56
+# ** Error: (vish-4014) No objects found matching '/aes_data_tb/f_rs232/rx/load_finish'.
+# Executing ONERROR command at macro ./wave.do line 59
+# ** Error: (vish-4014) No objects found matching '/aes_data_tb/f_rs232/rx/load_aes_write_data'.
+# Executing ONERROR command at macro ./wave.do line 60
+# Break in Module aes_data_tb at ../../aes_data_tb.v line 983
+# Simulation Breakpoint: Break in Module aes_data_tb at ../../aes_data_tb.v line 983
+# MACRO ./sim.do PAUSED at line 10
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/aes_out_ram[0]}
+add wave -position insertpoint  \
+{sim:/aes_data_tb/f_rs232/rx/ram[0]}
+add wave -position insertpoint  \
+sim:/aes_data_tb/f_rs232/rx/addr
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/simulation/modelsim/wave.do
+do compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# ../../
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module rs232
+# 
+# Top level modules:
+# 	rs232
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RX_code
+# 
+# Top level modules:
+# 	RX_code
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module TX_code
+# 
+# Top level modules:
+# 	TX_code
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_core
+# 
+# Top level modules:
+# 	aes_core
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_decipher_block
+# 
+# Top level modules:
+# 	aes_decipher_block
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_encipher_block
+# 
+# Top level modules:
+# 	aes_encipher_block
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_inv_sbox
+# 
+# Top level modules:
+# 	aes_inv_sbox
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_key_mem
+# 
+# Top level modules:
+# 	aes_key_mem
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_sbox
+# 
+# Top level modules:
+# 	aes_sbox
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module aes_data_tb
+# 
+# Top level modules:
+# 	aes_data_tb
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# vsim -voptargs=\"+acc\" work.aes_data_tb 
+# Loading work.aes_data_tb
+# Loading work.rs232
+# Loading work.RX_code
+# Loading work.aes_core
+# Loading work.aes_encipher_block
+# Loading work.aes_decipher_block
+# Loading work.aes_inv_sbox
+# Loading work.aes_key_mem
+# Loading work.aes_sbox
+# Loading work.TX_code
+# ** Warning: (vsim-3015) ../../RX_code.v(145): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'encdec'. The port definition is at: ../../aes_core.v(46).
+# 
+#         Region: /aes_data_tb/f_rs232/rx/aes
+# ** Warning: (vsim-3015) ../../RX_code.v(145): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'keylen'. The port definition is at: ../../aes_core.v(52).
+# 
+#         Region: /aes_data_tb/f_rs232/rx/aes
+# .main_pane.structure.interior.cs.body.struct .main_pane.wave.interior.cs.body.pw.wf .main_pane.objects.interior.cs.body.tree
+# Break in Module aes_data_tb at ../../aes_data_tb.v line 983
+# Simulation Breakpoint: Break in Module aes_data_tb at ../../aes_data_tb.v line 983
+# MACRO ./sim.do PAUSED at line 10

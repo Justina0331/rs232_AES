@@ -1,0 +1,217 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\user\just\Documents\GitHub\rs232_AES\rs232_de0_2\simulation\modelsim
+vaes_core
+Z1 !s100 O@Rfkic3Hkm[J2bZkJ2M@1
+Z2 IODTEW?PIal>7n7[VEz1:V2
+Z3 V`II3F`X<Q4AFz8V0GcRCP3
+Z4 dE:\user\just\Documents\GitHub\rs232_AES\rs232_de0_2\simulation\modelsim
+Z5 w1666012762
+Z6 8../../aes_core.v
+Z7 F../../aes_core.v
+L0 42
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|../../aes_core.v|
+o-O0
+Z10 !s108 1666101599.959000
+Z11 !s107 ../../aes_core.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vaes_data_tb
+!i10b 1
+Z12 !s100 BaGK4kY<RR2k7e>_ScV`?0
+Z13 IHVB94kC<N37Ijd14[bEO51
+Z14 V1]?U2=3cE[dSeCHi4FfC^1
+R4
+Z15 w1666101328
+Z16 8../../aes_data_tb.v
+Z17 F../../aes_data_tb.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1666101600.753000
+!s107 ../../aes_data_tb.v|
+Z18 !s90 -reportprogress|300|../../aes_data_tb.v|
+!s101 -O0
+o-O0
+vaes_decipher_block
+Z19 !s100 cjhk`2:EjfM>;lWgdAW4?2
+Z20 IOEb7:K`1Y2gBd[zKee4DS1
+Z21 VG?UD6Li8eh<C8h0OSD18H3
+R4
+Z22 w1666012044
+Z23 8../../aes_decipher_block.v
+Z24 F../../aes_decipher_block.v
+L0 43
+R8
+r1
+31
+Z25 !s90 -reportprogress|300|../../aes_decipher_block.v|
+o-O0
+Z26 !s108 1666101600.087000
+Z27 !s107 ../../aes_decipher_block.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vaes_encipher_block
+Z28 !s100 nT4>j?m8eHMzHmbJT:FLS0
+Z29 Idn1JGEYOWKeMhR]OhBIhJ0
+Z30 VghhTbBLF?kK5YQSenQen92
+R4
+Z31 w1666012046
+Z32 8../../aes_encipher_block.v
+Z33 F../../aes_encipher_block.v
+L0 43
+R8
+r1
+31
+Z34 !s90 -reportprogress|300|../../aes_encipher_block.v|
+o-O0
+Z35 !s108 1666101600.223000
+Z36 !s107 ../../aes_encipher_block.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vaes_inv_sbox
+Z37 !s100 `J;GM0QLiC6NNcEYD9<QZ1
+Z38 ICc:n@::Y3MB0ML5SPD=[K2
+Z39 VnG`Xz5XaJ=EjT1dIVD5X50
+R4
+Z40 w1666000624
+Z41 8../../aes_inv_sbox.v
+Z42 F../../aes_inv_sbox.v
+L0 40
+R8
+r1
+31
+Z43 !s90 -reportprogress|300|../../aes_inv_sbox.v|
+o-O0
+Z44 !s108 1666101600.355000
+Z45 !s107 ../../aes_inv_sbox.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vaes_key_mem
+Z46 !s100 ]nK9GmDU:G0;d>a^[TjgZ1
+Z47 InOF9j]X9lb?oC=iXS?BaG2
+Z48 VbE49JdOS_^^eBFc=n5lm]2
+R4
+R22
+Z49 8../../aes_key_mem.v
+Z50 F../../aes_key_mem.v
+L0 41
+R8
+r1
+31
+Z51 !s90 -reportprogress|300|../../aes_key_mem.v|
+o-O0
+Z52 !s108 1666101600.488000
+Z53 !s107 ../../aes_key_mem.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vaes_sbox
+Z54 !s100 U1KPO][oQY7Zf1jc9z><n1
+Z55 IFXK<_iMHY@>]kh=C^hZmK0
+Z56 V=Ka@FIcKD^L`AePBEd^;Q1
+R4
+Z57 w1666000676
+Z58 8../../aes_sbox.v
+Z59 F../../aes_sbox.v
+L0 42
+R8
+r1
+31
+Z60 !s90 -reportprogress|300|../../aes_sbox.v|
+o-O0
+!i10b 1
+!s85 0
+Z61 !s108 1666101600.621000
+Z62 !s107 ../../aes_sbox.v|
+!s101 -O0
+vmcu
+Z63 IIGlHa1X7YR92hi<;gg2EB1
+Z64 Vn6Mj=k2TZJo2cnZAR6V182
+R4
+Z65 w1666100219
+Z66 8E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v
+Z67 FE:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v
+L0 6
+R8
+r1
+31
+Z68 o-vlog01compat -work work -O0
+Z69 !s92 -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 -O0
+Z70 !s100 UD7ilARXW91I0imbGlS9]0
+Z71 !s108 1666101280.101000
+Z72 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v|
+Z73 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2|E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vrs232
+Z74 !s100 ie;bHB>]D<_<QT8IYRF8C1
+Z75 I;bN:jQPDHDjNfgXOnnY_M3
+Z76 VQDf;^UOY2B=HibQ`m3E?C2
+R4
+Z77 w1666100206
+Z78 8../../rs232.v
+Z79 F../../rs232.v
+L0 1
+R8
+r1
+31
+Z80 !s90 -reportprogress|300|../../rs232.v|
+o-O0
+Z81 !s108 1666101599.398000
+Z82 !s107 ../../rs232.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vRX_code
+Z83 ITWZ^S;VlnCI?7MKT?9P3N2
+Z84 V;VDX?3PbZ81SKS@9^RD1z3
+R4
+Z85 w1666101590
+Z86 8../../RX_code.v
+Z87 F../../RX_code.v
+L0 1
+R8
+r1
+31
+Z88 !s90 -reportprogress|300|../../RX_code.v|
+o-O0
+Z89 n@r@x_code
+Z90 !s100 0H9XAY7`CeN@TVQ9]G<<53
+Z91 !s108 1666101599.698000
+Z92 !s107 ../../RX_code.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vTX_code
+Z93 !s100 lbjz1amECn_GE?74U0IKM3
+Z94 IhWMK25Eg<^IjCPa;TDQ=^2
+Z95 VNSd5Jd@3EA=mAaYdlSGN41
+R4
+Z96 w1666101274
+Z97 8../../TX_code.v
+Z98 F../../TX_code.v
+L0 1
+R8
+r1
+31
+Z99 !s90 -reportprogress|300|../../TX_code.v|
+o-O0
+Z100 n@t@x_code
+Z101 !s108 1666101599.840000
+Z102 !s107 ../../TX_code.v|
+!i10b 1
+!s85 0
+!s101 -O0

@@ -1,8 +1,0 @@
-module RX(data_out, data_in);
-
-  output  data_out;
-  input   data_in; 
-    
-  assign data_out = ~data_in;
-
-endmodule

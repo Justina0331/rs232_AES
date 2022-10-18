@@ -22,5 +22,9 @@ module AES(enable, e128_in, e128_out, d128);
 
 	//檢查加密後解密是否正確
 	assign d128 = (decrypted128 == e128_in) && enable ? 1'b1 : 1'b0;
+	
+	//ram_128x32 RAM(data_out[47:16], addr, write_en, read_en, clk, ram_out);
+	
+	//fsm
 
 endmodule

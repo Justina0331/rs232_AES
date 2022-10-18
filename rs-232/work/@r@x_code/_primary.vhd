@@ -20,7 +20,7 @@ entity RX_code is
         tx_start        : out    vl_logic;
         clk             : in     vl_logic;
         rst             : in     vl_logic;
-        ram_out         : out    vl_logic_vector(31 downto 0)
+        ram_data_out    : out    vl_logic_vector(31 downto 0)
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of T0 : constant is 1;

@@ -11,7 +11,7 @@ module rs232(TX, RX, sw2, sw1 ,sw0, clk, rst, port_b_out);
 	reg  [7:0]port_b_out;
 	wire  tx_start;
   
-	RX_code rx(.data_in(RX), .load_port_b(load_port_b), .tx_start(tx_start), .clk(clk), .rst(rst), .ram_out(ram_out));
+	RX_code rx(.data_in(RX), .load_port_b(load_port_b), .tx_start(tx_start), .clk(clk), .rst(rst), .ram_data_out(ram_out));
 	
 	TX_code tx(.data_out(TX), .data_in(ram_out), .tx_start(tx_start), .rst(rst), .clk(clk));	
     
