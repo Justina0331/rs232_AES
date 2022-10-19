@@ -14,7 +14,11 @@ entity RX_code is
         T9              : integer := 9;
         T10             : integer := 10;
         T11             : integer := 11;
-        T12             : integer := 12
+        T12             : integer := 12;
+        ENCRYPT         : integer := 1;
+        DECRYPT         : integer := 0;
+        KEY_TYPE_128    : integer := 0;
+        KEY_TYPE_256    : integer := 1
     );
     port(
         data_in         : in     vl_logic;
@@ -37,4 +41,8 @@ entity RX_code is
     attribute mti_svvh_generic_type of T10 : constant is 1;
     attribute mti_svvh_generic_type of T11 : constant is 1;
     attribute mti_svvh_generic_type of T12 : constant is 1;
+    attribute mti_svvh_generic_type of ENCRYPT : constant is 1;
+    attribute mti_svvh_generic_type of DECRYPT : constant is 1;
+    attribute mti_svvh_generic_type of KEY_TYPE_128 : constant is 1;
+    attribute mti_svvh_generic_type of KEY_TYPE_256 : constant is 1;
 end RX_code;

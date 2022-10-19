@@ -17,6 +17,11 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 	parameter T10 = 10;
 	parameter T11 = 11;
 	parameter T12 = 12;
+	
+	parameter ENCRYPT = 1;
+	parameter DECRYPT = 0;
+	parameter KEY_TYPE_128 = 0;
+	parameter KEY_TYPE_256 = 1;
   
 	//檢查開始及結束(byte)
 	reg  s, d;			       //正負元檢查
@@ -142,7 +147,35 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 	wire ready;
 	reg  init;
 	reg	 next;
-	aes_core aes(clk, rst, 1, init, next, ready, key, 0, aes_in, aes_out, result_valid);
+	reg  AES_ACTION, KEY_TYPE;
+	aes_core aes(clk, rst, AES_ACTION, init, next, ready, key, KEY_TYPE, aes_in, aes_out, result_valid);
+	
+	//////////////////////////////////////////////
+	/////*RAM                              *//////
+	/////*[0]-[3] RESERVE                  *//////
+	//////////////////////////////////////////////
+	///////////WRITE AND READ/////////////////////
+	/////*[4]-[8] 	INPUT DATA(5)          *//////
+	/////*[9]	  	DO 128 ENCRYPT         *//////
+	/////*[10]	  	DO 128 DECRYPT         *//////
+	/////*[11]	  	DO 256 ENCRYPT         *//////
+	/////*[12]	  	DO 256 DECRYPT         *//////
+	/////*[13]-[16] INPUT DATA(4)          *//////
+	/////*                                 *////// 
+	/////*[24-33]	KEY                    *//////
+	//////////////////////////////////////////////
+	//////////////READ ONLY///////////////////////
+	/////*[60] 	   *AES OUTPUT TYPE        *//////none
+	/////*[64]-[68] AES OUTPUT(5)          *//////
+	/////*[73]-[76] AES OUTPUT(4)          *//////
+	//////////////////////////////////////////////
+	////////AES TYPE///////none
+	//* 0:IDLE			*//
+	//* 1:128 ENCRYPT	*//
+	//* 2:128 DECRYPT	*//
+	//* 3:256 ENCRYPT	*//
+	//* 4:256 DECRYPT	*//
+	///////////////////////
 	
 	//RAM
 	reg write_data_en;
@@ -157,9 +190,10 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 	assign ram_data_in = load_ram ? data_out[47:16] : ram_data_in;
 	
 	//ram_in
-	reg [31:0] ram[63:0];
-	reg [31:0] aes_out_ram[63:0];
-	
+	reg [31:0] ram[127:0];
+	//reg [31:0] aes_out_ram[63:0];
+	reg load_aes_out;
+	reg load_input_4;
 	always @ (posedge clk)
 	begin
 		if(write_data_en)	
@@ -167,13 +201,38 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 			ram[addr] <= ram_data_in;
 		end
 		
+		if(load_input_4)
+		begin
+			ram[13] <= {ram[5][3:0]  , ram[4][30:24], ram[4][22:16], ram[4][14:8] , ram[4][6:0]                 };
+			ram[14] <= {ram[6][8]    , ram[6][6:0]  , ram[5][30:24], ram[5][22:16], ram[5][14:8] , ram[5][6:4]  };
+			ram[15] <= {ram[7][12:8] , ram[7][6:0]  , ram[6][30:24], ram[6][22:16], ram[6][14:9]                };
+			ram[16] <= {ram[8][17:16], ram[8][14:8] , ram[8][6:0]  , ram[7][30:24], ram[7][22:16], ram[7][14:13]};
+			
+			ram[60]   <= 32'h00000000;
+		end
+		
+		if(load_aes_out)
+		begin
+			ram[64] <= {1'b1,aes_out[27:21],  1'b1,aes_out[20:14],1'b1  ,aes_out[13:7]   ,1'b1,aes_out[6:0]};
+			ram[65] <= {1'b1,aes_out[55:49],  1'b1,aes_out[48:42],1'b1  ,aes_out[41:35]  ,1'b1,aes_out[34:28]};
+			ram[66] <= {1'b1,aes_out[83:77],  1'b1,aes_out[76:70],1'b1  ,aes_out[69:63]  ,1'b1,aes_out[62:56]};
+			ram[67] <= {1'b1,aes_out[111:105],1'b1,aes_out[104:98],1'b1 ,aes_out[97:91]  ,1'b1,aes_out[90:84]};
+			ram[68] <= {14'b11111111111111,        aes_out[127:126],1'b1,aes_out[125:119],1'b1,aes_out[118:112]};
+			
+			ram[73] <= aes_out[31:0];
+			ram[74] <= aes_out[63:32];
+			ram[75] <= aes_out[95:64];
+			ram[76] <= aes_out[127:96];
+
+			ram[60]   <= 32'hffffffff;
+		end
+		
 	end
 	
 	always@(posedge clk)
 	begin
-		if(read_data_en) 
-			if (addr <= 63) ram_data_out <= ram[addr];
-			else 			ram_data_out <= aes_out_ram[addr-64];
+		if(read_data_en) 	ram_data_out <= ram[addr];
+			//else 			ram_data_out <= aes_out_ram[addr-64];
 	end
 	
 	
@@ -183,28 +242,28 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 	begin
 		if(load_aes_in)
 		begin
-		aes_in <= {	ram[addr-1][17:16], ram[addr-1][14: 8], ram[addr-1][6:0], 
-					ram[addr-2][30:24], ram[addr-2][22:16], ram[addr-2][14:8], ram[addr-2][6:0], 
-					ram[addr-3][30:24], ram[addr-3][22:16], ram[addr-3][14:8], ram[addr-3][6:0], 
-					ram[addr-4][30:24], ram[addr-4][22:16], ram[addr-4][14:8], ram[addr-4][6:0], 
-					ram[addr-5][30:24], ram[addr-5][22:16], ram[addr-5][14:8], ram[addr-5][6:0]};
+		aes_in <= {	ram[8][17:16], ram[8][14: 8], ram[8][6:0], 
+					ram[7][30:24], ram[7][22:16], ram[7][14:8], ram[7][6:0], 
+					ram[6][30:24], ram[6][22:16], ram[6][14:8], ram[6][6:0], 
+					ram[5][30:24], ram[5][22:16], ram[5][14:8], ram[5][6:0], 
+					ram[4][30:24], ram[4][22:16], ram[4][14:8], ram[4][6:0]};
 		end
 	end
 	
 	//AES data out in ram
-	reg load_aes_out;
+	/*reg load_aes_out;
 	always @ (posedge clk)
 	begin
 		if(load_aes_out)
 		begin
-			aes_out_ram[addr-5] <= {1'b1,aes_out[27:21],  1'b1,aes_out[20:14],1'b1  ,aes_out[13:7]   ,1'b1,aes_out[6:0]};
-			aes_out_ram[addr-4] <= {1'b1,aes_out[55:49],  1'b1,aes_out[48:42],1'b1  ,aes_out[41:35]  ,1'b1,aes_out[34:28]};
-			aes_out_ram[addr-3] <= {1'b1,aes_out[83:77],  1'b1,aes_out[76:70],1'b1  ,aes_out[69:63]  ,1'b1,aes_out[62:56]};
-			aes_out_ram[addr-2] <= {1'b1,aes_out[111:105],1'b1,aes_out[104:98],1'b1 ,aes_out[97:91]  ,1'b1,aes_out[90:84]};
-			aes_out_ram[addr-1] <= {14'b00000000000000,        aes_out[127:126],1'b1,aes_out[125:119],1'b1,aes_out[118:112]};
-			aes_out_ram[addr]   <= 32'hffffffff;
+			aes_out_ram[64] <= {1'b1,aes_out[27:21],  1'b1,aes_out[20:14],1'b1  ,aes_out[13:7]   ,1'b1,aes_out[6:0]};
+			aes_out_ram[65] <= {1'b1,aes_out[55:49],  1'b1,aes_out[48:42],1'b1  ,aes_out[41:35]  ,1'b1,aes_out[34:28]};
+			aes_out_ram[66] <= {1'b1,aes_out[83:77],  1'b1,aes_out[76:70],1'b1  ,aes_out[69:63]  ,1'b1,aes_out[62:56]};
+			aes_out_ram[67] <= {1'b1,aes_out[111:105],1'b1,aes_out[104:98],1'b1 ,aes_out[97:91]  ,1'b1,aes_out[90:84]};
+			aes_out_ram[68] <= {14'b00000000000000,        aes_out[127:126],1'b1,aes_out[125:119],1'b1,aes_out[118:112]};
+			aes_out_ram[60]   <= 32'hffffffff;
 		end
-	end
+	end*/
 
 	
 	//TX_start
@@ -239,6 +298,7 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 	begin
 		aes_ns = T0;
 		
+		load_input_4 = 0;
 		load_aes_in = 0;
 		load_aes_out = 0;
 		
@@ -254,6 +314,7 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 			begin
 				if (aes_flag)
 				begin
+					load_input_4 = 1;
 					load_aes_in = 1;
 					aes_ns = T2;
 				end
@@ -261,6 +322,29 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 			end
 			T2://init aes
 			begin
+				case(addr)
+					9:
+					begin
+						AES_ACTION = ENCRYPT;
+						KEY_TYPE = KEY_TYPE_128;
+					end
+					10:
+					begin
+						AES_ACTION = DECRYPT;
+						KEY_TYPE = KEY_TYPE_128;
+					end
+					11:
+					begin
+						AES_ACTION = ENCRYPT;
+						KEY_TYPE = KEY_TYPE_256;
+					end
+					12:
+					begin
+						AES_ACTION = DECRYPT;
+						KEY_TYPE = KEY_TYPE_256;
+					end
+					default:aes_ns = T1;	
+				endcase
 				init = 1;
 				aes_ns = T3;
 			end
@@ -279,6 +363,29 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 			end
 			T6://next aes
 			begin
+				case(addr)
+					9:
+					begin
+						AES_ACTION = ENCRYPT;
+						KEY_TYPE = KEY_TYPE_128;
+					end
+					10:
+					begin
+						AES_ACTION = DECRYPT;
+						KEY_TYPE = KEY_TYPE_128;
+					end
+					11:
+					begin
+						AES_ACTION = ENCRYPT;
+						KEY_TYPE = KEY_TYPE_256;
+					end
+					12:
+					begin
+						AES_ACTION = DECRYPT;
+						KEY_TYPE = KEY_TYPE_256;
+					end
+					default:aes_ns = T1;	
+				endcase
 				next = 1;
 				aes_ns = T7;
 			end
@@ -328,6 +435,8 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 		
 		load_addr = 0;
 		load_ram = 0;
+		
+		//rst_data_4_8 = 0;
 
 		aes_flag = 0;
 		
@@ -440,7 +549,7 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 				//write
 				if(data_out[15])  
 				begin	
-					if(addr <= 63)
+					if(addr < 60)
 					begin
 						write_data_en = 1;
 						ns = T11;
@@ -454,14 +563,9 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 					ns = T1;
 				end
 			end
-			T11://AES CHECK
+			T11://ACTION CHECK
 			begin
-				if((addr+1)%6 == 0) ns = T12;
-				else							ns = T1;
-			end
-			T12://AES FLAG
-			begin
-				aes_flag = 1;
+				if(addr >= 9 && addr <= 12)	aes_flag = 1;
 				ns = T1;
 			end
 
