@@ -17,6 +17,7 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 	parameter T10 = 10;
 	parameter T11 = 11;
 	parameter T12 = 12;
+	parameter T13 = 13;
 	
 	parameter ENCRYPT = 1;
 	parameter DECRYPT = 0;
@@ -56,8 +57,8 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 		else 
 		begin 
 			cnt_1_5 <= cnt_1_5 + 1;
-			if(cnt_1_5 >= 3900)  delta_time_1_5_flag <= 1;	//Quartus
-		//	if(cnt_1_5 >= 69)  delta_time_1_5_flag <= 1;	//Simulation
+		//	if(cnt_1_5 >= 3900)  delta_time_1_5_flag <= 1;	//Quartus
+			if(cnt_1_5 >= 69)  delta_time_1_5_flag <= 1;	//Simulation
 		end
 		
 	end
@@ -76,8 +77,8 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 		else 
 		begin 
 			cnt_1 <= cnt_1 + 1;
-			if(cnt_1 >= 2600)  delta_time_1_flag <= 1;	//Quartus
-		//	if(cnt_1 >= 46)  delta_time_1_flag <= 1;	//Simulation
+		//	if(cnt_1 >= 2600)  delta_time_1_flag <= 1;	//Quartus
+			if(cnt_1 >= 46)  delta_time_1_flag <= 1;	//Simulation
 		end
 		
 	end
@@ -126,18 +127,43 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 		else if(shift_reg)			data_out <= {data_in, data_out[63:1]};
 	end
 
-	//key
-	reg  [255:0] key;
+	//system key
+	reg  [255:0] system_key;
+	reg load_key_128;
+	reg load_key_256;
 	always @(posedge clk)
 	begin
-		key <= {8'h60, 8'h3d, 8'heb, 8'h10,
-				8'h15, 8'hca, 8'h71, 8'hbe,
-				8'h2b, 8'h73, 8'hae, 8'hf0,
-				8'h00, 8'h00, 8'h00, 8'h00,
-				8'h00, 8'h00, 8'h00, 8'h00,
-				8'h00, 8'h00, 8'h00, 8'h00, 
-				8'h00, 8'h00, 8'h00, 8'h00};
+		system_key <= {8'h00, 8'h00, 8'h00, 8'h00,
+					   8'h60, 8'h3d, 8'heb, 8'h10,
+					   8'h15, 8'hca, 8'h71, 8'hbe,
+				       8'h2b, 8'h73, 8'hae, 8'hf0,
+				       8'h00, 8'h00, 8'h00, 8'h00,
+				       8'h00, 8'h00, 8'h00, 8'h00,
+				       8'h00, 8'h00, 8'h00, 8'h00,
+				       8'h00, 8'h00, 8'h00, 8'h01};
 	end
+	/* 0000_0000, 0000_0000, 0000_0000, 0000_0000
+	   0110_0000, 0011_1101, 1110_1011, 0001_0000
+	   0001_0101, 1100_1010, 0111_0001, 1011_1110
+	   0010_1011, 0111_0011, 1010_1110, 1111_0000
+	   
+	   0000_0000, 0000_0000, 0000_0000, 0000_0000
+	   0000_0000, 0000_0000, 0000_0000, 0000_0000
+	   0000_0000, 0000_0000, 0000_0000, 0000_0000
+	   0000_0000, 0000_0000, 0000_0000, 0000_0001
+	   
+	   [33] 1000_0000,1000_0000,1000_0000,1000_0000
+	   [32] 1000_0000,1000_0000,1000_0000,1000_0000
+	   [31] 1011_0000,1000_1111,1011_1101,1011_0001
+	   [30] 1000_0000,1101_0111,1001_0100,1111_0001
+	   [29] 1101_1111,1000_1010,1110_1110,1011_1010
+	   
+	   [28] 1111_0111,1100_0000,1000_0000,1000_0000
+	   [27] 1000_0000,1000_0000,1000_0000,1000_0000
+	   [26] 1000_0000,1000_0000,1000_0000,1000_0000
+	   [25] 1000_0000,1000_0000,1000_0000,1000_0000
+	   [24] 1000_0000,1000_0000,1000_0000,1000_0001
+	*/
 	
 	//AES
 	reg  [127:0] aes_in;
@@ -148,7 +174,8 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 	reg  init;
 	reg	 next;
 	reg  AES_ACTION, KEY_TYPE;
-	aes_core aes(clk, rst, AES_ACTION, init, next, ready, key, KEY_TYPE, aes_in, aes_out, result_valid);
+	reg [255:0] user_key;
+	aes_core aes(clk, rst, AES_ACTION, init, next, ready, system_key, KEY_TYPE, aes_in, aes_out, result_valid);
 	
 	//////////////////////////////////////////////
 	/////*RAM                              *//////
@@ -229,11 +256,52 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 		
 	end
 	
+	
 	always@(posedge clk)
 	begin
 		if(read_data_en) 	ram_data_out <= ram[addr];
-			//else 			ram_data_out <= aes_out_ram[addr-64];
+		//else 			ram_data_out <= aes_out_ram[addr-64];
 	end
+	
+	//check if the same key
+	wire same_key_flag;
+	
+	always @(posedge clk)
+	begin
+		if(load_key_128)
+		user_key <= {	ram[28][17:16],ram[28][14:8],ram[28][6:0],
+						ram[27][30:24],ram[27][22:16],ram[27][14:8],ram[27][6:0],
+						ram[26][30:24],ram[26][22:16],ram[26][14:8],ram[26][6:0],
+						ram[25][30:24],ram[25][22:16],ram[25][14:8],ram[25][6:0],
+						ram[24][30:24],ram[24][22:16],ram[24][14:8],ram[24][6:0],
+						128'h00000000};
+		if(load_key_256)
+		user_key <= {	ram[28][17:16],ram[28][14:8],ram[28][6:0],
+						ram[27][30:24],ram[27][22:16],ram[27][14:8],ram[27][6:0],
+						ram[26][30:24],ram[26][22:16],ram[26][14:8],ram[26][6:0],
+						ram[25][30:24],ram[25][22:16],ram[25][14:8],ram[25][6:0],
+						ram[24][30:24],ram[24][22:16],ram[24][14:8],ram[24][6:0],
+						
+						ram[33][17:16],ram[33][14:8] ,ram[33][6:0],
+						ram[32][30:24],ram[32][22:16],ram[32][14:8],ram[32][6:0],
+						ram[31][30:24],ram[31][22:16],ram[31][14:8],ram[31][6:0],
+						ram[30][30:24],ram[30][22:16],ram[30][14:8],ram[30][6:0],
+						ram[29][30:24],ram[29][22:16],ram[29][14:8],ram[29][6:0]};
+	end
+	assign same_key_flag = load_key_128 ? (system_key[255:128] === user_key[255:128]) ? 1 : load_key_256 ? (system_key === user_key) ? 1 : 0 : 0 : same_key_flag;
+	
+	/*always @ (posedge clk)
+	begin
+		if(rst)											same_key_flag = 0;
+		if(load_key_128)
+		begin
+			if(system_key[127:0] == user_key[127:0])	same_key_flag = 1;
+		end
+		else if(load_key_256)
+		begin
+			if(system_key == user_key)					same_key_flag = 1;
+		end
+	end*/
 	
 	
 	// AES data in
@@ -249,6 +317,7 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 					ram[4][30:24], ram[4][22:16], ram[4][14:8], ram[4][6:0]};
 		end
 	end
+
 	
 	//AES data out in ram
 	/*reg load_aes_out;
@@ -276,8 +345,8 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 	end
 	
 	//States
-	reg [3:0]ps, ns;
-	reg [3:0]aes_ps, aes_ns;
+	reg [4:0]ps, ns;
+	reg [4:0]aes_ps, aes_ns;
 	always@(posedge clk)
 	begin
 		if(rst) 
@@ -312,15 +381,20 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 			end
 			T1://wait_aes_flag
 			begin
-				if (aes_flag)
+				if (aes_flag)	aes_ns = T2;
+				else 			aes_ns = T1;
+			end
+			T2://CHECK KEY
+			begin
+				if (same_key_flag)
 				begin
 					load_input_4 = 1;
 					load_aes_in = 1;
-					aes_ns = T2;
+					aes_ns = T3;
 				end
 				else aes_ns = T1;
 			end
-			T2://init aes
+			T3://init aes
 			begin
 				case(addr)
 					9:
@@ -346,22 +420,22 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 					default:aes_ns = T1;	
 				endcase
 				init = 1;
-				aes_ns = T3;
-			end
-			T3://delay
-			begin
 				aes_ns = T4;
 			end
 			T4://delay
 			begin
 				aes_ns = T5;
 			end
-			T5://wait for ready
+			T5://delay
 			begin
-				if(ready)	aes_ns = T6;
-				else		aes_ns = T5;
+				aes_ns = T6;
 			end
-			T6://next aes
+			T6://wait for ready
+			begin
+				if(ready)	aes_ns = T7;
+				else		aes_ns = T6;
+			end
+			T7://next aes
 			begin
 				case(addr)
 					9:
@@ -387,22 +461,22 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 					default:aes_ns = T1;	
 				endcase
 				next = 1;
-				aes_ns = T7;
-			end
-			T7://delay
-			begin
 				aes_ns = T8;
 			end
 			T8://delay
 			begin
 				aes_ns = T9;
 			end
-			T9://wait aes FINISH
+			T9://delay
 			begin
-				if(result_valid)	aes_ns = T10;
-				else				aes_ns = T9;
+				aes_ns = T10;
 			end
-			T10://write aes out in ram
+			T10://wait aes FINISH
+			begin
+				if(result_valid)	aes_ns = T11;
+				else				aes_ns = T10;
+			end
+			T11://write aes out in ram
 			begin
 				load_aes_out = 1;
 				aes_ns = T1;
@@ -435,9 +509,9 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 		
 		load_addr = 0;
 		load_ram = 0;
-		
-		//rst_data_4_8 = 0;
 
+		load_key_128 = 0;
+		load_key_256 = 0;
 		aes_flag = 0;
 		
 		case(ps)
@@ -565,9 +639,16 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 			end
 			T11://ACTION CHECK
 			begin
-				if(addr >= 9 && addr <= 12)	aes_flag = 1;
+				if(addr >= 9 && addr <= 12)
+				begin
+					if(addr==9 || addr==10)	load_key_128 = 1;
+					else					load_key_256 = 1;
+					aes_flag = 1;
+					ns = T1;
+				end
 				ns = T1;
 			end
+			
 
 		endcase 
   end
