@@ -17,18 +17,18 @@ r1
 31
 Z9 !s90 -reportprogress|300|../../aes_core.v|
 o-O0
-Z10 !s108 1666186345.241000
+Z10 !s108 1667119063.310000
 Z11 !s107 ../../aes_core.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vaes_data_tb
 !i10b 1
-!s100 =bImM@C8mRTDOl<RJ83OW1
-I5AQ8XKcBe9B`f_5?a<1^00
+!s100 cX=2^`PVdQ]l3WMCF]@c93
+IO95UKa_C7Ve<bCzMm9zWR0
 Z12 V1]?U2=3cE[dSeCHi4FfC^1
 R4
-w1666186342
+w1667119060
 Z13 8../../aes_data_tb.v
 Z14 F../../aes_data_tb.v
 L0 1
@@ -36,7 +36,7 @@ R8
 r1
 !s85 0
 31
-!s108 1666186346.327000
+!s108 1667119064.419000
 !s107 ../../aes_data_tb.v|
 Z15 !s90 -reportprogress|300|../../aes_data_tb.v|
 !s101 -O0
@@ -55,7 +55,7 @@ r1
 31
 Z22 !s90 -reportprogress|300|../../aes_decipher_block.v|
 o-O0
-Z23 !s108 1666186345.373000
+Z23 !s108 1667119063.753000
 Z24 !s107 ../../aes_decipher_block.v|
 !i10b 1
 !s85 0
@@ -74,7 +74,7 @@ r1
 31
 Z31 !s90 -reportprogress|300|../../aes_encipher_block.v|
 o-O0
-Z32 !s108 1666186345.505000
+Z32 !s108 1667119063.884000
 Z33 !s107 ../../aes_encipher_block.v|
 !i10b 1
 !s85 0
@@ -93,125 +93,125 @@ r1
 31
 Z40 !s90 -reportprogress|300|../../aes_inv_sbox.v|
 o-O0
-Z41 !s108 1666186345.635000
+Z41 !s108 1667119064.018000
 Z42 !s107 ../../aes_inv_sbox.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vaes_key_mem
-Z43 !s100 ]nK9GmDU:G0;d>a^[TjgZ1
-Z44 InOF9j]X9lb?oC=iXS?BaG2
+Z43 !s100 0HFgi_6b;N75[9kY?f4>=3
+Z44 IUnInK_0`R?Kf>:a0@L;4L3
 Z45 VbE49JdOS_^^eBFc=n5lm]2
 R4
-R19
-Z46 8../../aes_key_mem.v
-Z47 F../../aes_key_mem.v
+Z46 w1666535628
+Z47 8../../aes_key_mem.v
+Z48 F../../aes_key_mem.v
 L0 41
 R8
 r1
 31
-Z48 !s90 -reportprogress|300|../../aes_key_mem.v|
+Z49 !s90 -reportprogress|300|../../aes_key_mem.v|
 o-O0
-Z49 !s108 1666186345.887000
-Z50 !s107 ../../aes_key_mem.v|
+Z50 !s108 1667119064.155000
+Z51 !s107 ../../aes_key_mem.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vaes_sbox
-Z51 !s100 U1KPO][oQY7Zf1jc9z><n1
-Z52 IFXK<_iMHY@>]kh=C^hZmK0
-Z53 V=Ka@FIcKD^L`AePBEd^;Q1
+Z52 !s100 U1KPO][oQY7Zf1jc9z><n1
+Z53 IFXK<_iMHY@>]kh=C^hZmK0
+Z54 V=Ka@FIcKD^L`AePBEd^;Q1
 R4
-Z54 w1666000676
-Z55 8../../aes_sbox.v
-Z56 F../../aes_sbox.v
+Z55 w1666000676
+Z56 8../../aes_sbox.v
+Z57 F../../aes_sbox.v
 L0 42
 R8
 r1
 31
-Z57 !s90 -reportprogress|300|../../aes_sbox.v|
+Z58 !s90 -reportprogress|300|../../aes_sbox.v|
 o-O0
 !i10b 1
 !s85 0
-Z58 !s108 1666186346.183000
-Z59 !s107 ../../aes_sbox.v|
+Z59 !s108 1667119064.284000
+Z60 !s107 ../../aes_sbox.v|
 !s101 -O0
 vmcu
-Z60 IIGlHa1X7YR92hi<;gg2EB1
-Z61 Vn6Mj=k2TZJo2cnZAR6V182
+Z61 IIGlHa1X7YR92hi<;gg2EB1
+Z62 Vn6Mj=k2TZJo2cnZAR6V182
 R4
-Z62 w1666100219
-Z63 8E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v
-Z64 FE:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v
+Z63 w1666100219
+Z64 8E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v
+Z65 FE:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v
 L0 6
 R8
 r1
 31
-Z65 o-vlog01compat -work work -O0
-Z66 !s92 -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 -O0
-Z67 !s100 UD7ilARXW91I0imbGlS9]0
-Z68 !s108 1666181541.007000
-Z69 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v|
-Z70 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2|E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v|
+Z66 o-vlog01compat -work work -O0
+Z67 !s92 -vlog01compat -work work +incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2 -O0
+Z68 !s100 UD7ilARXW91I0imbGlS9]0
+Z69 !s108 1667117463.838000
+Z70 !s107 E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v|
+Z71 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2|E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/mcu.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vrs232
-Z71 !s100 lDC;?XJBbBMkdYI3mk>G<3
-Z72 IAf_TOVGN5CEg6XC@^Ym502
-Z73 VQDf;^UOY2B=HibQ`m3E?C2
+Z72 !s100 lDC;?XJBbBMkdYI3mk>G<3
+Z73 IAf_TOVGN5CEg6XC@^Ym502
+Z74 VQDf;^UOY2B=HibQ`m3E?C2
 R4
-Z74 w1666103187
-Z75 8../../rs232.v
-Z76 F../../rs232.v
+Z75 w1666103187
+Z76 8../../rs232.v
+Z77 F../../rs232.v
 L0 1
 R8
 r1
 31
-Z77 !s90 -reportprogress|300|../../rs232.v|
+Z78 !s90 -reportprogress|300|../../rs232.v|
 o-O0
-Z78 !s108 1666186344.448000
-Z79 !s107 ../../rs232.v|
+Z79 !s108 1667119062.840000
+Z80 !s107 ../../rs232.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vRX_code
-Z80 !s100 E>eU`TMGd3YXCEoK?GOZ13
-Z81 IgW?:dA9FgDF1D5LJ1iXUf3
-Z82 V4XAaEGLBFZSnIM5B@I?jz0
+Z81 !s100 ;e1RK09^;o9Z2H@:>O>_W0
+Z82 I5L0_FgEJRJc`DNL<RZZWC0
+Z83 VR:Ah6YlgAG6a9=7UTYXTm2
 R4
-Z83 w1666185842
-Z84 8../../RX_code.v
-Z85 F../../RX_code.v
+Z84 w1667118552
+Z85 8../../RX_code.v
+Z86 F../../RX_code.v
 L0 1
 R8
 r1
 31
-Z86 !s90 -reportprogress|300|../../RX_code.v|
+Z87 !s90 -reportprogress|300|../../RX_code.v|
 o-O0
-Z87 n@r@x_code
-Z88 !s108 1666186344.613000
-Z89 !s107 ../../RX_code.v|
+Z88 n@r@x_code
+Z89 !s108 1667119063.050000
+Z90 !s107 ../../RX_code.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vTX_code
-Z90 !s100 IUO[1bQWS6k126`T?PFf11
-Z91 Ih1dCYL:<[O;kJWame_PO53
-Z92 VNSd5Jd@3EA=mAaYdlSGN41
+Z91 !s100 IUO[1bQWS6k126`T?PFf11
+Z92 Ih1dCYL:<[O;kJWame_PO53
+Z93 VNSd5Jd@3EA=mAaYdlSGN41
 R4
-Z93 w1666171403
-Z94 8../../TX_code.v
-Z95 F../../TX_code.v
+Z94 w1666529486
+Z95 8../../TX_code.v
+Z96 F../../TX_code.v
 L0 1
 R8
 r1
 31
-Z96 !s90 -reportprogress|300|../../TX_code.v|
+Z97 !s90 -reportprogress|300|../../TX_code.v|
 o-O0
-Z97 n@t@x_code
-Z98 !s108 1666186344.987000
-Z99 !s107 ../../TX_code.v|
+Z98 n@t@x_code
+Z99 !s108 1667119063.184000
+Z100 !s107 ../../TX_code.v|
 !i10b 1
 !s85 0
 !s101 -O0

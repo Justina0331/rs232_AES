@@ -15,6 +15,7 @@ entity RX_code is
         T10             : integer := 10;
         T11             : integer := 11;
         T12             : integer := 12;
+        T13             : integer := 13;
         ENCRYPT         : integer := 1;
         DECRYPT         : integer := 0;
         KEY_TYPE_128    : integer := 0;
@@ -41,6 +42,7 @@ entity RX_code is
     attribute mti_svvh_generic_type of T10 : constant is 1;
     attribute mti_svvh_generic_type of T11 : constant is 1;
     attribute mti_svvh_generic_type of T12 : constant is 1;
+    attribute mti_svvh_generic_type of T13 : constant is 1;
     attribute mti_svvh_generic_type of ENCRYPT : constant is 1;
     attribute mti_svvh_generic_type of DECRYPT : constant is 1;
     attribute mti_svvh_generic_type of KEY_TYPE_128 : constant is 1;

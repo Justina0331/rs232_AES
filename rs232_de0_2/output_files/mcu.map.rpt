@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mcu
-Wed Oct 19 22:18:41 2022
+Thu Dec 08 20:32:17 2022
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -22,13 +22,14 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  14. State Machine - |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|enc_ctrl_reg
  15. User-Specified and Inferred Latches
  16. Registers Removed During Synthesis
- 17. General Register Statistics
- 18. Multiplexer Restructuring Statistics (Restructuring Performed)
- 19. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx
- 20. Parameter Settings for User Entity Instance: rs232:f_rs232|TX_code:tx
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
- 23. Analysis & Synthesis Suppressed Messages
+ 17. Removed Registers Triggering Further Register Optimizations
+ 18. General Register Statistics
+ 19. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 20. Parameter Settings for User Entity Instance: rs232:f_rs232|RX_code:rx
+ 21. Parameter Settings for User Entity Instance: rs232:f_rs232|TX_code:tx
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+ 24. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -54,15 +55,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 19 22:18:41 2022      ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 08 20:32:16 2022      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; mcu                                        ;
 ; Top-level Entity Name              ; mcu                                        ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 11,358                                     ;
-;     Total combinational functions  ; 7,550                                      ;
-;     Dedicated logic registers      ; 4,919                                      ;
-; Total registers                    ; 4919                                       ;
+; Total logic elements               ; 11,639                                     ;
+;     Total combinational functions  ; 7,703                                      ;
+;     Dedicated logic registers      ; 5,148                                      ;
+; Total registers                    ; 5148                                       ;
 ; Total pins                         ; 6                                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -199,28 +200,28 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 11,358    ;
+; Estimated Total logic elements              ; 11,639    ;
 ;                                             ;           ;
-; Total combinational functions               ; 7550      ;
+; Total combinational functions               ; 7703      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 6622      ;
-;     -- 3 input functions                    ; 718       ;
-;     -- <=2 input functions                  ; 210       ;
+;     -- 4 input functions                    ; 6557      ;
+;     -- 3 input functions                    ; 804       ;
+;     -- <=2 input functions                  ; 342       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 7489      ;
+;     -- normal mode                          ; 7642      ;
 ;     -- arithmetic mode                      ; 61        ;
 ;                                             ;           ;
-; Total registers                             ; 4919      ;
-;     -- Dedicated logic registers            ; 4919      ;
+; Total registers                             ; 5148      ;
+;     -- Dedicated logic registers            ; 5148      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 6         ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 4919      ;
-; Total fan-out                               ; 44193     ;
-; Average fan-out                             ; 3.54      ;
+; Maximum fan-out                             ; 5148      ;
+; Total fan-out                               ; 45046     ;
+; Average fan-out                             ; 3.50      ;
 +---------------------------------------------+-----------+
 
 
@@ -229,16 +230,16 @@ applicable agreement for further details.
 +---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                ; Library Name ;
 +---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+--------------+
-; |mcu                                        ; 7550 (0)          ; 4919 (0)     ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |mcu                                                                                               ; work         ;
-;    |rs232:f_rs232|                          ; 7550 (0)          ; 4919 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232                                                                                 ; work         ;
-;       |RX_code:rx|                          ; 7474 (2059)       ; 4857 (2381)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx                                                                      ; work         ;
-;          |aes_core:aes|                     ; 5415 (239)        ; 2476 (5)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes                                                         ; work         ;
-;             |aes_decipher_block:dec_block|  ; 1824 (992)        ; 139 (139)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block                            ; work         ;
+; |mcu                                        ; 7703 (0)          ; 5148 (0)     ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |mcu                                                                                               ; work         ;
+;    |rs232:f_rs232|                          ; 7703 (0)          ; 5148 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232                                                                                 ; work         ;
+;       |RX_code:rx|                          ; 7626 (2219)       ; 5086 (2610)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx                                                                      ; work         ;
+;          |aes_core:aes|                     ; 5407 (239)        ; 2476 (5)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes                                                         ; work         ;
+;             |aes_decipher_block:dec_block|  ; 1827 (995)        ; 139 (139)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block                            ; work         ;
 ;                |aes_inv_sbox:inv_sbox_inst| ; 832 (832)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|aes_inv_sbox:inv_sbox_inst ; work         ;
-;             |aes_encipher_block:enc_block|  ; 684 (684)         ; 139 (139)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block                            ; work         ;
-;             |aes_key_mem:keymem|            ; 1836 (1836)       ; 2193 (2193)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem                                      ; work         ;
+;             |aes_encipher_block:enc_block|  ; 692 (692)         ; 139 (139)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block                            ; work         ;
+;             |aes_key_mem:keymem|            ; 1817 (1817)       ; 2193 (2193)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem                                      ; work         ;
 ;             |aes_sbox:sbox_inst|            ; 832 (832)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_sbox:sbox_inst                                      ; work         ;
-;       |TX_code:tx|                          ; 76 (76)           ; 62 (62)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|TX_code:tx                                                                      ; work         ;
+;       |TX_code:tx|                          ; 77 (77)           ; 62 (62)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcu|rs232:f_rs232|TX_code:tx                                                                      ; work         ;
 +---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -263,44 +264,46 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |mcu|rs232:f_rs232|RX_code:rx|aes_ps                                                                                            ;
-+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
-; Name       ; aes_ps.T10 ; aes_ps.T9 ; aes_ps.T8 ; aes_ps.T7 ; aes_ps.T6 ; aes_ps.T5 ; aes_ps.T4 ; aes_ps.T3 ; aes_ps.T2 ; aes_ps.T1 ; aes_ps.T0 ;
-+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
-; aes_ps.T0  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ;
-; aes_ps.T1  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 1         ;
-; aes_ps.T2  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 1         ;
-; aes_ps.T3  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 1         ;
-; aes_ps.T4  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 1         ;
-; aes_ps.T5  ; 0          ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 1         ;
-; aes_ps.T6  ; 0          ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
-; aes_ps.T7  ; 0          ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
-; aes_ps.T8  ; 0          ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
-; aes_ps.T9  ; 0          ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
-; aes_ps.T10 ; 1          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
-+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |mcu|rs232:f_rs232|RX_code:rx|aes_ps                                                                                                         ;
++------------+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+; Name       ; aes_ps.T11 ; aes_ps.T10 ; aes_ps.T9 ; aes_ps.T8 ; aes_ps.T7 ; aes_ps.T6 ; aes_ps.T5 ; aes_ps.T4 ; aes_ps.T3 ; aes_ps.T2 ; aes_ps.T1 ; aes_ps.T0 ;
++------------+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+; aes_ps.T0  ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ;
+; aes_ps.T1  ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 1         ;
+; aes_ps.T2  ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 1         ;
+; aes_ps.T3  ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 1         ;
+; aes_ps.T4  ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 1         ;
+; aes_ps.T5  ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; aes_ps.T6  ; 0          ; 0          ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; aes_ps.T7  ; 0          ; 0          ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; aes_ps.T8  ; 0          ; 0          ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; aes_ps.T9  ; 0          ; 0          ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; aes_ps.T10 ; 0          ; 1          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; aes_ps.T11 ; 1          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
++------------+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------+
-; State Machine - |mcu|rs232:f_rs232|RX_code:rx|ps                                                         ;
-+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-; Name   ; ps.T11 ; ps.T10 ; ps.T9 ; ps.T8 ; ps.T7 ; ps.T6 ; ps.T5 ; ps.T4 ; ps.T3 ; ps.T2 ; ps.T1 ; ps.T0 ;
-+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-; ps.T0  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
-; ps.T1  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
-; ps.T2  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
-; ps.T3  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
-; ps.T4  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
-; ps.T5  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; ps.T6  ; 0      ; 0      ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; ps.T7  ; 0      ; 0      ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; ps.T8  ; 0      ; 0      ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; ps.T9  ; 0      ; 0      ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; ps.T10 ; 0      ; 1      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; ps.T11 ; 1      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
++-------------------------------------------------------------------------------------------------------------------+
+; State Machine - |mcu|rs232:f_rs232|RX_code:rx|ps                                                                  ;
++--------+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; Name   ; ps.T12 ; ps.T11 ; ps.T10 ; ps.T9 ; ps.T8 ; ps.T7 ; ps.T6 ; ps.T5 ; ps.T4 ; ps.T3 ; ps.T2 ; ps.T1 ; ps.T0 ;
++--------+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; ps.T0  ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
+; ps.T1  ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
+; ps.T2  ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
+; ps.T3  ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
+; ps.T4  ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T5  ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T6  ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T7  ; 0      ; 0      ; 0      ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T8  ; 0      ; 0      ; 0      ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T9  ; 0      ; 0      ; 0      ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T10 ; 0      ; 0      ; 1      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T11 ; 0      ; 1      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ps.T12 ; 1      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
++--------+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
 
 
 Encoding Type:  One-Hot
@@ -354,54 +357,55 @@ Encoding Type:  One-Hot
 +------------------------+------------------------+------------------------+------------------------+------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                               ;
-+-----------------------------------------------------+------------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal                ; Free of Timing Hazards ;
-+-----------------------------------------------------+------------------------------------+------------------------+
-; rs232:f_rs232|RX_code:rx|addr[1]                    ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|addr[0]                    ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|addr[4]                    ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|addr[5]                    ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|addr[3]                    ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|addr[2]                    ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|addr[6]                    ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[0]             ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|AES_ACTION                 ; rs232:f_rs232|RX_code:rx|Selector3 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[1]             ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[13]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[4]             ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[9]             ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|KEY_TYPE                   ; rs232:f_rs232|RX_code:rx|Selector3 ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[2]             ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[14]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[5]             ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[10]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[3]             ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[16]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[6]             ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[11]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[18]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[17]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[8]             ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[12]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[19]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[21]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[20]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[24]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[22]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[27]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[28]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[29]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[25]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[26]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[30]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[7]             ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[15]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[23]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; rs232:f_rs232|RX_code:rx|ram_data_in[31]            ; rs232:f_rs232|RX_code:rx|load_addr ; yes                    ;
-; Number of user-specified and inferred latches = 41  ;                                    ;                        ;
-+-----------------------------------------------------+------------------------------------+------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                   ;
++-----------------------------------------------------+----------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                    ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------------------+------------------------+
+; rs232:f_rs232|RX_code:rx|addr[1]                    ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[0]                    ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[4]                    ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[5]                    ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[3]                    ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[2]                    ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|addr[6]                    ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[0]             ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|same_key_flag              ; rs232:f_rs232|RX_code:rx|same_key_flag ; yes                    ;
+; rs232:f_rs232|RX_code:rx|AES_ACTION                 ; rs232:f_rs232|RX_code:rx|Selector0     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[1]             ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|KEY_TYPE                   ; rs232:f_rs232|RX_code:rx|Selector0     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[13]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[4]             ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[9]             ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[2]             ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[14]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[5]             ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[10]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[3]             ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[16]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[6]             ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[11]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[8]             ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[12]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[17]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[18]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[19]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[20]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[21]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[22]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[24]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[25]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[26]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[27]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[28]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[29]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[30]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[7]             ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[15]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[23]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; rs232:f_rs232|RX_code:rx|ram_data_in[31]            ; rs232:f_rs232|RX_code:rx|load_addr     ; yes                    ;
+; Number of user-specified and inferred latches = 42  ;                                        ;                        ;
++-----------------------------------------------------+----------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -410,51 +414,53 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------------------------------------------------+--------------------------------------------------+
 ; Register name                                                                     ; Reason for Removal                               ;
 +-----------------------------------------------------------------------------------+--------------------------------------------------+
-; rs232:f_rs232|RX_code:rx|key[0..131]                                              ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[132..135]                                            ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[136]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[137..139]                                            ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[140]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[141]                                                 ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[142]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[143..145]                                            ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[146,147]                                             ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[148..150]                                            ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[151]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[152,153]                                             ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[154]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[155]                                                 ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[156]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[157]                                                 ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[158..160]                                            ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[161..165]                                            ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[166]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[167,168]                                             ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[169..171]                                            ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[172..174]                                            ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[175,176]                                             ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[177]                                                 ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[178]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[179]                                                 ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[180,181]                                             ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[182..184]                                            ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[185]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[186]                                                 ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[187]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[188]                                                 ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[189..195]                                            ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[196]                                                 ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[197..199]                                            ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[200,201]                                             ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[202]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[203]                                                 ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[204]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[205..208]                                            ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[209]                                                 ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[210..213]                                            ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[214..220]                                            ; Stuck at GND due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[221,222]                                             ; Stuck at VCC due to stuck port data_in           ;
-; rs232:f_rs232|RX_code:rx|key[223..255]                                            ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[0..3]                                         ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[4..7]                                         ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[8]                                            ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[9..11]                                        ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[12]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[13]                                           ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[14]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[15..17]                                       ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[18,19]                                        ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[20..22]                                       ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[23]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[24,25]                                        ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[26]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[27]                                           ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[28]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[29]                                           ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[30..32]                                       ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[33..37]                                       ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[38]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[39,40]                                        ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[41..43]                                       ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[44..46]                                       ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[47,48]                                        ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[49]                                           ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[50]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[51]                                           ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[52,53]                                        ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[54..56]                                       ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[57]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[58]                                           ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[59]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[60]                                           ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[61..67]                                       ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[68]                                           ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[69..71]                                       ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[72,73]                                        ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[74]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[75]                                           ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[76]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[77..80]                                       ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[81]                                           ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[82..85]                                       ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[86..92]                                       ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[93,94]                                        ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[95..127]                                      ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[128]                                          ; Stuck at VCC due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|system_key[129..255]                                     ; Stuck at GND due to stuck port data_in           ;
 ; rs232:f_rs232|RX_code:rx|ram[61][0]                                               ; Stuck at GND due to stuck port clock_enable      ;
 ; rs232:f_rs232|RX_code:rx|ram[62][0]                                               ; Stuck at GND due to stuck port clock_enable      ;
 ; rs232:f_rs232|RX_code:rx|ram[63][0]                                               ; Stuck at GND due to stuck port clock_enable      ;
@@ -2351,10 +2357,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; rs232:f_rs232|RX_code:rx|aes_ps~3                                                 ; Lost fanout                                      ;
 ; rs232:f_rs232|RX_code:rx|aes_ps~4                                                 ; Lost fanout                                      ;
 ; rs232:f_rs232|RX_code:rx|aes_ps~5                                                 ; Lost fanout                                      ;
+; rs232:f_rs232|RX_code:rx|aes_ps~6                                                 ; Lost fanout                                      ;
 ; rs232:f_rs232|RX_code:rx|ps~2                                                     ; Lost fanout                                      ;
 ; rs232:f_rs232|RX_code:rx|ps~3                                                     ; Lost fanout                                      ;
 ; rs232:f_rs232|RX_code:rx|ps~4                                                     ; Lost fanout                                      ;
 ; rs232:f_rs232|RX_code:rx|ps~5                                                     ; Lost fanout                                      ;
+; rs232:f_rs232|RX_code:rx|ps~6                                                     ; Lost fanout                                      ;
 ; rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem_ctrl_reg~6       ; Lost fanout                                      ;
 ; rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem_ctrl_reg~7       ; Lost fanout                                      ;
 ; rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem_ctrl_reg~8       ; Lost fanout                                      ;
@@ -2491,8 +2499,60 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; rs232:f_rs232|RX_code:rx|ram[73][25]                                              ; Merged with rs232:f_rs232|RX_code:rx|ram[64][28] ;
 ; rs232:f_rs232|RX_code:rx|ram[73][26]                                              ; Merged with rs232:f_rs232|RX_code:rx|ram[64][29] ;
 ; rs232:f_rs232|RX_code:rx|ram[73][27]                                              ; Merged with rs232:f_rs232|RX_code:rx|ram[64][30] ;
-; Total Number of Removed Registers = 2292                                          ;                                                  ;
+; rs232:f_rs232|RX_code:rx|ram[60][3]                                               ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][4]                                               ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][5]                                               ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][6]                                               ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][7]                                               ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][8]                                               ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][9]                                               ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][10]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][11]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][12]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][13]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][14]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][15]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][16]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][17]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][18]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][19]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][20]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][21]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][22]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][23]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][24]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][25]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][26]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][27]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][28]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][29]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][30]                                              ; Stuck at GND due to stuck port data_in           ;
+; rs232:f_rs232|RX_code:rx|ram[60][31]                                              ; Stuck at GND due to stuck port data_in           ;
+; Total Number of Removed Registers = 2323                                          ;                                                  ;
 +-----------------------------------------------------------------------------------+--------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                      ;
++----------------------------------------+---------------------------+-----------------------------------------------------------------------------+
+; Register name                          ; Reason for Removal        ; Registers Removed due to This Register                                      ;
++----------------------------------------+---------------------------+-----------------------------------------------------------------------------+
+; rs232:f_rs232|RX_code:rx|system_key[0] ; Stuck at GND              ; rs232:f_rs232|RX_code:rx|ram[60][3], rs232:f_rs232|RX_code:rx|ram[60][4],   ;
+;                                        ; due to stuck port data_in ; rs232:f_rs232|RX_code:rx|ram[60][5], rs232:f_rs232|RX_code:rx|ram[60][6],   ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][7], rs232:f_rs232|RX_code:rx|ram[60][8],   ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][9], rs232:f_rs232|RX_code:rx|ram[60][10],  ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][11], rs232:f_rs232|RX_code:rx|ram[60][12], ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][13], rs232:f_rs232|RX_code:rx|ram[60][14], ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][15], rs232:f_rs232|RX_code:rx|ram[60][16], ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][17], rs232:f_rs232|RX_code:rx|ram[60][18], ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][19], rs232:f_rs232|RX_code:rx|ram[60][20], ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][21], rs232:f_rs232|RX_code:rx|ram[60][22], ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][23], rs232:f_rs232|RX_code:rx|ram[60][24], ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][25], rs232:f_rs232|RX_code:rx|ram[60][26], ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][27], rs232:f_rs232|RX_code:rx|ram[60][28], ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][29], rs232:f_rs232|RX_code:rx|ram[60][30], ;
+;                                        ;                           ; rs232:f_rs232|RX_code:rx|ram[60][31]                                        ;
++----------------------------------------+---------------------------+-----------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -2500,12 +2560,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4919  ;
-; Number of registers using Synchronous Clear  ; 361   ;
-; Number of registers using Synchronous Load   ; 52    ;
+; Total registers                              ; 5148  ;
+; Number of registers using Synchronous Clear  ; 362   ;
+; Number of registers using Synchronous Load   ; 5     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4831  ;
+; Number of registers using Clock Enable       ; 5057  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -2515,73 +2575,74 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bits[1]                                             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bytes[1]                                            ;
-; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|data_out[53]                                               ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bits[0]                                             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|cnt_tx_bytes[2]                                            ;
+; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|data_out[40]                                               ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bits[0]                                             ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|cnt_rx_bytes[0]                                            ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|watch_dog[12]                                              ;
-; 3:1                ; 79 bits   ; 158 LEs       ; 79 LEs               ; 79 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|prev_key1_reg[111]         ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|data_r[13]                                                 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[76][0]                                                 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[75][3]                                                 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[74][6]                                                 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[73][9]                                                 ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[68][7]                                                 ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[68][4]                                                 ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[67][15]                                                ;
-; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[67][10]                                                ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[66][31]                                                ;
-; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[66][0]                                                 ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[65][31]                                                ;
-; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[65][6]                                                 ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[64][31]                                                ;
-; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[64][13]                                                ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[16][17]                                                ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[15][1]                                                 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[14][14]                                                ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[13][23]                                                ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[14][75]            ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[13][75]            ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[12][75]            ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[11][75]            ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[10][75]            ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[9][90]             ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[8][123]            ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[7][48]             ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[6][112]            ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[5][83]             ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[4][13]             ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[3][123]            ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[2][56]             ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[1][73]             ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[0][41]             ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[60][25]                                                ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|rcon_reg[5]                ;
+; 3:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|user_key[245]                                              ;
+; 3:1                ; 128 bits  ; 256 LEs       ; 0 LEs                ; 256 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|user_key[3]                                                ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|watch_dog[19]                                              ;
+; 3:1                ; 127 bits  ; 254 LEs       ; 127 LEs              ; 127 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|prev_key1_reg[58]          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|TX_code:tx|data_r[17]                                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[76][17]                                                ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[75][15]                                                ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[74][4]                                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[73][4]                                                 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[68][27]                                                ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[68][13]                                                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[67][23]                                                ;
+; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[67][17]                                                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[66][23]                                                ;
+; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[66][4]                                                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[65][23]                                                ;
+; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[65][4]                                                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[64][7]                                                 ;
+; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[64][10]                                                ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[16][4]                                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[15][4]                                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[14][28]                                                ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[13][5]                                                 ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[14][51]            ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[13][89]            ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[12][89]            ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[11][82]            ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[10][125]           ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[9][1]              ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[8][127]            ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[7][41]             ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[6][110]            ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[5][105]            ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[4][106]            ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[3][13]             ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[2][80]             ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[1][13]             ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem[0][119]            ;
+; 5:1                ; 29 bits   ; 87 LEs        ; 29 LEs               ; 58 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram[60][8]                                                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|rcon_reg[6]                ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|rcon_reg[3]                ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|round_ctr_reg[1]           ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|round_ctr_reg[0] ;
-; 6:1                ; 49 bits   ; 196 LEs       ; 98 LEs               ; 98 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|prev_key1_reg[78]          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|sword_ctr_reg[0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|round_ctr_reg[0]           ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|round_ctr_reg[3] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|sword_ctr_reg[1] ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|sword_ctr_reg[1] ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|round_ctr_reg[0] ;
-; 7:1                ; 128 bits  ; 512 LEs       ; 512 LEs              ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|prev_key0_reg[110]         ;
-; 128:1              ; 32 bits   ; 2720 LEs      ; 2720 LEs             ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram_data_out[9]                                            ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|block_w0_reg[27] ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|block_w1_reg[0]  ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|block_w2_reg[10] ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|block_w3_reg[17] ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|block_w0_reg[30] ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|block_w1_reg[10] ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|block_w2_reg[27] ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|block_w3_reg[27] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|round_ctr_reg[1] ;
+; 7:1                ; 128 bits  ; 512 LEs       ; 512 LEs              ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|prev_key0_reg[113]         ;
+; 128:1              ; 32 bits   ; 2720 LEs      ; 2720 LEs             ; 0 LEs                  ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|ram_data_out[22]                                           ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|block_w0_reg[15] ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|block_w1_reg[10] ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|block_w2_reg[11] ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|block_w3_reg[23] ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|block_w0_reg[15] ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|block_w1_reg[18] ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|block_w2_reg[20] ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block|block_w3_reg[22] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|load_key_256                                               ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|dec_ctrl_reg     ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|tmp_sboxw[5]     ;
-; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem_new[49]            ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_decipher_block:dec_block|tmp_sboxw[28]    ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_core_ctrl_reg                             ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|muxed_sboxw[27]                               ;
-; 15:1               ; 128 bits  ; 1280 LEs      ; 1280 LEs             ; 0 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|Mux10                      ;
-; 6:1                ; 78 bits   ; 312 LEs       ; 234 LEs              ; 78 LEs                 ; No         ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem_new[57]            ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|muxed_sboxw[0]                                ;
+; 15:1               ; 128 bits  ; 1280 LEs      ; 1280 LEs             ; 0 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|Mux70                      ;
+; 6:1                ; 126 bits  ; 504 LEs       ; 504 LEs              ; 0 LEs                  ; No         ; |mcu|rs232:f_rs232|RX_code:rx|aes_core:aes|aes_key_mem:keymem|key_mem_new[64]            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
 
 
@@ -2603,6 +2664,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; T10            ; 10    ; Signed Integer                               ;
 ; T11            ; 11    ; Signed Integer                               ;
 ; T12            ; 12    ; Signed Integer                               ;
+; T13            ; 13    ; Signed Integer                               ;
 ; ENCRYPT        ; 1     ; Signed Integer                               ;
 ; DECRYPT        ; 0     ; Signed Integer                               ;
 ; KEY_TYPE_128   ; 0     ; Signed Integer                               ;
@@ -2635,7 +2697,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:40     ;
+; Top            ; 00:00:49     ;
 +----------------+--------------+
 
 
@@ -2645,7 +2707,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Oct 19 22:17:56 2022
+    Info: Processing started: Thu Dec 08 20:31:21 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mcu -c mcu
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file rs232.v
@@ -2673,70 +2735,72 @@ Info (12021): Found 1 design units, including 1 entities, in source file mcu.v
 Info (12127): Elaborating entity "mcu" for the top level hierarchy
 Info (12128): Elaborating entity "rs232" for hierarchy "rs232:f_rs232"
 Info (12128): Elaborating entity "RX_code" for hierarchy "rs232:f_rs232|RX_code:rx"
-Warning (10230): Verilog HDL assignment warning at RX_code.v(58): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(78): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(96): truncated value with size 32 to match size of target (21)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(106): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(116): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(328): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(329): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(333): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(334): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(338): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(339): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(343): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(344): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(369): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(370): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(374): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(375): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(379): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(380): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(384): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at RX_code.v(385): truncated value with size 32 to match size of target (1)
-Warning (10240): Verilog HDL Always Construct warning at RX_code.v(299): inferring latch(es) for variable "AES_ACTION", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at RX_code.v(299): inferring latch(es) for variable "KEY_TYPE", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "KEY_TYPE" at RX_code.v(299)
-Info (10041): Inferred latch for "AES_ACTION" at RX_code.v(299)
-Info (10041): Inferred latch for "ram_data_in[0]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[1]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[2]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[3]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[4]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[5]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[6]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[7]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[8]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[9]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[10]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[11]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[12]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[13]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[14]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[15]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[16]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[17]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[18]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[19]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[20]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[21]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[22]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[23]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[24]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[25]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[26]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[27]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[28]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[29]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[30]" at RX_code.v(190)
-Info (10041): Inferred latch for "ram_data_in[31]" at RX_code.v(190)
-Info (10041): Inferred latch for "addr[0]" at RX_code.v(189)
-Info (10041): Inferred latch for "addr[1]" at RX_code.v(189)
-Info (10041): Inferred latch for "addr[2]" at RX_code.v(189)
-Info (10041): Inferred latch for "addr[3]" at RX_code.v(189)
-Info (10041): Inferred latch for "addr[4]" at RX_code.v(189)
-Info (10041): Inferred latch for "addr[5]" at RX_code.v(189)
-Info (10041): Inferred latch for "addr[6]" at RX_code.v(189)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(59): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(79): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(97): truncated value with size 32 to match size of target (21)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(107): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(117): truncated value with size 32 to match size of target (5)
+Warning (10240): Verilog HDL Always Construct warning at RX_code.v(312): inferring latch(es) for variable "same_key_flag", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at RX_code.v(421): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(422): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(426): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(427): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(431): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(432): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(436): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(437): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(462): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(463): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(467): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(468): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(472): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(473): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(477): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at RX_code.v(478): truncated value with size 32 to match size of target (1)
+Warning (10240): Verilog HDL Always Construct warning at RX_code.v(387): inferring latch(es) for variable "AES_ACTION", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at RX_code.v(387): inferring latch(es) for variable "KEY_TYPE", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "KEY_TYPE" at RX_code.v(387)
+Info (10041): Inferred latch for "AES_ACTION" at RX_code.v(387)
+Info (10041): Inferred latch for "same_key_flag" at RX_code.v(318)
+Info (10041): Inferred latch for "ram_data_in[0]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[1]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[2]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[3]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[4]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[5]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[6]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[7]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[8]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[9]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[10]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[11]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[12]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[13]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[14]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[15]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[16]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[17]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[18]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[19]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[20]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[21]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[22]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[23]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[24]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[25]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[26]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[27]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[28]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[29]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[30]" at RX_code.v(221)
+Info (10041): Inferred latch for "ram_data_in[31]" at RX_code.v(221)
+Info (10041): Inferred latch for "addr[0]" at RX_code.v(220)
+Info (10041): Inferred latch for "addr[1]" at RX_code.v(220)
+Info (10041): Inferred latch for "addr[2]" at RX_code.v(220)
+Info (10041): Inferred latch for "addr[3]" at RX_code.v(220)
+Info (10041): Inferred latch for "addr[4]" at RX_code.v(220)
+Info (10041): Inferred latch for "addr[5]" at RX_code.v(220)
+Info (10041): Inferred latch for "addr[6]" at RX_code.v(220)
 Info (12128): Elaborating entity "aes_core" for hierarchy "rs232:f_rs232|RX_code:rx|aes_core:aes"
 Info (12128): Elaborating entity "aes_encipher_block" for hierarchy "rs232:f_rs232|RX_code:rx|aes_core:aes|aes_encipher_block:enc_block"
 Info (10264): Verilog HDL Case Statement information at aes_encipher_block.v(282): all case item expressions in this case statement are onehot
@@ -2751,27 +2815,29 @@ Info (12128): Elaborating entity "TX_code" for hierarchy "rs232:f_rs232|TX_code:
 Warning (10230): Verilog HDL assignment warning at TX_code.v(43): truncated value with size 32 to match size of target (12)
 Warning (10230): Verilog HDL assignment warning at TX_code.v(56): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at TX_code.v(66): truncated value with size 32 to match size of target (3)
+Warning (13012): Latch rs232:f_rs232|RX_code:rx|same_key_flag has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|ps.T12
 Warning (13012): Latch rs232:f_rs232|RX_code:rx|AES_ACTION has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|addr[0]
 Warning (13012): Latch rs232:f_rs232|RX_code:rx|KEY_TYPE has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal rs232:f_rs232|RX_code:rx|addr[4]
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 19 registers lost all their fanouts during netlist optimizations.
+Info (17049): 21 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file E:/user/just/Documents/GitHub/rs232_AES/rs232_de0_2/output_files/mcu.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BTN[1]"
     Warning (15610): No output dependent on input pin "BTN[2]"
-Info (21057): Implemented 11527 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 11807 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 11521 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 35 warnings
-    Info: Peak virtual memory: 4718 megabytes
-    Info: Processing ended: Wed Oct 19 22:18:41 2022
-    Info: Elapsed time: 00:00:45
-    Info: Total CPU time (on all processors): 00:00:45
+    Info (21061): Implemented 11801 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 4722 megabytes
+    Info: Processing ended: Thu Dec 08 20:32:17 2022
+    Info: Elapsed time: 00:00:56
+    Info: Total CPU time (on all processors): 00:00:54
 
 
 +------------------------------------------+

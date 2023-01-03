@@ -3,111 +3,147 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLK'
-Slack : -12.415
-TNS   : -30849.547
+Slack : -13.029
+TNS   : -31327.711
+
+Type  : Slow 1200mV 85C Model Setup 'BTN[0]'
+Slack : -3.473
+TNS   : -3.473
 
 Type  : Slow 1200mV 85C Model Setup 'rs232:f_rs232|RX_code:rx|data_out[56]'
-Slack : -3.108
-TNS   : -34.278
+Slack : -2.321
+TNS   : -21.717
 
 Type  : Slow 1200mV 85C Model Setup 'rs232:f_rs232|RX_code:rx|addr[0]'
-Slack : 0.967
-TNS   : 0.000
+Slack : -1.921
+TNS   : -1.921
 
 Type  : Slow 1200mV 85C Model Hold 'rs232:f_rs232|RX_code:rx|addr[0]'
-Slack : -3.007
-TNS   : -5.148
+Slack : -3.370
+TNS   : -3.370
 
 Type  : Slow 1200mV 85C Model Hold 'rs232:f_rs232|RX_code:rx|data_out[56]'
-Slack : -0.093
-TNS   : -0.093
+Slack : -0.116
+TNS   : -0.202
+
+Type  : Slow 1200mV 85C Model Hold 'BTN[0]'
+Slack : 0.128
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLK'
-Slack : 0.017
+Slack : 0.261
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -4922.000
+TNS   : -5151.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BTN[0]'
+Slack : -3.000
+TNS   : -3.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'rs232:f_rs232|RX_code:rx|addr[0]'
-Slack : 0.380
+Slack : 0.316
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'rs232:f_rs232|RX_code:rx|data_out[56]'
-Slack : 0.398
+Slack : 0.357
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'CLK'
-Slack : -11.070
-TNS   : -27258.554
+Slack : -11.525
+TNS   : -27730.236
+
+Type  : Slow 1200mV 0C Model Setup 'BTN[0]'
+Slack : -2.994
+TNS   : -2.994
 
 Type  : Slow 1200mV 0C Model Setup 'rs232:f_rs232|RX_code:rx|data_out[56]'
-Slack : -2.787
-TNS   : -31.820
+Slack : -2.106
+TNS   : -21.060
 
 Type  : Slow 1200mV 0C Model Setup 'rs232:f_rs232|RX_code:rx|addr[0]'
-Slack : 0.939
-TNS   : 0.000
+Slack : -1.617
+TNS   : -1.617
 
 Type  : Slow 1200mV 0C Model Hold 'rs232:f_rs232|RX_code:rx|addr[0]'
-Slack : -2.692
-TNS   : -4.552
-
-Type  : Slow 1200mV 0C Model Hold 'CLK'
-Slack : 0.007
-TNS   : 0.000
+Slack : -2.958
+TNS   : -2.958
 
 Type  : Slow 1200mV 0C Model Hold 'rs232:f_rs232|RX_code:rx|data_out[56]'
-Slack : 0.045
+Slack : 0.042
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'BTN[0]'
+Slack : 0.043
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLK'
+Slack : 0.219
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -4922.000
+TNS   : -5151.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rs232:f_rs232|RX_code:rx|data_out[56]'
-Slack : 0.422
-TNS   : 0.000
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BTN[0]'
+Slack : -3.000
+TNS   : -3.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rs232:f_rs232|RX_code:rx|addr[0]'
-Slack : 0.438
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rs232:f_rs232|RX_code:rx|data_out[56]'
+Slack : 0.447
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'CLK'
-Slack : -7.312
-TNS   : -17137.594
+Slack : -7.577
+TNS   : -16822.021
+
+Type  : Fast 1200mV 0C Model Setup 'BTN[0]'
+Slack : -1.603
+TNS   : -1.603
 
 Type  : Fast 1200mV 0C Model Setup 'rs232:f_rs232|RX_code:rx|data_out[56]'
-Slack : -1.553
-TNS   : -9.172
+Slack : -1.068
+TNS   : -4.577
 
 Type  : Fast 1200mV 0C Model Setup 'rs232:f_rs232|RX_code:rx|addr[0]'
-Slack : 1.070
-TNS   : 0.000
+Slack : -0.701
+TNS   : -0.701
 
 Type  : Fast 1200mV 0C Model Hold 'rs232:f_rs232|RX_code:rx|addr[0]'
-Slack : -1.840
-TNS   : -3.219
-
-Type  : Fast 1200mV 0C Model Hold 'CLK'
-Slack : -0.094
-TNS   : -0.154
+Slack : -2.051
+TNS   : -2.051
 
 Type  : Fast 1200mV 0C Model Hold 'rs232:f_rs232|RX_code:rx|data_out[56]'
-Slack : 0.079
+Slack : 0.059
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLK'
+Slack : 0.061
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'BTN[0]'
+Slack : 0.080
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -5247.953
+TNS   : -5505.332
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BTN[0]'
+Slack : -3.000
+TNS   : -3.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rs232:f_rs232|RX_code:rx|addr[0]'
-Slack : 0.188
+Slack : 0.198
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rs232:f_rs232|RX_code:rx|data_out[56]'
-Slack : 0.369
+Slack : 0.320
 TNS   : 0.000
 
 ------------------------------------------------------------

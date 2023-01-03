@@ -238,8 +238,8 @@ module aes_key_mem(
               begin
                 if (round_ctr_reg == 0)
                   begin
-                    key_mem_new   = key[255 : 128];
-                    prev_key1_new = key[255 : 128];
+                    key_mem_new   = key[127 : 0];
+                    prev_key1_new = key[127 : 0];
                     prev_key1_we  = 1'b1;
                     rcon_next     = 1'b1;
                   end

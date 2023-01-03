@@ -57,8 +57,8 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 		else 
 		begin 
 			cnt_1_5 <= cnt_1_5 + 1;
-		//	if(cnt_1_5 >= 3900)  delta_time_1_5_flag <= 1;	//Quartus
-			if(cnt_1_5 >= 69)  delta_time_1_5_flag <= 1;	//Simulation
+			if(cnt_1_5 >= 3900)  delta_time_1_5_flag <= 1;	//Quartus
+		//	if(cnt_1_5 >= 69)  delta_time_1_5_flag <= 1;	//Simulation
 		end
 		
 	end
@@ -77,8 +77,8 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 		else 
 		begin 
 			cnt_1 <= cnt_1 + 1;
-		//	if(cnt_1 >= 2600)  delta_time_1_flag <= 1;	//Quartus
-			if(cnt_1 >= 46)  delta_time_1_flag <= 1;	//Simulation
+			if(cnt_1 >= 2600)  delta_time_1_flag <= 1;	//Quartus
+		//	if(cnt_1 >= 46)  delta_time_1_flag <= 1;	//Simulation
 		end
 		
 	end
@@ -134,35 +134,39 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 	always @(posedge clk)
 	begin
 		system_key <= {8'h00, 8'h00, 8'h00, 8'h00,
+				       8'h00, 8'h00, 8'h00, 8'h00,
+				       8'h00, 8'h00, 8'h00, 8'h00,
+				       8'h00, 8'h00, 8'h00, 8'h01,
+					   
+					   8'h00, 8'h00, 8'h00, 8'h00,
 					   8'h60, 8'h3d, 8'heb, 8'h10,
 					   8'h15, 8'hca, 8'h71, 8'hbe,
-				       8'h2b, 8'h73, 8'hae, 8'hf0,
-				       8'h00, 8'h00, 8'h00, 8'h00,
-				       8'h00, 8'h00, 8'h00, 8'h00,
-				       8'h00, 8'h00, 8'h00, 8'h00,
-				       8'h00, 8'h00, 8'h00, 8'h01};
+				       8'h2b, 8'h73, 8'hae, 8'hf0};
 	end
-	/* 0000_0000, 0000_0000, 0000_0000, 0000_0000
-	   0110_0000, 0011_1101, 1110_1011, 0001_0000
-	   0001_0101, 1100_1010, 0111_0001, 1011_1110
-	   0010_1011, 0111_0011, 1010_1110, 1111_0000
-	   
+	/* 
 	   0000_0000, 0000_0000, 0000_0000, 0000_0000
 	   0000_0000, 0000_0000, 0000_0000, 0000_0000
 	   0000_0000, 0000_0000, 0000_0000, 0000_0000
 	   0000_0000, 0000_0000, 0000_0000, 0000_0001
 	   
-	   [33] 1000_0000,1000_0000,1000_0000,1000_0000
-	   [32] 1000_0000,1000_0000,1000_0000,1000_0000
-	   [31] 1011_0000,1000_1111,1011_1101,1011_0001
-	   [30] 1000_0000,1101_0111,1001_0100,1111_0001
-	   [29] 1101_1111,1000_1010,1110_1110,1011_1010
+	   0000_0000, 0000_0000, 0000_0000, 0000_0000
+	   0110_0000, 0011_1101, 1110_1011, 0001_0000
+	   0001_0101, 1100_1010, 0111_0001, 1011_1110
+	   0010_1011, 0111_0011, 1010_1110, 1111_0000
 	   
-	   [28] 1111_0111,1100_0000,1000_0000,1000_0000
-	   [27] 1000_0000,1000_0000,1000_0000,1000_0000
-	   [26] 1000_0000,1000_0000,1000_0000,1000_0000
-	   [25] 1000_0000,1000_0000,1000_0000,1000_0000
-	   [24] 1000_0000,1000_0000,1000_0000,1000_0001
+	   [33] 1000_0000,1000_0000,1000_0000,1000_0000	80 80 80 80
+	   [32] 1000_0000,1000_0000,1000_0000,1000_0000	80 80 80 80
+	   [31] 1000_0000,1000_0000,1000_0000,1000_0000	80 80 80 80
+	   [30] 1000_0000,1000_0000,1000_0000,1000_0000	80 80 80 80
+	   [29] 1000_0000,1000_0000,1000_0000,1000_0001	80 80 80 81
+	   
+	   [28] 1000_0000,1000_0000,1000_0000,1000_0000 80 80 80 80
+	   [27] 1000_0000,1000_0000,1000_1100,1000_0011 80 80 8C 83
+	   [26] 1110_1111,1010_1100,1010_0000,1001_0101 EF AC A0 95
+	   [25] 1110_0101,1001_1100,1011_0111,1110_0010 E5 9C B7 E2
+	   [24] 1101_1011,1100_1110,1101_1101,1111_0000	DB CE DD F0
+	   
+	   
 	*/
 	
 	//AES
@@ -192,11 +196,11 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 	/////*[24-33]	KEY                    *//////
 	//////////////////////////////////////////////
 	//////////////READ ONLY///////////////////////
-	/////*[60] 	   *AES OUTPUT TYPE        *//////none
+	/////*[60] 	   *AES OUTPUT TYPE        *//////
 	/////*[64]-[68] AES OUTPUT(5)          *//////
 	/////*[73]-[76] AES OUTPUT(4)          *//////
 	//////////////////////////////////////////////
-	////////AES TYPE///////none
+	////////AES TYPE///////
 	//* 0:IDLE			*//
 	//* 1:128 ENCRYPT	*//
 	//* 2:128 DECRYPT	*//
@@ -250,8 +254,18 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 			ram[74] <= aes_out[63:32];
 			ram[75] <= aes_out[95:64];
 			ram[76] <= aes_out[127:96];
-
-			ram[60]   <= 32'hffffffff;
+			
+			if(KEY_TYPE == KEY_TYPE_128)
+			begin
+				if(AES_ACTION == ENCRYPT)		ram[60] <= 32'h00000001;
+				else if(AES_ACTION == DECRYPT)	ram[60] <= 32'h00000002;
+			end
+			else if(KEY_TYPE == KEY_TYPE_256)
+			begin
+				if(AES_ACTION == ENCRYPT)		ram[60] <= 32'h00000003;
+				else if(AES_ACTION == DECRYPT)	ram[60] <= 32'h00000004;
+			end
+			else	if(!same_key_flag)	ram[60] <= 32'h00000000;
 		end
 		
 	end
@@ -264,44 +278,49 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 	end
 	
 	//check if the same key
-	wire same_key_flag;
+	reg same_key_flag;
 	
 	always @(posedge clk)
 	begin
 		if(load_key_128)
-		user_key <= {	ram[28][17:16],ram[28][14:8],ram[28][6:0],
+		user_key <= {	128'h00000000,
+						ram[28][17:16],ram[28][14:8],ram[28][6:0],
 						ram[27][30:24],ram[27][22:16],ram[27][14:8],ram[27][6:0],
 						ram[26][30:24],ram[26][22:16],ram[26][14:8],ram[26][6:0],
 						ram[25][30:24],ram[25][22:16],ram[25][14:8],ram[25][6:0],
-						ram[24][30:24],ram[24][22:16],ram[24][14:8],ram[24][6:0],
-						128'h00000000};
+						ram[24][30:24],ram[24][22:16],ram[24][14:8],ram[24][6:0]
+						};
 		if(load_key_256)
-		user_key <= {	ram[28][17:16],ram[28][14:8],ram[28][6:0],
-						ram[27][30:24],ram[27][22:16],ram[27][14:8],ram[27][6:0],
-						ram[26][30:24],ram[26][22:16],ram[26][14:8],ram[26][6:0],
-						ram[25][30:24],ram[25][22:16],ram[25][14:8],ram[25][6:0],
-						ram[24][30:24],ram[24][22:16],ram[24][14:8],ram[24][6:0],
-						
-						ram[33][17:16],ram[33][14:8] ,ram[33][6:0],
+		user_key <= {	ram[33][17:16],ram[33][14:8] ,ram[33][6:0],
 						ram[32][30:24],ram[32][22:16],ram[32][14:8],ram[32][6:0],
 						ram[31][30:24],ram[31][22:16],ram[31][14:8],ram[31][6:0],
 						ram[30][30:24],ram[30][22:16],ram[30][14:8],ram[30][6:0],
-						ram[29][30:24],ram[29][22:16],ram[29][14:8],ram[29][6:0]};
+						ram[29][30:24],ram[29][22:16],ram[29][14:8],ram[29][6:0],
+						
+						ram[28][17:16],ram[28][14:8],ram[28][6:0],
+						ram[27][30:24],ram[27][22:16],ram[27][14:8],ram[27][6:0],
+						ram[26][30:24],ram[26][22:16],ram[26][14:8],ram[26][6:0],
+						ram[25][30:24],ram[25][22:16],ram[25][14:8],ram[25][6:0],
+						ram[24][30:24],ram[24][22:16],ram[24][14:8],ram[24][6:0]};
 	end
-	assign same_key_flag = load_key_128 ? (system_key[255:128] === user_key[255:128]) ? 1 : load_key_256 ? (system_key === user_key) ? 1 : 0 : 0 : same_key_flag;
+	//assign same_key_flag = load_key_128 ? (system_key[127:0] === user_key[127:0]) ? 1 : load_key_256 ? (system_key === user_key) ? 1 : 0 : 0 : same_key_flag;
 	
-	/*always @ (posedge clk)
+	reg check_key_128;
+	reg check_key_256;
+	always @ (*)
 	begin
 		if(rst)											same_key_flag = 0;
-		if(load_key_128)
+		if(check_key_128)
 		begin
 			if(system_key[127:0] == user_key[127:0])	same_key_flag = 1;
+			else										same_key_flag = 0;
 		end
-		else if(load_key_256)
+		else if(check_key_256)
 		begin
 			if(system_key == user_key)					same_key_flag = 1;
+			else										same_key_flag = 0;
 		end
-	end*/
+	end
 	
 	
 	// AES data in
@@ -512,6 +531,8 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 
 		load_key_128 = 0;
 		load_key_256 = 0;
+		check_key_128 = 0;
+		check_key_256 = 0;
 		aes_flag = 0;
 		
 		case(ps)
@@ -643,9 +664,15 @@ module RX_code(data_in, tx_start, clk, rst, ram_data_out);
 				begin
 					if(addr==9 || addr==10)	load_key_128 = 1;
 					else					load_key_256 = 1;
-					aes_flag = 1;
-					ns = T1;
+					ns = T12;
 				end
+				else	ns = T1;
+			end
+			T12://KEY CHECK
+			begin
+				if(addr==9 || addr==10)	check_key_128 = 1;
+				else					check_key_256 = 1;
+				aes_flag = 1;
 				ns = T1;
 			end
 			
